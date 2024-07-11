@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 interface InfoWithDescProps {
-  data: {
+  readonly data: {
     header: string;
     icon: ReactNode;
     description: string;
