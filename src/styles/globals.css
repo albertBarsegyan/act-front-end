@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+  scroll-behavior: smooth;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+@layer components {
+
+  .flex-center {
+    @apply flex items-center justify-center
+  }
+
+  .flex-one-line {
+    @apply flex items-center
+  }
+
+  .vertical-separator {
+    @apply h-full w-1 bg-blue-dark-1
+  }
+}
+
+
+.button-reset {
+ border: none;
+  background: transparent;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
