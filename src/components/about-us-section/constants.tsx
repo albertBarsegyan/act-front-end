@@ -1,4 +1,4 @@
-import { HeartIcon } from '@/icons/info-icons/heart-icon';
+import { HeartIcon } from '@/components/icons/info-icons/heart-icon';
 
 export const AboutUsDataList = [
   {

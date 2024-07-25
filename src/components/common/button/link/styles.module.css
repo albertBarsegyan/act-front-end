@@ -1,0 +1,26 @@
+.linkButton {
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: var(--text-color-light);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 75ms;
+}
+
+.linkButton:hover {
+    background: transparent;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.linkButtonActive {
+    composes: linkButton;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.linkButtonActive:hover,
+.linkButtonActive:active {
+    color: var(--secondary-color);
+}

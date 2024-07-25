@@ -1,0 +1,29 @@
+.wrapper {
+    padding-top: 100px;
+    background-color: black;
+}
+
+.header {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 62px;
+    text-align: left;
+    color: white;
+    margin-bottom: 24px;
+}
+
+.description {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: left;
+    color: white;
+    max-width: 720px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.imageWrapper {
+    height: 526px;
+    position: relative;
+}

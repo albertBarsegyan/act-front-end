@@ -2,7 +2,7 @@
 
 import { AboutUsDataList } from '@/components/about-us-section/constants';
 import { InfoWithDesc } from '@/components/common/info-with-desc/info-with-desc';
-import { SectionLayout } from '@/components/layout/section-layout/section-layout';
+import { SectionLayout } from '@/components/layout/section/section-layout';
 
 export function AboutUsSection() {
   return (

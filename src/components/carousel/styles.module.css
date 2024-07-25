@@ -1,0 +1,82 @@
+.carouselContainer {
+    position: relative;
+    overflow: hidden;
+}
+
+.carouselWrapper {
+    display: flex;
+    transition: transform 0.5s;
+    height: 420px;
+}
+
+.carouselItem {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+
+}
+
+.carouselTtemActive {
+    composes: carouselItem;
+    opacity: 1;
+}
+
+.controls button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #FFFFFF26;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    padding: 28px;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.controls button:hover {
+    background-color: #FFFFFF40;
+}
+
+.controls button:first-child {
+    left: 36px;
+}
+
+.controls button:last-child {
+    right: 36px;
+}
+
+.dots {
+    position: absolute;
+    bottom: 34px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.dot {
+    padding: 5px;
+    margin: 0 2px;
+    background-color: #FFFFFF66;
+    border: none;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+
+.dotActive {
+    composes: dot;
+    width: 20px;
+    height: 20px;
+    background-color: #FFFFFF;
+
+}

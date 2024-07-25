@@ -11,7 +11,7 @@ export default [
   ...tseslint.configs.recommended,
   {
     plugins: {
-      "@next/next": next,
+      '@next/next': next,
     },
     rules: {
       ...next.configs.recommended.rules,
@@ -19,12 +19,17 @@ export default [
   },
   {
     plugins: {
-      "simple-import-sort": simpleImportSort,
+      'simple-import-sort': simpleImportSort,
     },
     rules: {
-      "simple-import-sort/imports": "error",
-      "simple-import-sort/exports": "error",
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
     },
   },
   eslintConfigPrettier,
+  {
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+    },
+  },
 ];

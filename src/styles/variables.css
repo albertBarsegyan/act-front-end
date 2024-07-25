@@ -1,0 +1,13 @@
+:root {
+    --primary-color: black;
+    --text-color-light: white;
+    --text-color-dark: black;
+    --secondary-color: #fafafa;
+    --secondary-color-light: #ffffff;
+    --color-danger: #f8413e;
+    --screen-size: 100vh;
+    --border-radius: 8px;
+    --menu-z-index: 99;
+    white-space: pre-line;
+    font-size: 16px;
+}

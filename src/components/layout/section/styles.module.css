@@ -1,0 +1,18 @@
+.wrapper {
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.fullWidth {
+    width: 100%;
+    max-width: 1320px;
+}
+
+@media (max-width: 768px) {
+    .fullWidth {
+        max-width: 100%;
+    }
+}
+
