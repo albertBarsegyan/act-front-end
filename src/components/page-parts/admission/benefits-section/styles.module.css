@@ -1,0 +1,24 @@
+.benefitSectionWrapper {
+    padding-bottom: 64px;
+    background: var(--light-bg-color);
+}
+
+.header {
+    font-size: 3.25rem;
+    font-weight: 700;
+    line-height: 150%;
+    text-align: left;
+}
+
+.benefitContent {
+    display: flex;
+    flex-direction: row;
+    gap: 0 1.5rem;
+}
+
+
+@media screen and (max-width: 920px) {
+    .benefitContent {
+        flex-direction: column;
+    }
+}

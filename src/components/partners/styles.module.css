@@ -1,0 +1,41 @@
+.sectionWrapper {
+    background-color: var(--primary-color);
+}
+
+.wrapper {
+    padding: 1.5rem 10px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.partnersWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow: visible;
+    animation: scrolling 30s linear infinite;
+}
+
+.partnerItem img {
+    object-fit: contain;
+}
+
+
+@media screen and (max-width: 920px) {
+    .wrapper {
+        margin-bottom: 24px;
+    }
+}
+
+@keyframes scrolling {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-10 * 288px));
+    }
+}

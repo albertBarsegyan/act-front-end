@@ -50,8 +50,8 @@ export function ImageLoader({
       ref={ref}
       priority={priority}
       fill={fill}
-      width={width ?? 200}
-      height={height ?? 200}
+      width={width ?? 400}
+      height={height ?? 400}
       style={style}
       unoptimized={unoptimized}
       src={src}

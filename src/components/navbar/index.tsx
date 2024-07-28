@@ -14,8 +14,8 @@ import styles from './styles.module.css';
 
 const NavbarNavigations = [
   { nameId: 'home', path: routePath.getHome() },
-  { nameId: 'studentPortal', path: routePath.getStudentPortal() },
   { nameId: 'admission', path: routePath.getAdmission() },
+  { nameId: 'studentPortal', path: routePath.getStudentPortal() },
   { nameId: 'academic', path: routePath.getAcademic() },
   { nameId: 'aboutUs', path: routePath.getAboutUs() },
   { nameId: 'contactUs', path: routePath.getContactUs() },
@@ -36,24 +36,29 @@ export function Navbar() {
           </Link>
 
           <Menu>
-            <div className={styles.menuWrapper}>
-              <div className={styles.linksWrapper}>
-                {NavbarNavigations.map((navigation) => (
-                  <Link className={styles.linkItem} key={navigation.nameId} href={navigation.path}>
-                    <LinkButton
-                      data-text={t(`routes.${navigation.nameId}`)}
-                      isActive={getIsActive({ pathname, locale, path: navigation.path })}
-                    >
-                      {t(`routes.${navigation.nameId}`)}
-                    </LinkButton>
-                  </Link>
-                ))}
-              </div>
+            {({ toggleMenu }) => {
+              return (
+                <div className={styles.menuWrapper}>
+                  <div className={styles.linksWrapper}>
+                    {NavbarNavigations.map((navigation) => (
+                      <Link className={styles.linkItem} key={navigation.nameId} href={navigation.path}>
+                        <LinkButton
+                          onClick={toggleMenu}
+                          data-text={t(`routes.${navigation.nameId}`)}
+                          isActive={getIsActive({ pathname, locale, path: navigation.path })}
+                        >
+                          {t(`routes.${navigation.nameId}`)}
+                        </LinkButton>
+                      </Link>
+                    ))}
+                  </div>
 
-              <div className={styles.buttonsWrapper}>
-                <PrimaryButton>{t('apply-button-text')}</PrimaryButton>
-              </div>
-            </div>
+                  <div className={styles.buttonsWrapper}>
+                    <PrimaryButton>{t('apply-button-text')}</PrimaryButton>
+                  </div>
+                </div>
+              );
+            }}
           </Menu>
         </div>
       </SectionLayout>

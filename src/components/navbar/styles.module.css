@@ -47,18 +47,19 @@
     }
 
     .menuWrapper {
-        position: absolute;
+        position: fixed;
         width: 100%;
         height: calc(var(--screen-size) - 76px);
-        top: 176px;
+        bottom: 0;
+        top: 76px;
         left: 0;
         justify-content: flex-start;
         align-items: flex-start;
-        background: var(--secondary-color);
+        background: var(--primary-color);
+        color: var(--secondary-color);
         z-index: var(--menu-z-index);
         flex-direction: column;
         gap: 36px 0;
-        opacity: 0;
     }
 
     .linksWrapper {

@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 
 import Carousel from '@/components/carousel';
 import { PrimaryButton } from '@/components/common/button/primary';
+import { HeaderText } from '@/components/header-text';
 
 import styles from './styles.module.css';
 
@@ -37,8 +38,8 @@ export function GraduationSection() {
       </Carousel>
 
       <div className={styles.contentWrapper}>
-        <span className={styles.header}>{t('graduation-header-1')}</span>
-        <span className={styles.header}>{t('graduation-header-2')}</span>
+        <HeaderText color="white">{t('graduation-header-1')}</HeaderText>
+        <HeaderText color="white">{t('graduation-header-2')}</HeaderText>
 
         <PrimaryButton className={styles.button}>{t('graduation-button-text')}</PrimaryButton>
       </div>

@@ -7,10 +7,10 @@ interface LinkButtonProps {
   readonly children: React.ReactNode;
   readonly isActive: boolean;
   readonly className?: string;
-  readonly handleClick?: () => void;
+  readonly onClick?: () => void;
 }
 
-export function LinkButton({ children, handleClick, isActive, className }: LinkButtonProps) {
+export function LinkButton({ children, onClick, isActive, className }: LinkButtonProps) {
   const buttonStyles = classNames({
     [styles.linkButton]: true,
     [styles.linkButtonActive]: isActive,
@@ -18,7 +18,7 @@ export function LinkButton({ children, handleClick, isActive, className }: LinkB
   });
 
   return (
-    <button type="button" onClick={handleClick} className={buttonStyles}>
+    <button type="button" onClick={onClick} className={buttonStyles}>
       {children}
     </button>
   );

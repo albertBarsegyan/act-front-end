@@ -1,0 +1,24 @@
+.header {
+    font-size: 3.25rem;
+    font-weight: 700;
+    line-height: 150%;
+    text-align: left;
+}
+
+.wrapper {
+    background: var(--light-bg-color);
+    padding-bottom: 3rem;
+}
+
+.contentWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.125rem 2.5rem;
+}
+
+@media screen and (max-width: 920px) {
+    .contentWrapper {
+        grid-template-columns: 1fr;
+    }
+
+}
