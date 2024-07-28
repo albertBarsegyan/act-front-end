@@ -11,6 +11,11 @@
 }
 
 @media (max-width: 768px) {
+    .wrapper {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
     .fullWidth {
         max-width: 100%;
     }

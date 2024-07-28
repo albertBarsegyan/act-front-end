@@ -1,0 +1,16 @@
+.facultySectionWrapper {
+    padding-top: 28px;
+}
+
+.facultiesWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+@media screen and (max-width: 920px) {
+    .facultiesWrapper {
+        gap: 8px;
+    }
+}

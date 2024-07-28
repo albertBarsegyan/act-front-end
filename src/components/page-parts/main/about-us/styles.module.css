@@ -27,3 +27,7 @@
     height: 526px;
     position: relative;
 }
+
+.imageWrapper > img {
+    object-fit: cover;
+}

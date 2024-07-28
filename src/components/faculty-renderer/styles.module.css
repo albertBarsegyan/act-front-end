@@ -1,0 +1,41 @@
+.facultyRendererWrapper {
+    position: relative;
+    border-radius: var(--border-radius);
+}
+
+.facultyRendererHeader {
+    position: absolute;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 150%;
+    top: 32px;
+    left: 32px;
+    color: white;
+}
+
+.facultyRendererImage {
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+.readerMoreButton {
+    width: 8.125rem;
+    bottom: 32px;
+    left: 32px;
+    position: absolute;
+}
+
+@media screen and (max-width: 920px) {
+    .facultyRendererHeader {
+        font-size: 2rem;
+        top: 16px;
+        left: 16px;
+    }
+
+    .readerMoreButton {
+        bottom: 16px;
+        left: 16px;
+    }
+
+}

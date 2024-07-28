@@ -1,0 +1,4 @@
+.pageWrapper {
+    background: var(--light-bg-color);
+    padding-bottom: 120px;
+}

@@ -11,14 +11,11 @@
 
 .regularOutlineButton {
     composes: regularButton;
-    color: white;
-    border: 1px solid white;
+    color: var(--text-color-lighter);
+    border: 2px solid var(--text-color-lighter);
+    background: transparent;
 }
 
-.regularOutlineButton:hover,
-.regularOutlineButton:active {
-    background: white;
-}
 
 .regularOutlineButtonDisabled {
     composes: regularOutlineButton;

@@ -1,0 +1,8 @@
+.pageLayout {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.pageLayout.loaded {
+    opacity: 1;
+}
