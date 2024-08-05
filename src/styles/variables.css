@@ -1,4 +1,5 @@
 :root {
+    --primary-color-dark: #f0a347;
     --primary-color: black;
     --text-color-light: white;
     --text-color-dark: black;
@@ -11,5 +12,8 @@
     --border-radius: 4px;
     --menu-z-index: 99;
     white-space: pre-line;
+    --color-gray-1: #05060f;
     font-size: 16px;
+
 }
+

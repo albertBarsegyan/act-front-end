@@ -14,6 +14,7 @@ export default getRequestConfig(async ({ locale }) => {
     ...(await import(`../messages/${locale}/admission.json`)).default,
     ...(await import(`../messages/${locale}/academic.json`)).default,
     ...(await import(`../messages/${locale}/privacy_policy.json`)).default,
+    ...(await import(`../messages/${locale}/contact.json`)).default,
   };
 
   return {

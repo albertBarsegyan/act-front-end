@@ -38,10 +38,9 @@ export function ImageLoader({
 }: Readonly<ImageLoaderProps>) {
   const [isIntersecting, ref] = useIntersection({ delay: 0.1 });
 
-  const imageStyles = classNames({
+  const imageStyles = classNames(className, {
     [styles.imageLoading]: !isIntersecting,
     [styles.imageSuccess]: isIntersecting,
-    [String(className)]: Boolean(className),
   });
 
   return (

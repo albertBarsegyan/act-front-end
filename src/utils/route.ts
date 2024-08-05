@@ -4,7 +4,7 @@ export const routePath = {
   getAdmission: () => '/admission',
   getAcademic: () => '/academic',
   getAboutUs: () => '/about-us',
-  getContactUs: () => '/contact-us',
+  getContactUs: () => '/contact',
   getStore: () => '/store',
 };
 

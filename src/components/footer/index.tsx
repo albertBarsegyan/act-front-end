@@ -1,4 +1,5 @@
 'use client';
+import classNames from 'classnames';
 import Link from 'next/link';
 import { useParams, usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
@@ -15,28 +16,33 @@ import { getIsActive, routePath } from '@/utils/route';
 
 import styles from './styles.module.css';
 
-export function ContactDetails() {
+export function ContactDetails({ isDark = false }: Readonly<{ isDark?: boolean }>) {
+  const contactInfoItemStyle = classNames({
+    [styles.contactInfoItem]: !isDark,
+    [styles.contactInfoItemDark]: isDark,
+  });
+
   return (
     <div>
-      <div className={styles.contactInfoItem}>
+      <div className={contactInfoItemStyle}>
         <div className={styles.iconShape}>
           <PhoneIcon />
         </div>
         <span>{ContactInformation.phone}</span>
       </div>
-      <div className={styles.contactInfoItem}>
+      <div className={contactInfoItemStyle}>
         <div className={styles.iconShape}>
           <MailIcon />
         </div>
         <span>{ContactInformation.email}</span>
       </div>
-      <div className={styles.contactInfoItem}>
+      <div className={contactInfoItemStyle}>
         <div className={styles.iconShape}>
           <TargetIcon />
         </div>
         <span>{ContactInformation.place1}</span>
       </div>
-      <div className={styles.contactInfoItem}>
+      <div className={contactInfoItemStyle}>
         <div className={styles.iconShape}>
           <TargetIcon />
         </div>
@@ -51,6 +57,8 @@ export function Footer() {
   const pathname = usePathname();
   const { locale } = useParams<{ locale: string }>();
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className={styles.bgWrapper}>
       <SectionLayout>
@@ -63,7 +71,7 @@ export function Footer() {
             <SocialMedia />
 
             <div>
-              <p className={styles.copyRight}>{t('copyright-text', { year: new Date().getFullYear() })}</p>
+              <p className={styles.copyRight}>{t('copyright-text', { year: currentYear })}</p>
             </div>
           </div>
 

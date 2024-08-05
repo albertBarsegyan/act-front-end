@@ -27,6 +27,7 @@
     "contacted-button-text": "Go Back",
     "error-page-message": "Oops, Something Went Wrong",
     "error-page-button-text": "Go Home",
+    "working-days": "Monday - Saturday 9AM - 6PM",
     "course-starting-messages": {
       "days-count": "Starting in DAYS days \uD83D\uDD25",
       "today": "Starts today \uD83D\uDD25"
