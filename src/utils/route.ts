@@ -3,7 +3,7 @@ export const routePath = {
   getStudentPortal: () => '/student-portal',
   getAdmission: () => '/admission',
   getAcademic: () => '/academic',
-  getAboutUs: () => '/about-us',
+  getAboutUs: () => '/about',
   getContactUs: () => '/contact',
   getStore: () => '/store',
 };
