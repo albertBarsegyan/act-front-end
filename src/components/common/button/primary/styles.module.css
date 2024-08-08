@@ -23,7 +23,7 @@
 
 .regularOutlineButtonDisabled:hover,
 .regularOutlineButtonDisabled:active {
-    color: white;
+    color: var(--color-gray-1);
     cursor: not-allowed;
 }
 

@@ -1,10 +1,15 @@
+import classNames from 'classnames';
 import { PropsWithChildren } from 'react';
 
 import styles from './styles.module.css';
 
-export function SectionLayout({ children }: Readonly<PropsWithChildren>) {
+interface SectionLayoutProps extends PropsWithChildren {
+  className?: string | null;
+}
+
+export function SectionLayout({ children, className }: Readonly<SectionLayoutProps>) {
   return (
-    <div className={styles.wrapper}>
+    <div className={classNames(styles.wrapper, className ?? '')}>
       <div className={styles.fullWidth}>{children}</div>
     </div>
   );

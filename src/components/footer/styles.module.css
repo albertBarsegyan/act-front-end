@@ -58,6 +58,11 @@
     margin-bottom: 15px;
 }
 
+.contactInfoItemDark {
+    composes: contactInfoItem;
+    color: #1C222A;
+}
+
 .paymentItemImage {
     margin-top: 15px;
 }
