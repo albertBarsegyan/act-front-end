@@ -1,0 +1,13 @@
+{
+  "studentPortal": {
+    "header": "Welcome to student portal",
+    "description": "Login to access your account",
+    "loginForm": {
+      "header": "Login",
+      "description": "Enter your account details",
+      "submit": "Login",
+      "signUpTitle": "Don't have an account?",
+      "signUpLink": "Sign up"
+    }
+  }
+}

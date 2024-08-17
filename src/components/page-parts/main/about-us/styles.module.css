@@ -1,6 +1,6 @@
 .wrapper {
     padding-top: 100px;
-    background-color: black;
+    background-color: var(--primary-color);
 }
 
 .header {

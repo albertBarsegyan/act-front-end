@@ -1,0 +1,29 @@
+.layoutWrapper {
+    display: flex;
+    min-height: calc(100vh - var(--navbar-height));
+}
+
+.layoutPart {
+    max-width: 50%;
+    width: 100%;
+}
+
+.formWrapper {
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6.25rem;
+}
+
+@media screen and (max-width: 920px) {
+    .layoutWrapper {
+        flex-direction: column-reverse;
+    }
+
+    .layoutPart {
+        max-width: 100%;
+        height: 50vh;
+    }
+}
+
