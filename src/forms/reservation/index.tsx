@@ -9,6 +9,7 @@ import styles from './styles.module.css';
 export function ReservationForm() {
   const [firstName, setFirstName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [email, setEmail] = useState('');
   const t = useTranslations('home');
 
   const handleFirstNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -17,6 +18,9 @@ export function ReservationForm() {
 
   const handlePhoneNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPhoneNumber(event.target.value);
+  };
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -27,26 +31,32 @@ export function ReservationForm() {
 
   return (
     <form className={styles.formWrapper} onSubmit={handleSubmit}>
-      <p className={styles.formHeader}>{t('reservation-form-header')}</p>
-      <div className={styles.inputWrapper}>
-        <input
-          placeholder="Name Surname"
-          className={styles.input}
-          type="text"
-          id="firstName"
-          value={firstName}
-          onChange={handleFirstNameChange}
-        />
-      </div>
+      <div>
+        <p className={styles.formHeader}>{t('reservation-form-header')}</p>
+        <div className={styles.inputWrapper}>
+          <input
+            placeholder="Name Surname"
+            className={styles.input}
+            type="text"
+            id="firstName"
+            value={firstName}
+            onChange={handleFirstNameChange}
+          />
+        </div>
 
-      <div className={styles.inputWrapper}>
-        <input
-          className={styles.input}
-          type="tel"
-          placeholder="Phone Number"
-          value={phoneNumber}
-          onChange={handlePhoneNumberChange}
-        />
+        <div className={styles.inputWrapper}>
+          <input
+            className={styles.input}
+            type="tel"
+            placeholder="Phone Number"
+            value={phoneNumber}
+            onChange={handlePhoneNumberChange}
+          />
+        </div>
+
+        <div className={styles.inputWrapper}>
+          <input className={styles.input} placeholder="Email" value={email} onChange={handleEmailChange} />
+        </div>
       </div>
       <PrimaryButton type="submit">{t('apply-button-text')}</PrimaryButton>
     </form>

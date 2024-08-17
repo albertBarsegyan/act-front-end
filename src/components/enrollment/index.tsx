@@ -1,11 +1,11 @@
 import { useTranslations } from 'next-intl';
 
+import contactedImg from '/static/img/common/contacted.jpg';
+import enrollmentImg from '/static/img/common/inrollment.png';
 import { PrimaryButton } from '@/components/common/button/primary';
 import { ImageLoader } from '@/components/image-loader';
 import { useModal } from '@/context/modal/Modal.context';
 
-import contactedImg from '../../../../../../../static/img/common/contacted.jpg';
-import enrollmentImg from '../../../../../../../static/img/common/inrollment.png';
 import styles from './styles.module.css';
 
 export function EnrollmentModal() {

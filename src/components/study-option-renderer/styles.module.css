@@ -49,5 +49,7 @@
         flex-direction: column;
         gap: 16px;
         padding: 16px;
+        max-width: 100%;
     }
 }
+

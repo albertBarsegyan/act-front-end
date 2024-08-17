@@ -11,9 +11,9 @@
     --screen-size: 100vh;
     --border-radius: 8px;
     --menu-z-index: 99;
-    white-space: pre-line;
+    --navbar-height: 76px;
     --color-gray-1: #05060f;
     font-size: 16px;
-
+    white-space: pre-line;
 }
 

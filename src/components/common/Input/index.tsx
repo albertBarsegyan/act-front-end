@@ -13,6 +13,7 @@ export const enum InputFieldVariant {
   PhoneNumber = 'PhoneNumber',
   TextArea = 'TextArea',
   Date = 'Date',
+  Outlined = 'Outlined',
 }
 
 interface InputFieldProps {
@@ -25,6 +26,7 @@ interface InputFieldProps {
   label?: string;
   errorMessage?: string;
   accept?: string;
+  id?: string;
 }
 
 export function Input({
@@ -37,6 +39,7 @@ export function Input({
   label,
   type = 'text',
   accept = '',
+  id,
 }: Readonly<InputFieldProps>) {
   const inputStyles = classNames({
     [styles.inputField]: true,
@@ -57,6 +60,18 @@ export function Input({
                 value={value !== '' ? value : undefined}
                 onChange={onChange}
                 placeholder={placeholder}
+                id={id}
+              />
+            );
+          case InputFieldVariant.Outlined:
+            return (
+              <input
+                className={styles.inputOutlined}
+                value={value !== '' ? value : undefined}
+                onChange={onChange}
+                placeholder={placeholder}
+                type={type}
+                accept={accept || undefined}
               />
             );
           case InputFieldVariant.Regular:
