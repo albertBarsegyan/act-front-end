@@ -11,23 +11,23 @@ export const enum ButtonVariant {
 }
 
 interface PrimaryButtonProps extends PropsWithChildren {
-  readonly handleClick?: () => void;
-  readonly type?: 'button' | 'submit';
-  readonly className?: string | null;
-  readonly variant?: ButtonVariant;
-  readonly active?: boolean;
-  readonly style?: CSSProperties;
+  onClick?: () => void;
+  type?: 'button' | 'submit';
+  className?: string | null;
+  variant?: ButtonVariant;
+  active?: boolean;
+  style?: CSSProperties;
 }
 
 export function PrimaryButton({
   children,
-  handleClick,
+  onClick,
   className,
   active = true,
   variant = ButtonVariant.Regular,
   type = 'button',
   style,
-}: PrimaryButtonProps) {
+}: Readonly<PrimaryButtonProps>) {
   const buttonStyles = classNames({
     [styles[`${variant}Button`]]: active,
     [styles[`${variant}ButtonDisabled`]]: !active,
@@ -35,7 +35,7 @@ export function PrimaryButton({
   });
 
   return (
-    <button type={type} style={style} onClick={handleClick} className={buttonStyles}>
+    <button type={type} style={style} onClick={onClick} className={buttonStyles}>
       {children}
     </button>
   );

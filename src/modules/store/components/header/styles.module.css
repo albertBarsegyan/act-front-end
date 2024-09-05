@@ -1,0 +1,17 @@
+.storeLogoWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 24px 0;
+}
+
+.basketWrapper {
+    position: relative;
+    height: 56px;
+    width: 100%;
+    background-color: var(--primary-color);
+    margin-bottom: 64px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 6px 24px;
+}
