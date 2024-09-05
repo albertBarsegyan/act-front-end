@@ -1,0 +1,17 @@
+.basketCounter {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--primary-color-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    font-size: 12px;
+}
+
+.basketBlockWrapper {
+    position: relative;
+}

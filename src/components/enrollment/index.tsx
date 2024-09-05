@@ -30,7 +30,7 @@ export function EnrollmentModal() {
         <p className={styles.description}>{translation('enrollment-description')}</p>
       </div>
 
-      <PrimaryButton handleClick={handleModal}>{translation('enrollment-button-text')}</PrimaryButton>
+      <PrimaryButton onClick={handleModal}>{translation('enrollment-button-text')}</PrimaryButton>
     </div>
   );
 }
@@ -57,7 +57,7 @@ export function Contacted() {
         <p className={styles.description}>{translation('contacted-description')}</p>
       </div>
 
-      <PrimaryButton handleClick={handleModal}>{translation('contacted-button-text')}</PrimaryButton>
+      <PrimaryButton onClick={handleModal}>{translation('contacted-button-text')}</PrimaryButton>
     </div>
   );
 }
@@ -81,7 +81,7 @@ export function ContractSigned() {
         <p className={styles.description}>{translation('signed-description')}</p>
       </div>
 
-      <PrimaryButton handleClick={handleModal}>{translation('signed-button-text')}</PrimaryButton>
+      <PrimaryButton onClick={handleModal}>{translation('signed-button-text')}</PrimaryButton>
     </div>
   );
 }
@@ -108,7 +108,7 @@ export function ContractSignedError() {
         <p className={styles.description}>{translation('not-signed-description')}</p>
       </div>
 
-      <PrimaryButton handleClick={handleModal}>{translation('not-signed-button-text')}</PrimaryButton>
+      <PrimaryButton onClick={handleModal}>{translation('not-signed-button-text')}</PrimaryButton>
     </div>
   );
 }

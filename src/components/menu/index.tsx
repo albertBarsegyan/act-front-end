@@ -25,7 +25,7 @@ export function Menu({
 
   return (
     <div>
-      {isTabletSize && <PrimaryButton handleClick={toggleMenu}>{menuButtonText}</PrimaryButton>}
+      {isTabletSize && <PrimaryButton onClick={toggleMenu}>{menuButtonText}</PrimaryButton>}
       {(!isTabletSize || isMenuOpen) && children?.({ toggleMenu })}
     </div>
   );
