@@ -44,7 +44,7 @@ export default async function RootLayout({
 
       <body className={rubik.className}>
         <ErrorBoundary>
-          <NextIntlClientProvider messages={messages}>
+          <NextIntlClientProvider locale={'us'} messages={messages}>
             <PageLayout>{children}</PageLayout>
           </NextIntlClientProvider>
         </ErrorBoundary>

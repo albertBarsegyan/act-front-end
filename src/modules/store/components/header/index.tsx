@@ -6,11 +6,13 @@ import { StoreLogo } from '@/components/icons/store/logo';
 import { SectionLayout } from '@/components/layout/section/section-layout';
 import { BasketBlock } from '@/modules/store/components/basket-block';
 import { BasketContent } from '@/modules/store/components/basket-content';
+import { useStore } from '@/modules/store/context/basket';
 
 import styles from './styles.module.css';
 
 export function StoreHeader() {
   const [isBasketOpen, setIsBasketOpen] = useState(false);
+  const { basketItemsCount } = useStore();
 
   const onBasketClick = () => setIsBasketOpen((prev) => !prev);
 
@@ -23,10 +25,10 @@ export function StoreHeader() {
       </div>
       <div className={styles.basketWrapper}>
         <PrimaryButton onClick={onBasketClick} variant={ButtonVariant.TextPrimary}>
-          <BasketBlock itemsCount={10} />
+          <BasketBlock itemsCount={basketItemsCount} />
         </PrimaryButton>
 
-        {isBasketOpen && <BasketContent />}
+        {isBasketOpen && <BasketContent onClose={onBasketClick} />}
       </div>
     </SectionLayout>
   );
