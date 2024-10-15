@@ -1,3 +1,4 @@
+'use client';
 import React, { ForwardedRef, forwardRef, PropsWithChildren } from 'react';
 
 import styles from './styles.module.css';

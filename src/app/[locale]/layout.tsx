@@ -7,6 +7,7 @@ import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
 
 import ErrorBoundary from '@/components/error-boundary';
 import { PageLayout } from '@/components/layout/page';
+import ModalProvider from '@/context/modal/Modal.context';
 
 const rubik = Rubik({ subsets: ['latin'], weight: ['400', '700'] });
 
@@ -45,7 +46,9 @@ export default async function RootLayout({
       <body className={rubik.className}>
         <ErrorBoundary>
           <NextIntlClientProvider locale={'us'} messages={messages}>
-            <PageLayout>{children}</PageLayout>
+            <ModalProvider>
+              <PageLayout>{children}</PageLayout>
+            </ModalProvider>
           </NextIntlClientProvider>
         </ErrorBoundary>
       </body>

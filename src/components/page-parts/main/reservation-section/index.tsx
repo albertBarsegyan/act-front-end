@@ -5,10 +5,13 @@ import styles from './styles.module.css';
 export function ReservationSection() {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.formWrapper}>
-        <ReservationForm />
+      <div className={styles.contentWrapper}>
+        <div className={styles.reservationForm}>
+          <ReservationForm />
+        </div>
+
+        <div className={styles.gradientEffect} />
       </div>
-      <div className={styles.gradientEffect} />
     </div>
   );
 }

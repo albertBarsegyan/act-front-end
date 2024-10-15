@@ -1,4 +1,5 @@
-import React, { createContext, PropsWithChildren, useContext, useRef, useState } from 'react';
+'use client';
+import React, { createContext, PropsWithChildren, useContext, useEffect, useState } from 'react';
 
 import { ModalLayout } from '@/components/layout/modal';
 import { useOverflow } from '@/hooks/overflow';
@@ -6,6 +7,7 @@ import { useOverflow } from '@/hooks/overflow';
 interface ModalStateSettings {
   isShowing: boolean;
   content?: string | React.ReactNode;
+  delay?: number;
 }
 
 interface ModalContext {
@@ -14,12 +16,12 @@ interface ModalContext {
 }
 
 const ModalContext = createContext<ModalContext>({
-  settings: { isShowing: false, content: '' },
+  settings: { isShowing: false, content: '', delay: 3000 },
   provideModalSettings: () => {},
 });
 
 function useModalProvider() {
-  const [settings, setSettings] = useState<ModalStateSettings>({ isShowing: false, content: '' });
+  const [settings, setSettings] = useState<ModalStateSettings>({ isShowing: false, content: '', delay: 3000 });
 
   function provideModalSettings(changedSettings?: ModalStateSettings) {
     setSettings((prevState) => {
@@ -32,6 +34,15 @@ function useModalProvider() {
 
   useOverflow(settings.isShowing);
 
+  useEffect(() => {
+    if (settings.isShowing && settings.delay) {
+      const timer = setTimeout(() => {
+        provideModalSettings({ isShowing: false });
+      }, settings.delay);
+      return () => clearTimeout(timer);
+    }
+  }, [settings.isShowing, settings.delay]);
+
   return {
     provideModalSettings,
     settings,
@@ -39,14 +50,13 @@ function useModalProvider() {
 }
 
 export default function ModalProvider({ children }: Readonly<PropsWithChildren>) {
-  const modalRef = useRef(null);
   const modal = useModalProvider();
 
   const isModalVisible = modal.settings.isShowing && modal.settings.content;
 
   return (
     <ModalContext.Provider value={modal}>
-      {isModalVisible && <ModalLayout ref={modalRef}>{modal.settings.content}</ModalLayout>}
+      {isModalVisible && <ModalLayout>{modal.settings.content}</ModalLayout>}
       {children}
     </ModalContext.Provider>
   );

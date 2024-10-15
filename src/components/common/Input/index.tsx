@@ -1,5 +1,6 @@
-import 'react-date-picker/dist/DatePicker.css';
+import 'react-datetime-picker/dist/DateTimePicker.css';
 import 'react-calendar/dist/Calendar.css';
+import 'react-clock/dist/Clock.css';
 
 import classNames from 'classnames';
 import React from 'react';
@@ -27,6 +28,7 @@ interface InputFieldProps {
   errorMessage?: string;
   accept?: string;
   id?: string;
+  wrapperClassName?: string;
 }
 
 export function Input({
@@ -36,6 +38,7 @@ export function Input({
   value = '',
   placeholder,
   className,
+  wrapperClassName,
   label,
   type = 'text',
   accept = '',
@@ -46,8 +49,13 @@ export function Input({
     [className ?? '']: Boolean(className),
   });
 
+  const wrapperStyles = classNames({
+    [styles.inputFieldWrapper]: true,
+    [wrapperClassName ?? '']: Boolean(wrapperClassName),
+  });
+
   return (
-    <div className={styles.inputFieldWrapper}>
+    <div className={wrapperStyles}>
       {label && <span className={styles.label}>{label}</span>}
       {errorMessage && <span className={styles.errorText}>{errorMessage}</span>}
 
@@ -90,7 +98,7 @@ export function Input({
               <PhoneInput
                 value={value !== '' ? value : undefined}
                 placeholder={placeholder}
-                className={styles.inputField}
+                className={className}
                 onChange={onChange}
               />
             );

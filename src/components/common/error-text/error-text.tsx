@@ -1,10 +1,23 @@
 import classNames from 'classnames';
 
-export function ErrorText({ errorMessage }: { errorMessage: string }) {
+import styles from './styles.module.css';
+
+export function ErrorText({
+  errorMessage,
+  variant = 'fill',
+}: Readonly<{
+  errorMessage?: string;
+  variant?: 'text' | 'fill';
+}>) {
+  if (!errorMessage) {
+    return null;
+  }
+
   return (
     <p
-      className={classNames('mt-2 h-0 rounded-3xl bg-white text-red-500 duration-75', {
-        ['h-auto px-4 py-2']: Boolean(errorMessage),
+      className={classNames({
+        [styles.errorText]: variant === 'text',
+        [styles.error]: variant === 'fill',
       })}
     >
       {errorMessage}
