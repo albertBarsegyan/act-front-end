@@ -47,6 +47,10 @@
       "nov": "November",
       "dec": "December"
     },
-    "payment-icons-alt": "Payment icons"
+    "payment-icons-alt": "Payment icons",
+    "contact-form-success-header": "Thank You!",
+    "contact-form-success-description": "Your consultation request has been successfully submitted",
+    "contact-form-error-header": "Sorry",
+    "contact-form-error-description": "Something went wrong. Please try again later"
   }
 }

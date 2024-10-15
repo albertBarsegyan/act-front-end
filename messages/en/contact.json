@@ -2,14 +2,15 @@
   "contact": {
     "contact-form-title": "Leave us a message",
     "contact-form-fields": {
-      "name-placeholder": "Name",
-      "email-placeholder": "Email",
-      "message-placeholder": "Tell us your question",
-      "name-label": "Name *",
-      "email-label": "Email *",
-      "message-label": "Message *",
+      "name-placeholder": "First Name",
+      "last-name-placeholder": "Last Name",
+      "phone-placeholder": "Phone number",
+      "date-placeholder": "Consultation Date",
+      "name-label": "First Name *",
+      "last-name-label": "Last Name *",
+      "phone-label": "Phone number *",
+      "date-label": "Consultation Date *",
       "submit-button-text": "Send Message",
-      "invalid-email": "Invalid email address",
       "string-max-length": "Maximum MAX character"
     }
   }

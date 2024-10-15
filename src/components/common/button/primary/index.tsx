@@ -17,6 +17,7 @@ interface PrimaryButtonProps extends PropsWithChildren {
   variant?: ButtonVariant;
   active?: boolean;
   style?: CSSProperties;
+  disabled?: boolean;
 }
 
 export function PrimaryButton({
@@ -35,7 +36,7 @@ export function PrimaryButton({
   });
 
   return (
-    <button type={type} style={style} onClick={onClick} className={buttonStyles}>
+    <button type={type} disabled={!active} style={style} onClick={onClick} className={buttonStyles}>
       {children}
     </button>
   );

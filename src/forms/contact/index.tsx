@@ -1,105 +1,140 @@
 'use client';
+
+import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
-import React, { useReducer } from 'react';
+import React from 'react';
+import DateTimePicker from 'react-datetime-picker';
+import { Controller, useForm } from 'react-hook-form';
 
 import { ButtonVariant, PrimaryButton } from '@/components/common/button/primary';
+import { ErrorText } from '@/components/common/error-text/error-text';
+import { FormResponseContent } from '@/components/common/form-response-content';
 import { Input, InputFieldVariant } from '@/components/common/Input';
 import { Loader } from '@/components/common/loader';
-import { FormFieldActionTypes } from '@/forms/contact/types';
-import { emailValidator, maxLengthValidator } from '@/utils/validation';
+import { useModal } from '@/context/modal/Modal.context';
+import { contactFormSchema } from '@/forms/contact/schema';
+import { admissionsService } from '@/services/form-submissions';
+import { ConsultationApplication } from '@/types/services';
 
-import { ContactFormFieldName, initialFormData, reducer } from './reducer';
 import styles from './styles.module.css';
+
+const formDefaultValues: ConsultationApplication = {
+  first_name: '',
+  last_name: '',
+  phone_number: '',
+  consultation_date: '',
+};
 
 export function ContactForm() {
   const t = useTranslations('contact');
+  const commonTranslation = useTranslations('common');
+  const { provideModalSettings } = useModal();
 
-  const [contactFormData, dispatch] = useReducer(reducer, initialFormData);
+  const {
+    control,
+    handleSubmit,
+    formState: { errors, isLoading },
+    reset,
+  } = useForm<ConsultationApplication>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: formDefaultValues,
+    mode: 'onChange',
+  });
 
-  const isButtonActive = Object.values(contactFormData).every(
-    (fieldData) => fieldData.value && !fieldData.errorMessage
-  );
+  const onSubmit = async (data: ConsultationApplication) => {
+    const res = await admissionsService.consultation(data);
 
-  const isLoading = false;
+    const isSuccess = !res?.error;
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    const header = commonTranslation(isSuccess ? 'contact-form-success-header' : 'contact-form-error-header');
 
-    const data = {
-      name: contactFormData.name.value,
-      email: contactFormData.email.value,
-      message: contactFormData.message.value,
-    };
+    const description = commonTranslation(
+      isSuccess ? 'contact-form-success-description' : 'contact-form-error-description'
+    );
 
-    if (isButtonActive) {
-      console.log(data); // request to send the message
+    provideModalSettings({
+      content: <FormResponseContent isSuccess={isSuccess} header={header} description={description} />,
+      isShowing: true,
+    });
+
+    if (isSuccess) {
+      reset(formDefaultValues);
     }
-  };
-
-  const handleChange = (fieldName: ContactFormFieldName) => (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-
-    if (fieldName === ContactFormFieldName.Email) {
-      dispatch({
-        fieldName,
-        type: FormFieldActionTypes.Update,
-        fieldData: { value, errorMessage: emailValidator(value) ? '' : String(t('contact-form-fields.invalid-email')) },
-      });
-      return;
-    }
-
-    if (fieldName === ContactFormFieldName.Name) {
-      dispatch({
-        fieldName,
-        type: FormFieldActionTypes.Update,
-        fieldData: {
-          value,
-          errorMessage: maxLengthValidator(value, 64) ? '' : String(t('string-max-length').replace('MAX', '64')),
-        },
-      });
-      return;
-    }
-
-    dispatch({ type: FormFieldActionTypes.Update, fieldName, fieldData: { value } });
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.formWrapper}>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.formWrapper}>
       <p className={styles.formTitle}>{t('contact-form-title')}</p>
 
-      <Input
-        value={contactFormData.name.value}
-        errorMessage={contactFormData.name.errorMessage}
-        onChange={handleChange(ContactFormFieldName.Name)}
-        placeholder={String(t('contact-form-fields.name-placeholder'))}
-        label={String(t('contact-form-fields.name-label'))}
-        type="text"
+      <Controller
+        name="first_name"
+        control={control}
+        render={({ field }) => (
+          <Input
+            {...field}
+            wrapperClassName={styles.inputWrapper}
+            placeholder={String(t('contact-form-fields.name-placeholder'))}
+            label={String(t('contact-form-fields.name-label'))}
+            errorMessage={errors.first_name?.message}
+            type="text"
+          />
+        )}
       />
 
-      <Input
-        placeholder={String(t('contact-form-fields.email-placeholder'))}
-        label={String(t('contact-form-fields.email-label'))}
-        value={contactFormData.email.value}
-        errorMessage={contactFormData.email.errorMessage}
-        onChange={handleChange(ContactFormFieldName.Email)}
-        type="text"
+      <Controller
+        name="last_name"
+        control={control}
+        render={({ field }) => (
+          <Input
+            {...field}
+            wrapperClassName={styles.inputWrapper}
+            placeholder={String(t('contact-form-fields.last-name-placeholder'))}
+            label={String(t('contact-form-fields.last-name-label'))}
+            errorMessage={errors.last_name?.message}
+            type="text"
+          />
+        )}
       />
 
-      <Input
-        variant={InputFieldVariant.TextArea}
-        placeholder={String(t('contact-form-fields.message-placeholder'))}
-        label={String(t('contact-form-fields.message-label'))}
-        value={contactFormData.message.value}
-        onChange={handleChange(ContactFormFieldName.Message)}
-      />
+      <div className={styles.inputWrapper}>
+        <Controller
+          name="phone_number"
+          control={control}
+          render={({ field }) => (
+            <Input
+              wrapperClassName={styles.inputWrapper}
+              variant={InputFieldVariant.PhoneNumber}
+              className={styles.phoneInput}
+              placeholder={String(t('contact-form-fields.phone-placeholder'))}
+              label={String(t('contact-form-fields.phone-label'))}
+              {...field}
+            />
+          )}
+        />
 
-      <PrimaryButton
-        variant={ButtonVariant.RegularOutline}
-        className={styles.submit}
-        active={isButtonActive}
-        type="submit"
-      >
-        {t('contact-form-fields.submit-button-text')} <Loader isLoading={isLoading} />
+        {errors.phone_number && <ErrorText variant="text" errorMessage={errors.phone_number.message} />}
+      </div>
+
+      <div className={styles.inputWrapper}>
+        <p className={styles.label}>{t('contact-form-fields.date-label')}</p>
+
+        <Controller
+          name="consultation_date"
+          control={control}
+          render={({ field }) => (
+            <DateTimePicker
+              className={styles.dateTimePicker}
+              disableClock
+              {...field}
+              onChange={(date) => field.onChange(date ? date.toISOString() : '')}
+            />
+          )}
+        />
+        {errors.consultation_date && <ErrorText variant="text" errorMessage={errors.consultation_date.message} />}
+      </div>
+
+      <PrimaryButton variant={ButtonVariant.RegularOutline} className={styles.submit} type="submit">
+        {isLoading ? <Loader isLoading={true} /> : t('contact-form-fields.submit-button-text')}
       </PrimaryButton>
     </form>
   );

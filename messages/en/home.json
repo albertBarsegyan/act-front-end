@@ -10,6 +10,10 @@
     "graduation-header-2": "2024",
     "graduation-button-text": "See More",
     "reservation-form-header": "Soccer field reservation",
+    "reservation-form-success-header": "Thank You!",
+    "reservation-form-success-description": "Your reservation has been successfully submitted",
+    "reservation-form-error-header": "Sorry",
+    "reservation-form-error-description": "Something went wrong. Please try again later",
     "about-us-header": "About Us",
     "about-us-description": "Lorem ipsum dolor sit amet consectetur. Elit cursus amet lobortis iaculis. Mattis viverra mi cursus senectus tincidunt nibh. Dapibus enim neque lectus amet porttitor id orci. Quis nibh elit adipiscing placerat."
   }

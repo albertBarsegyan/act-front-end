@@ -150,7 +150,9 @@ const products = [
 ];
 
 export function StoreContent() {
-  const { addToBasket } = useStore();
+  const { addToBasket, basket } = useStore();
+
+  console.log('basket', basket);
 
   const handleClick = (product: ProductType) => addToBasket(product);
 
