@@ -1,7 +1,12 @@
+.closeButton {
+    margin-left: 32px;
+    margin-top: 16px;
+    cursor: pointer;
+}
+
 .formHeader {
     font-size: 2.5rem;
     font-weight: 700;
-    color: white;
     text-transform: uppercase;
     line-height: 120%;
     margin-bottom: 2rem;
@@ -26,6 +31,7 @@
 }
 
 .formWrapper {
+    margin-top: 68px;
     max-width: 400px;
     width: 100%;
     backdrop-filter: blur(10px);
@@ -37,28 +43,41 @@
 
 .input {
     border: none;
-    border-bottom: 0.5px solid white;
+    border-bottom: 0.5px solid #00000066;
     background: transparent;
-    color: white;
     padding: 8px 0;
     font-size: 18px;
     width: 100%;
 }
 
 .input::placeholder {
-    color: white;
+    color: #00000080;
 }
 
 .input:focus {
     outline: none;
 }
 
+.submitWrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.submitButton {
+    background: black;
+    color: white;
+    margin-top: 2rem;
+    padding: 0.75rem 3rem;
+    font-size: 1rem;
+}
+
 .dateTimePicker :global(.react-datetime-picker__wrapper) {
     padding: 8px 0;
     font-size: 18px;
-    color: white;
+    color: #00000080;
     border: none;
-    border-bottom: 0.5px solid white;
+    border-bottom: 0.5px solid #00000066;
 }
 
 
@@ -72,9 +91,7 @@
     }
 
     .formWrapper {
-        max-width: 300px;
         border-radius: 24px;
-        max-height: 450px;
     }
 }
 
