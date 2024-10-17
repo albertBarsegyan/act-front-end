@@ -37,4 +37,9 @@
     .contentWrapper {
         top: 120px;
     }
+
+    .drawerModal {
+        width: 100%;
+        left: 0;
+    }
 }
