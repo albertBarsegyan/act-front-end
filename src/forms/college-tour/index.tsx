@@ -1,4 +1,3 @@
-// src/forms/reservation/index.tsx
 'use client';
 import 'react-datetime-picker/dist/DateTimePicker.css';
 import 'react-calendar/dist/Calendar.css';
@@ -14,16 +13,16 @@ import { ButtonVariant, PrimaryButton } from '@/components/common/button/primary
 import { FormResponseContent } from '@/components/common/form-response-content';
 import { Input, InputFieldVariant } from '@/components/common/Input';
 import { useModal } from '@/context/modal/Modal.context';
+import { CollegeTourFormValues, collegeTourSchema } from '@/forms/college-tour/schema';
 import { admissionsService } from '@/services/form-submissions';
 
-import { ReservationFormValues, reservationSchema } from './schema';
 import styles from './styles.module.css';
 
 const formDefaultValues = {
   first_name: '',
   last_name: '',
   phone_number: '',
-  reservation_date: '',
+  tour_date: '',
 };
 
 export function ReservationForm() {
@@ -36,14 +35,14 @@ export function ReservationForm() {
     control,
     formState: { errors, isLoading },
     reset,
-  } = useForm<ReservationFormValues>({
-    resolver: zodResolver(reservationSchema),
+  } = useForm<CollegeTourFormValues>({
+    resolver: zodResolver(collegeTourSchema),
     mode: 'onChange',
     defaultValues: formDefaultValues,
   });
 
-  const onSubmit = async (data: ReservationFormValues) => {
-    const res = await admissionsService.soccerFieldReservation(data);
+  const onSubmit = async (data: CollegeTourFormValues) => {
+    const res = await admissionsService.collegeTour(data);
 
     const isSuccess = !res?.error;
 
@@ -91,7 +90,7 @@ export function ReservationForm() {
 
         <div className={styles.inputWrapper}>
           <Controller
-            name="reservation_date"
+            name="tour_date"
             control={control}
             render={({ field }) => (
               <DateTimePicker
@@ -102,7 +101,7 @@ export function ReservationForm() {
               />
             )}
           />
-          {errors.reservation_date && <p className={styles.error}>{errors.reservation_date.message}</p>}
+          {errors.tour_date && <p className={styles.error}>{errors.tour_date.message}</p>}
         </div>
       </div>
 
