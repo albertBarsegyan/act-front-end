@@ -46,14 +46,12 @@ export function ContactForm() {
 
     const isSuccess = !res?.error;
 
-    const header = commonTranslation(isSuccess ? 'contact-form-success-header' : 'contact-form-error-header');
-
     const description = commonTranslation(
       isSuccess ? 'contact-form-success-description' : 'contact-form-error-description'
     );
 
     provideModalSettings({
-      content: <FormResponseContent isSuccess={isSuccess} header={header} description={description} />,
+      content: <FormResponseContent isSuccess={isSuccess} description={description} />,
       isShowing: true,
     });
 

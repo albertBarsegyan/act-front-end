@@ -1,6 +1,6 @@
-import { CloseIcon } from 'next/dist/client/components/react-dev-overlay/internal/icons/CloseIcon';
+import classNames from 'classnames';
 
-import { PrimaryButton } from '@/components/common/button/primary';
+import { ButtonVariant, PrimaryButton } from '@/components/common/button/primary';
 import { ErrorIcon } from '@/components/icons/error-icon';
 import { SuccessIcon } from '@/components/icons/success-icon';
 import { useModal } from '@/context/modal/Modal.context';
@@ -10,11 +10,10 @@ import styles from './styles.module.css';
 
 interface FormResponseContentProps {
   isSuccess: boolean;
-  header: string;
   description: string;
 }
 
-export function FormResponseContent({ isSuccess, header, description }: Readonly<FormResponseContentProps>) {
+export function FormResponseContent({ isSuccess, description }: Readonly<FormResponseContentProps>) {
   const { provideModalSettings } = useModal();
 
   const closeModal = () => provideModalSettings({ isShowing: false });
@@ -23,15 +22,28 @@ export function FormResponseContent({ isSuccess, header, description }: Readonly
 
   return (
     <div className={styles.wrapper} ref={ref}>
-      <div className={styles.closeButton}>
-        <PrimaryButton onClick={closeModal}>
-          <CloseIcon />
-        </PrimaryButton>
-      </div>
-
       {isSuccess ? <SuccessIcon /> : <ErrorIcon />}
-      <span className={styles.header}>{header}</span>
+      <span
+        className={classNames({
+          [styles.header]: isSuccess,
+          [styles.headerError]: !isSuccess,
+        })}
+      >
+        {isSuccess ? 'Success' : 'Error'}
+      </span>
       <p className={styles.description}>{description}</p>
+      <p className={styles.emailConfirmation}>Shortly you will find a confirmation in your email.</p>
+
+      <PrimaryButton
+        onClick={closeModal}
+        variant={ButtonVariant.Regular}
+        className={classNames({
+          [styles.actionButton]: isSuccess,
+          [styles.actionButtonError]: !isSuccess,
+        })}
+      >
+        {isSuccess ? 'Continue' : 'Try again'}
+      </PrimaryButton>
     </div>
   );
 }

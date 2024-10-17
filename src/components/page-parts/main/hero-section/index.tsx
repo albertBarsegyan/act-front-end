@@ -1,12 +1,24 @@
+'use client';
 import { useTranslations } from 'next-intl';
 
 import { PrimaryButton } from '@/components/common/button/primary';
 import { SectionLayout } from '@/components/layout/section/section-layout';
+import { useModal } from '@/context/modal/Modal.context';
+import { ReservationForm } from '@/forms/college-tour';
 
 import styles from './styles.module.css';
 
 export function HeroSection() {
   const t = useTranslations('home');
+  const { provideModalSettings } = useModal();
+
+  const collegeTourButtonClick = () =>
+    provideModalSettings({
+      isShowing: true,
+      variant: 'drawer',
+      content: <ReservationForm />,
+      delay: 0,
+    });
 
   return (
     <div className={styles.wrapper}>
@@ -16,7 +28,7 @@ export function HeroSection() {
 
         <div className={styles.buttonsWrapper}>
           <PrimaryButton>{t('apply-button-text')}</PrimaryButton>
-          <PrimaryButton>{t('college-tour-button-text')}</PrimaryButton>
+          <PrimaryButton onClick={collegeTourButtonClick}>{t('college-tour-button-text')}</PrimaryButton>
         </div>
       </SectionLayout>
       <div className={styles.gradientEffect} />

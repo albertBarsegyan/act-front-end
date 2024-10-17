@@ -8,6 +8,7 @@ interface ModalStateSettings {
   isShowing: boolean;
   content?: string | React.ReactNode;
   delay?: number;
+  variant?: 'modal' | 'drawer';
 }
 
 interface ModalContext {
@@ -16,12 +17,17 @@ interface ModalContext {
 }
 
 const ModalContext = createContext<ModalContext>({
-  settings: { isShowing: false, content: '', delay: 3000 },
+  settings: { isShowing: false, content: '', delay: 3000, variant: 'modal' },
   provideModalSettings: () => {},
 });
 
 function useModalProvider() {
-  const [settings, setSettings] = useState<ModalStateSettings>({ isShowing: false, content: '', delay: 3000 });
+  const [settings, setSettings] = useState<ModalStateSettings>({
+    isShowing: false,
+    content: '',
+    delay: 3000,
+    variant: 'modal',
+  });
 
   function provideModalSettings(changedSettings?: ModalStateSettings) {
     setSettings((prevState) => {
@@ -56,7 +62,7 @@ export default function ModalProvider({ children }: Readonly<PropsWithChildren>)
 
   return (
     <ModalContext.Provider value={modal}>
-      {isModalVisible && <ModalLayout>{modal.settings.content}</ModalLayout>}
+      {isModalVisible && <ModalLayout variant={modal.settings.variant}>{modal.settings.content}</ModalLayout>}
       {children}
     </ModalContext.Provider>
   );
