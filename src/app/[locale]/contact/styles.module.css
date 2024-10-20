@@ -3,7 +3,7 @@
     padding: 40px 2.5rem 120px;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     background-color: var(--light-bg-color);
 }
 
@@ -24,7 +24,6 @@
 .formWrapper {
     width: 100%;
     max-width: 23.875rem;
-    height: 528px;
 }
 
 .image {

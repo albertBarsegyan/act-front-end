@@ -94,14 +94,7 @@ export function Input({
               />
             );
           case InputFieldVariant.PhoneNumber:
-            return (
-              <PhoneInput
-                value={value !== '' ? value : undefined}
-                placeholder={placeholder}
-                className={className}
-                onChange={onChange}
-              />
-            );
+            return <PhoneInput value={value} placeholder={placeholder} className={className} onChange={onChange} />;
           case InputFieldVariant.Date:
             return (
               <DatePicker

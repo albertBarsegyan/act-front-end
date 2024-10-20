@@ -3,7 +3,6 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 import React from 'react';
-import DateTimePicker from 'react-datetime-picker';
 import { Controller, useForm } from 'react-hook-form';
 
 import { ButtonVariant, PrimaryButton } from '@/components/common/button/primary';
@@ -22,17 +21,20 @@ const formDefaultValues: ConsultationApplication = {
   first_name: '',
   last_name: '',
   phone_number: '',
-  consultation_date: '',
+  message: '',
 };
 
 export function ContactForm() {
   const t = useTranslations('contact');
   const commonTranslation = useTranslations('common');
+
   const { provideModalSettings } = useModal();
 
   const {
     control,
     handleSubmit,
+    getValues,
+    setValue,
     formState: { errors, isLoading },
     reset,
   } = useForm<ConsultationApplication>({
@@ -95,40 +97,34 @@ export function ContactForm() {
       />
 
       <div className={styles.inputWrapper}>
-        <Controller
-          name="phone_number"
-          control={control}
-          render={({ field }) => (
-            <Input
-              wrapperClassName={styles.inputWrapper}
-              variant={InputFieldVariant.PhoneNumber}
-              className={styles.phoneInput}
-              placeholder={String(t('contact-form-fields.phone-placeholder'))}
-              label={String(t('contact-form-fields.phone-label'))}
-              {...field}
-            />
-          )}
+        <Input
+          wrapperClassName={styles.inputWrapper}
+          variant={InputFieldVariant.PhoneNumber}
+          className={styles.phoneInput}
+          placeholder={String(t('contact-form-fields.phone-placeholder'))}
+          label={String(t('contact-form-fields.phone-label'))}
+          value={getValues('phone_number')}
+          onChange={(value) =>
+            setValue('phone_number', value ?? '', {
+              shouldDirty: true,
+              shouldValidate: true,
+            })
+          }
         />
 
         {errors.phone_number && <ErrorText variant="text" errorMessage={errors.phone_number.message} />}
       </div>
 
       <div className={styles.inputWrapper}>
-        <p className={styles.label}>{t('contact-form-fields.date-label')}</p>
-
+        <p className={styles.label}>{t('contact-form-fields.message-label')}</p>
         <Controller
-          name="consultation_date"
+          name="message"
           control={control}
           render={({ field }) => (
-            <DateTimePicker
-              className={styles.dateTimePicker}
-              disableClock
-              {...field}
-              onChange={(date) => field.onChange(date ? date.toISOString() : '')}
-            />
+            <Input variant={InputFieldVariant.TextArea} className={styles.input} {...field} placeholder={'Message'} />
           )}
         />
-        {errors.consultation_date && <ErrorText variant="text" errorMessage={errors.consultation_date.message} />}
+        {errors.message && <ErrorText variant="text" errorMessage={errors.message.message} />}
       </div>
 
       <PrimaryButton variant={ButtonVariant.RegularOutline} className={styles.submit} type="submit">

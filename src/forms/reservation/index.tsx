@@ -9,10 +9,10 @@ import { useTranslations } from 'next-intl';
 import React from 'react';
 import DateTimePicker from 'react-datetime-picker';
 import { Controller, useForm } from 'react-hook-form';
+import PhoneInput from 'react-phone-number-input/input';
 
 import { ButtonVariant, PrimaryButton } from '@/components/common/button/primary';
 import { FormResponseContent } from '@/components/common/form-response-content';
-import { Input, InputFieldVariant } from '@/components/common/Input';
 import { useModal } from '@/context/modal/Modal.context';
 import { admissionsService } from '@/services/form-submissions';
 
@@ -22,8 +22,8 @@ import styles from './styles.module.css';
 const formDefaultValues = {
   first_name: '',
   last_name: '',
-  // phone_number: '',
-  // reservation_date: '',
+  phone_number: '',
+  reservation_date: '',
 };
 
 export function ReservationForm() {
@@ -34,11 +34,14 @@ export function ReservationForm() {
     register,
     handleSubmit,
     control,
+    setValue,
+    getValues,
     formState: { errors, isLoading },
     reset,
   } = useForm<ReservationFormValues>({
     resolver: zodResolver(reservationSchema),
     mode: 'onChange',
+    reValidateMode: 'onChange',
     defaultValues: formDefaultValues,
   });
 
@@ -54,9 +57,7 @@ export function ReservationForm() {
       isShowing: true,
     });
 
-    if (isSuccess) {
-      reset(formDefaultValues);
-    }
+    if (isSuccess) reset(formDefaultValues);
   };
 
   return (
@@ -74,18 +75,18 @@ export function ReservationForm() {
         </div>
 
         <div className={styles.inputWrapper}>
-          <Controller
-            name="phone_number"
-            control={control}
-            render={({ field }) => (
-              <Input
-                variant={InputFieldVariant.PhoneNumber}
-                className={styles.input}
-                {...field}
-                placeholder={'Phone number'}
-              />
-            )}
+          <PhoneInput
+            className={styles.input}
+            placeholder={'Phone number'}
+            value={getValues('phone_number')}
+            onChange={(value) =>
+              setValue('phone_number', value ?? '', {
+                shouldDirty: true,
+                shouldValidate: true,
+              })
+            }
           />
+
           {errors.phone_number && <p className={styles.error}>{errors.phone_number.message}</p>}
         </div>
 
@@ -97,16 +98,18 @@ export function ReservationForm() {
               <DateTimePicker
                 className={styles.dateTimePicker}
                 disableClock
+                format={'y-MM-dd'}
                 {...field}
                 onChange={(date) => field.onChange(date ? date.toISOString() : '')}
               />
             )}
           />
+
           {errors.reservation_date && <p className={styles.error}>{errors.reservation_date.message}</p>}
         </div>
       </div>
 
-      <PrimaryButton style={{ marginTop: '16px' }} variant={ButtonVariant.Regular} type="submit">
+      <PrimaryButton variant={ButtonVariant.Regular} type="submit">
         {isLoading ? 'Loading' : t('apply-button-text')}
       </PrimaryButton>
     </form>

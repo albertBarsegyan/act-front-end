@@ -28,12 +28,14 @@ export const admissionSchema: Schema<ApplicantReservation> = z.object({
     .refine(isValidFacebookUrl, {
       message: 'Facebook URL must be valid.',
     })
+    .or(z.literal(''))
     .nullable(),
   instagram_url: z
     .string()
     .refine(isValidInstagramUrl, {
       message: 'Instagram URL must be valid.',
     })
+    .or(z.literal(''))
     .nullable(),
 });
 

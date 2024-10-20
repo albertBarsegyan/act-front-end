@@ -26,7 +26,7 @@ const formDefaultValues = {
   tour_date: '',
 };
 
-export function ReservationForm() {
+export function CollegeTourForm() {
   const t = useTranslations('home');
   const { provideModalSettings } = useModal();
 
@@ -68,7 +68,7 @@ export function ReservationForm() {
       </PrimaryButton>
       <form className={styles.formWrapper} onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <p className={styles.formHeader}>{t('reservation-form-header')}</p>
+          <p className={styles.formHeader}>{t('college-tour-form-header')}</p>
           <div className={styles.inputWrapper}>
             <input placeholder="First Name" className={styles.input} type="text" {...register('first_name')} />
             {errors.first_name && <p className={styles.error}>{errors.first_name.message}</p>}
@@ -94,7 +94,6 @@ export function ReservationForm() {
             />
             {errors.phone_number && <p className={styles.error}>{errors.phone_number.message}</p>}
           </div>
-
           <div className={styles.inputWrapper}>
             <Controller
               name="tour_date"

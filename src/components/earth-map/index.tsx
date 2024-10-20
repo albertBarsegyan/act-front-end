@@ -14,19 +14,15 @@ export default function ProjectMap({ children }: Readonly<PropsWithChildren>) {
   };
 
   const renderMarkers = (map: any, maps: any) => {
-    const firstMarker = new maps.Marker({
-      position: { lat: 40.78652690472329, lng: 43.838328619067 },
-      map,
-      title: 'Gitc Gyumri',
-    });
-
     const secondMarker = new maps.Marker({
-      position: { lat: 40.2103683406743, lng: 44.52942459778606 },
+      position: { lat: 40.16479, lng: 44.402503 },
       map,
       title: 'Gitc Yerevan',
     });
 
-    return { firstMarker, secondMarker };
+    return {
+      secondMarker,
+    };
   };
 
   return (
