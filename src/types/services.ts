@@ -9,7 +9,7 @@ export interface ConsultationApplication {
   first_name: string;
   last_name: string;
   phone_number: string;
-  consultation_date: string;
+  message: string;
 }
 
 export interface SoccerFieldReservation {

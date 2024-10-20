@@ -36,12 +36,12 @@ export function ContactDetails({ isDark = false }: Readonly<{ isDark?: boolean }
         </div>
         <span>{ContactInformation.email}</span>
       </div>
-      <div className={contactInfoItemStyle}>
-        <div className={styles.iconShape}>
-          <TargetIcon />
-        </div>
-        <span>{ContactInformation.place1}</span>
-      </div>
+      {/*<div className={contactInfoItemStyle}>*/}
+      {/*  <div className={styles.iconShape}>*/}
+      {/*    <TargetIcon />*/}
+      {/*  </div>*/}
+      {/*  <span>{ContactInformation.place1}</span>*/}
+      {/*</div>*/}
       <div className={contactInfoItemStyle}>
         <div className={styles.iconShape}>
           <TargetIcon />

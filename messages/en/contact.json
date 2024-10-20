@@ -10,6 +10,7 @@
       "last-name-label": "Last Name *",
       "phone-label": "Phone number *",
       "date-label": "Consultation Date *",
+      "message-label": "Message *",
       "submit-button-text": "Send Message",
       "string-max-length": "Maximum MAX character"
     }

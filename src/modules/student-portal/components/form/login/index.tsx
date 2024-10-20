@@ -57,10 +57,10 @@ export function StudentPortalLoginForm() {
         <PrimaryButton type="submit">{t('submit')}</PrimaryButton>
       </form>
 
-      <div className={styles.signUpWrapper}>
-        <span className={styles.signUpTitle}>{t('signUpTitle')}</span>
-        <PrimaryButton type="submit">{t('signUpLink')}</PrimaryButton>
-      </div>
+      {/*<div className={styles.signUpWrapper}>*/}
+      {/*  <span className={styles.signUpTitle}>{t('signUpTitle')}</span>*/}
+      {/*  <PrimaryButton type="submit">{t('signUpLink')}</PrimaryButton>*/}
+      {/*</div>*/}
     </div>
   );
 }

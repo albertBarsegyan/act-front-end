@@ -5,7 +5,7 @@ import { PrimaryButton } from '@/components/common/button/primary';
 import { SectionLayout } from '@/components/layout/section/section-layout';
 import { useModal } from '@/context/modal/Modal.context';
 import { AdmissionForm } from '@/forms/admission';
-import { ReservationForm } from '@/forms/college-tour';
+import { CollegeTourForm } from '@/forms/college-tour';
 
 import styles from './styles.module.css';
 
@@ -13,11 +13,11 @@ export function HeroSection() {
   const t = useTranslations('home');
   const { provideModalSettings } = useModal();
 
-  const onClickAction = (actionName: 'reservation' | 'admission') => () =>
+  const onClickAction = (actionName: 'tour' | 'admission') => () =>
     provideModalSettings({
       isShowing: true,
       variant: 'drawer',
-      content: actionName === 'reservation' ? <ReservationForm /> : <AdmissionForm />,
+      content: actionName === 'tour' ? <CollegeTourForm /> : <AdmissionForm />,
       delay: 0,
     });
 
@@ -30,7 +30,7 @@ export function HeroSection() {
 
         <div className={styles.buttonsWrapper}>
           <PrimaryButton onClick={onClickAction('admission')}>{t('apply-button-text')}</PrimaryButton>
-          <PrimaryButton onClick={onClickAction('reservation')}>{t('college-tour-button-text')}</PrimaryButton>
+          <PrimaryButton onClick={onClickAction('tour')}>{t('college-tour-button-text')}</PrimaryButton>
         </div>
       </SectionLayout>
 

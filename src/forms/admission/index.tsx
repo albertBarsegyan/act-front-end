@@ -6,11 +6,11 @@ import 'react-clock/dist/Clock.css';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 import React from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
+import PhoneInput from 'react-phone-number-input/input';
 
 import { ButtonVariant, PrimaryButton } from '@/components/common/button/primary';
 import { FormResponseContent } from '@/components/common/form-response-content';
-import { Input, InputFieldVariant } from '@/components/common/Input';
 import { CloseIcon } from '@/components/icons/close-icon';
 import { useModal } from '@/context/modal/Modal.context';
 import { AdmissionFormValues, admissionSchema } from '@/forms/admission/schema';
@@ -34,7 +34,8 @@ export function AdmissionForm() {
   const {
     register,
     handleSubmit,
-    control,
+    getValues,
+    setValue,
     formState: { errors, isLoading },
     reset,
   } = useForm<AdmissionFormValues>({
@@ -81,18 +82,18 @@ export function AdmissionForm() {
           </div>
 
           <div className={styles.inputWrapper}>
-            <Controller
-              name="phone_number"
-              control={control}
-              render={({ field }) => (
-                <Input
-                  variant={InputFieldVariant.PhoneNumber}
-                  className={styles.input}
-                  {...field}
-                  placeholder={'Phone number'}
-                />
-              )}
+            <PhoneInput
+              className={styles.input}
+              value={getValues('phone_number')}
+              onChange={(value) =>
+                setValue('phone_number', value ?? '', {
+                  shouldDirty: true,
+                  shouldValidate: true,
+                })
+              }
+              placeholder={'Phone number'}
             />
+
             {errors.phone_number && <p className={styles.error}>{errors.phone_number.message}</p>}
           </div>
 

@@ -1,13 +1,26 @@
+'use client';
 import { useTranslations } from 'next-intl';
 
 import { ImageLoader } from '@/components/image-loader';
 import { SectionLayout } from '@/components/layout/section/section-layout';
+import { useModal } from '@/context/modal/Modal.context';
+import { AdmissionForm } from '@/forms/admission';
 import globalStyles from '@/styles/common.module.css';
 
 import styles from './styles.module.css';
 
 export function AdmissionHeroSection() {
   const t = useTranslations('admission');
+  const { provideModalSettings } = useModal();
+
+  const onOpenAdmissionForm = () => {
+    provideModalSettings({
+      isShowing: true,
+      content: <AdmissionForm />,
+      variant: 'drawer',
+      delay: 0,
+    });
+  };
 
   const email = t('contact-email');
 
@@ -37,9 +50,13 @@ export function AdmissionHeroSection() {
 
           <ul className={styles.listWrapper}>
             <li>
-              <strong>Apply Now:</strong> Start by filling out the online application form. You'll need to provide your
-              name, phone number, and links to your social media accounts.
+              <strong>Apply Now:</strong> Start by filling out the online{' '}
+              <button type="button" onClick={onOpenAdmissionForm} className={styles.linkButton}>
+                application form.
+              </button>{' '}
+              You'll need to provide your name, phone number, and links to your social media accounts.
             </li>
+
             <li>
               <strong>Interview and Tour:</strong> In the second stage, applicants will be invited for an interview and
               a tour at the ACT campus. During this visit, our admissions committee will assess applicants’ motivation
