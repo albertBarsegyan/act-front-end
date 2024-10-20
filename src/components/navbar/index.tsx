@@ -8,6 +8,8 @@ import { PrimaryButton } from '@/components/common/button/primary';
 import { ActLogo } from '@/components/icons/act-logo';
 import { SectionLayout } from '@/components/layout/section/section-layout';
 import { Menu } from '@/components/menu';
+import { useModal } from '@/context/modal/Modal.context';
+import { AdmissionForm } from '@/forms/admission';
 import { getIsActive, routePath } from '@/utils/route';
 
 import styles from './styles.module.css';
@@ -26,6 +28,15 @@ export function Navbar() {
   const pathname = usePathname();
   const { locale } = useParams<{ locale: string }>();
   const t = useTranslations('common');
+  const { provideModalSettings } = useModal();
+
+  const onApplyClick = () =>
+    provideModalSettings({
+      isShowing: true,
+      variant: 'drawer',
+      content: <AdmissionForm />,
+      delay: 0,
+    });
 
   return (
     <div className={styles.bgWrapper}>
@@ -54,7 +65,7 @@ export function Navbar() {
                   </div>
 
                   <div className={styles.buttonsWrapper}>
-                    <PrimaryButton>{t('apply-button-text')}</PrimaryButton>
+                    <PrimaryButton onClick={onApplyClick}>{t('apply-button-text')}</PrimaryButton>
                   </div>
                 </div>
               );

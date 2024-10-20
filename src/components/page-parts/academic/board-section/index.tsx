@@ -8,80 +8,52 @@ import styles from './styles.module.css';
 
 const admissionMembers = [
   {
-    id: 1,
-    name: 'John Doe',
-    position: 'Admission Officer',
-    img: '/static/img/admission/profile.jpeg',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Magna morbi magna rhoncus lorem. Ut adipiscing diam arcu lectus euismod scelerisque elementum amet sed.',
+    id: 'board-member-0',
+    img: '/static/img/academic/board-members/nairi.jpeg',
   },
   {
-    id: 2,
-    name: 'John Doe',
-    position: 'Admission Officer',
-    img: '/static/img/admission/profile.jpeg',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Magna morbi magna rhoncus lorem. Ut adipiscing diam arcu lectus euismod scelerisque elementum amet sed.',
+    id: 'board-member-1',
+    img: '/static/img/academic/board-members/aram.jpeg',
   },
   {
-    id: 3,
-    name: 'John Doe',
-    position: 'Admission Officer',
-    img: '/static/img/admission/profile.jpeg',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Magna morbi magna rhoncus lorem. Ut adipiscing diam arcu lectus euismod scelerisque elementum amet sed.',
+    id: 'board-member-2',
+    img: '/static/img/academic/board-members/shant.jpeg',
   },
   {
-    id: 4,
-    name: 'John Doe',
-    position: 'Admission Officer',
-    img: '/static/img/admission/profile.jpeg',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Magna morbi magna rhoncus lorem. Ut adipiscing diam arcu lectus euismod scelerisque elementum amet sed.',
+    id: 'board-member-3',
+    img: '/static/img/academic/board-members/armen.jpeg',
   },
   {
-    id: 14,
-    name: 'John Doe',
-    position: 'Admission Officer',
+    id: 'board-member-4',
     img: '/static/img/admission/profile.jpeg',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Magna morbi magna rhoncus lorem. Ut adipiscing diam arcu lectus euismod scelerisque elementum amet sed.',
   },
   {
-    id: 23,
-    name: 'John Doe',
-    position: 'Admission Officer',
+    id: 'board-member-5',
     img: '/static/img/admission/profile.jpeg',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Magna morbi magna rhoncus lorem. Ut adipiscing diam arcu lectus euismod scelerisque elementum amet sed.',
   },
   {
-    id: 32,
-    name: 'John Doe',
-    position: 'Admission Officer',
-    img: '/static/img/admission/profile.jpeg',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Magna morbi magna rhoncus lorem. Ut adipiscing diam arcu lectus euismod scelerisque elementum amet sed.',
-  },
-  {
-    id: 41,
-    name: 'John Doe',
-    position: 'Admission Officer',
-    img: '/static/img/admission/profile.jpeg',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Magna morbi magna rhoncus lorem. Ut adipiscing diam arcu lectus euismod scelerisque elementum amet sed.',
+    id: 'board-member-6',
+    img: '/static/img/academic/board-members/armine.jpeg',
   },
 ];
 
 export function AcademicBoardSection() {
   const t = useTranslations('academic');
 
+  const list = admissionMembers.map(({ id, img }) => ({
+    id,
+    img,
+    name: t(`${id}.name`),
+    position: t(`${id}.position`),
+    description: t(`${id}.description`),
+  }));
+
   return (
     <div className={styles.sectionWrapper}>
       <SectionLayout>
-        <HeaderText>{t('board-header')}</HeaderText>
+        <HeaderText className={styles.header}>{t('board-header')}</HeaderText>
 
-        <MemberListRenderer list={admissionMembers} />
+        <MemberListRenderer list={list} />
       </SectionLayout>
     </div>
   );

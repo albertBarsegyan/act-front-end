@@ -7,48 +7,36 @@ import styles from '@/components/page-parts/admission/benefits-section/styles.mo
 
 const admissionMembers = [
   {
-    id: 1,
-    name: 'John Doe',
-    position: 'Admission Officer',
-    img: '/static/img/admission/profile.jpeg',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Magna morbi magna rhoncus lorem. Ut adipiscing diam arcu lectus euismod scelerisque elementum amet sed.',
+    id: 'admission-member-0',
+    img: '/static/img/admission/staff/edgar.jpeg',
   },
   {
-    id: 2,
-    name: 'John Doe',
-    position: 'Admission Officer',
+    id: 'admission-member-1',
     img: '/static/img/admission/profile.jpeg',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Magna morbi magna rhoncus lorem. Ut adipiscing diam arcu lectus euismod scelerisque elementum amet sed.',
   },
   {
-    id: 3,
-    name: 'John Doe',
-    position: 'Admission Officer',
-    img: '/static/img/admission/profile.jpeg',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Magna morbi magna rhoncus lorem. Ut adipiscing diam arcu lectus euismod scelerisque elementum amet sed.',
-  },
-  {
-    id: 4,
-    name: 'John Doe',
-    position: 'Admission Officer',
-    img: '/static/img/admission/profile.jpeg',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Magna morbi magna rhoncus lorem. Ut adipiscing diam arcu lectus euismod scelerisque elementum amet sed.',
+    id: 'admission-member-2',
+    img: '/static/img/admission/staff/levon.jpeg',
   },
 ];
 
 export function AdmissionMembersSection() {
   const t = useTranslations('admission');
 
+  const list = admissionMembers.map(({ id, img }) => ({
+    id,
+    img,
+    name: t(`${id}.name`),
+    position: t(`${id}.position`),
+    description: t(`${id}.description`),
+  }));
+
   return (
     <div className={styles.benefitSectionWrapper}>
       <SectionLayout>
         <HeaderText>{t('team-header')}</HeaderText>
 
-        <MemberListRenderer list={admissionMembers} />
+        <MemberListRenderer list={list} />
       </SectionLayout>
     </div>
   );

@@ -11,14 +11,17 @@ import styles from './styles.module.css';
 interface FormResponseContentProps {
   isSuccess: boolean;
   description: string;
+  onTryAgain?: () => void;
 }
 
-export function FormResponseContent({ isSuccess, description }: Readonly<FormResponseContentProps>) {
+export function FormResponseContent({ isSuccess, description, onTryAgain }: Readonly<FormResponseContentProps>) {
   const { provideModalSettings } = useModal();
 
   const closeModal = () => provideModalSettings({ isShowing: false });
 
   const ref = useOutsideClick(closeModal);
+
+  const tryAgainAction = onTryAgain ?? closeModal;
 
   return (
     <div className={styles.wrapper} ref={ref}>
@@ -35,7 +38,7 @@ export function FormResponseContent({ isSuccess, description }: Readonly<FormRes
       <p className={styles.emailConfirmation}>Shortly you will find a confirmation in your email.</p>
 
       <PrimaryButton
-        onClick={closeModal}
+        onClick={isSuccess ? closeModal : tryAgainAction}
         variant={ButtonVariant.Regular}
         className={classNames({
           [styles.actionButton]: isSuccess,

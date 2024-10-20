@@ -13,7 +13,7 @@ interface StudyOptionRendererProps {
   };
 }
 
-export function StudyOptionRenderer({ data }: Readonly<StudyOptionRendererProps>) {
+export function ProgramOptionRenderer({ data }: Readonly<StudyOptionRendererProps>) {
   const { header, description, img } = data;
   const t = useTranslations('common');
 

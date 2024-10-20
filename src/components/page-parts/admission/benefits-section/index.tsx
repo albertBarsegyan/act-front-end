@@ -8,19 +8,16 @@ import styles from './styles.module.css';
 
 const benefits = [
   {
-    id: 0,
+    id: 'free-transportation',
     img: '/static/img/admission/benefig-img.jpeg',
-    title: 'Transporting Pupils By Bus',
   },
   {
-    id: 1,
-    img: '/static/img/admission/benefig-img.jpeg',
-    title: 'Manufacturing Plant',
+    id: 'manufacturing-area',
+    img: '/static/img/admission/manufactoring.jpeg',
   },
   {
-    id: 2,
-    img: '/static/img/admission/benefig-img.jpeg',
-    title: 'Extracurricular Learning',
+    id: 'extracurricular-learning',
+    img: '/static/img/admission/learning.jpeg',
   },
 ];
 
@@ -33,8 +30,8 @@ export function BenefitsSection() {
         <HeaderText>{t('benefits-header')}</HeaderText>
 
         <div className={styles.benefitContent}>
-          {benefits.map(({ id, ...data }) => (
-            <BenefitRenderer key={id} data={data} />
+          {benefits.map(({ id, img }) => (
+            <BenefitRenderer key={id} data={{ img, title: t(`${id}.title`) }} />
           ))}
         </div>
       </SectionLayout>

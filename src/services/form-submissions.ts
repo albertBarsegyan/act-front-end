@@ -1,5 +1,10 @@
 import { axiosInstance } from '@/config/axios';
-import { CollegeTourRequest, ConsultationApplication, SoccerFieldReservation } from '@/types/services';
+import {
+  ApplicantReservation,
+  CollegeTourRequest,
+  ConsultationApplication,
+  SoccerFieldReservation,
+} from '@/types/services';
 import { getErrorMessage } from '@/utils/error';
 
 export const admissionsService = {
@@ -24,6 +29,15 @@ export const admissionsService = {
   soccerFieldReservation: async (data: SoccerFieldReservation) => {
     try {
       const response = await axiosInstance.post(`/admissions/soccer-field-reservation/`, data);
+      return response.data;
+    } catch (error) {
+      return { error: getErrorMessage(error) };
+    }
+  },
+  applicantAdmission: async (data: ApplicantReservation) => {
+    try {
+      const response = await axiosInstance.post('/admissions/applicant/', data);
+
       return response.data;
     } catch (error) {
       return { error: getErrorMessage(error) };

@@ -9,7 +9,7 @@ import ErrorBoundary from '@/components/error-boundary';
 import { PageLayout } from '@/components/layout/page';
 import ModalProvider from '@/context/modal/Modal.context';
 
-const rubik = Rubik({ subsets: ['latin'], weight: ['400', '700'] });
+const rubik = Rubik({ subsets: ['latin'], weight: ['400', '500', '600', '700'] });
 
 export const metadata: Metadata = {
   title: 'Home',

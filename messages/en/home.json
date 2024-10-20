@@ -3,6 +3,7 @@
     "menu-button-title-is-closed": "Menu",
     "menu-button-title-is-open": "Close",
     "header-title": "Armenian Creative\nTechnologies College",
+    "header-founders-name": "After Nshan and Aida Karayans",
     "header-description": "Since its foundation the GITC Scientific and Educational Foundation has been providing market demand specialists in the field of Information Technologies.",
     "apply-button-text": "Apply",
     "college-tour-button-text": "College Tour",
@@ -15,7 +16,9 @@
     "reservation-form-error-header": "Sorry",
     "reservation-form-error-description": "Something went wrong. Please try again later",
     "about-us-header": "About Us",
-    "about-us-description": "Lorem ipsum dolor sit amet consectetur. Elit cursus amet lobortis iaculis. Mattis viverra mi cursus senectus tincidunt nibh. Dapibus enim neque lectus amet porttitor id orci. Quis nibh elit adipiscing placerat."
+    "about-us-description": "ACT College was founded in 2025 thanks to the generous support of philanthropists Nshan and Aida Karayan, with a vision to empower Armenia’s youth through high-quality education in technology and creative fields. As a state-licensed vocational institution, we offer specialized programs in Computer Science, Engineering & Manufacturing, and Digital Art, equipping students with practical skills for today’s evolving job market.",
+    "admission-form-header": "Registration"
   }
 }
+
 

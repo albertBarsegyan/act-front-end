@@ -58,11 +58,17 @@ function useModalProvider() {
 export default function ModalProvider({ children }: Readonly<PropsWithChildren>) {
   const modal = useModalProvider();
 
+  const closeModal = () => modal.provideModalSettings({ isShowing: false });
+
   const isModalVisible = modal.settings.isShowing && modal.settings.content;
 
   return (
     <ModalContext.Provider value={modal}>
-      {isModalVisible && <ModalLayout variant={modal.settings.variant}>{modal.settings.content}</ModalLayout>}
+      {isModalVisible && (
+        <ModalLayout closeDrawer={closeModal} variant={modal.settings.variant}>
+          {modal.settings.content}
+        </ModalLayout>
+      )}
       {children}
     </ModalContext.Provider>
   );

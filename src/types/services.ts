@@ -18,3 +18,12 @@ export interface SoccerFieldReservation {
   phone_number: string;
   reservation_date: string;
 }
+
+export interface ApplicantReservation {
+  first_name: string;
+  last_name: string;
+  phone_number: string;
+  email: string;
+  facebook_url?: string | null;
+  instagram_url?: string | null;
+}

@@ -1,9 +1,57 @@
 {
   "admission": {
     "header": "Welcome to the ACT College!",
-    "description": "Lorem ipsum dolor sit amet consectetur. Bibendum vel ipsum cursus egestas ullamcorper nibh mi. Sed nunc dictum dictum elementum. Vulputate in libero consectetur sed. Enim semper pharetra viverra sit mollis. Vitae tincidunt sed in id et lacus. Vel accumsan arcu posuere diam aliquam dui. Tristique faucibus a tempus sit accumsan phasellus vitae. Sollicitudin proin et pulvinar fames convallis malesuada viverra. Molestie amet venenatis venenatis in. Felis accumsan lobortis nisi non. Sit molestie elit dignissim bibendum iaculis id placerat. Tortor suspendisse sit nisl velit.\nId elementum ut nunc diam amet ac ac. Cras ullamcorper eget venenatis in. Magna et mauris lectus dolor nunc pretium. Leo elementum suspendisse sit purus. Turpis id metus tempus urna. Malesuada amet amet malesuada magna neque. Ut fusce.",
-    "study-program-header": "Study Options",
+    "description": "We are excited to guide you through the admission process and help you take the first step toward an innovative career in technology and creative industries.",
+    "study-program-header": "Programs & Certifications",
     "benefits-header": "Benefits",
-    "team-header": "Admission Team"
+    "team-header": "Admission Staff",
+    "sub-header": "Who Can Apply?",
+    "sub-description": "ACT College welcomes applicants who are passionate about pursuing education in Computer Science, Engineering & Manufacturing, or Digital Art. We accept students who have completed their secondary education and are ready to embark on their vocational journey.",
+    "process-header": "Application Process",
+    "scholarship-description": "ACT College is committed to making education accessible. We offer scholarships to outstanding students based on academic merit and financial need.",
+    "scholarship-sub-description": "For more details on the application process and eligibility criteria, please contact our admissions emailing us at",
+    "contact-email": "info@gitc.am",
+    "mandatory-education": {
+      "header": "Mandatory Education",
+      "description": "ACT College, mandatory education is a 3-year program available for students who have completed the 9th grade, providing a strong foundation in their chosen fields to prepare them for future academic or career success."
+    },
+    "certification-courses": {
+      "header": "Certification Courses",
+      "description": "ACT College offers a range of after-class certification courses.These courses provide an excellent opportunity for individuals to gain specialized skills and knowledge in a flexible and efficient format."
+    },
+    "summer-school": {
+      "header": "Summer School",
+      "description": "ACT College offers summer school program designed for youth. These program allows students to develop new skills, deepen their knowledge, and explore their interests in a focused environment during the summer months."
+    },
+    "courses": {
+      "header": "Courses",
+      "description": "ACT College offers a range of courses in software development, data science and other sectors of interest in technology. These courses provide hands-on, practical learning experiences designed to equip students with the skills needed for success in today’s tech-driven job market."
+    },
+    "free-transportation": {
+      "title": "Free Transportation"
+    },
+    "manufacturing-area": {
+      "title": "Manufacturing Area"
+    },
+    "extracurricular-learning": {
+      "title": "Extracurricular Learning"
+    },
+    "admission-member-0": {
+      "name": "Edgar Chilingaryan",
+      "position": "Senior Front-end Developer",
+      "description": "Responsible for evaluating applications, conducting interviews, and making decisions on student admissions to ensure a diverse and qualified student body."
+    },
+    "admission-member-1": {
+      "name": "Margarita Krtikashyan",
+      "position": "Senior Front-end Developer",
+      "description": "Responsible for handling calls, sending invitations, coordinating meetings, and guiding campus tours for prospective students."
+    },
+    "admission-member-2": {
+      "name": "Levon Hayrapetyan",
+      "position": "Senior Front-end Developer",
+      "description": "Responsible for managing scholarship applications and ensuring that eligible students receive financial support as per ACT Scholarship Policy and procedures."
+    }
   }
 }
+
+

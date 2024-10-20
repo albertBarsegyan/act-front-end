@@ -17,6 +17,7 @@
     width: 100%;
     overflow: visible;
     animation: scrolling 30s linear infinite;
+    gap: 80px;
 }
 
 .partnerItem img {
@@ -36,6 +37,6 @@
     }
 
     100% {
-        transform: translateX(calc(-10 * 288px));
+        transform: translateX(calc(-5 * (160px + 80px)));
     }
 }

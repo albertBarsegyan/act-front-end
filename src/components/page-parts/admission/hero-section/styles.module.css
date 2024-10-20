@@ -12,17 +12,49 @@
 }
 
 .header {
-    font-size: 3.25rem;
+    font-size: 52px;
     font-weight: 700;
-    line-height: 150%;
+    line-height: 61.62px;
     text-align: left;
 }
 
 .description {
-    font-size: 1.125rem;
+    font-size: 24px;
     font-weight: 400;
-    line-height: 150%;
-    text-align: left;
+    line-height: 32px;
+    margin-top: 20px;
+}
+
+.subHeader {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    display: block;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.subDescription {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    margin-top: 8px;
+}
+
+.listWrapper > li {
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.listWrapper strong {
+    font-weight: 700;
+}
+
+.scholarship {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
 }
 
 
