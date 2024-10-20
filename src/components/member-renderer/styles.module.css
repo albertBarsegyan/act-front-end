@@ -3,8 +3,8 @@
     background: white;
     width: 100%;
     box-sizing: border-box;
-    max-width: 100%;
     border-radius: var(--border-radius);
+    max-width: 320px;
 }
 
 .memberWrapper img {
@@ -47,10 +47,9 @@
 }
 
 .memberListWrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 320px);
-    flex-direction: row;
+    display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 0.5rem;
 }
 
@@ -58,7 +57,7 @@
 @media screen and (max-width: 920px) {
     .memberListWrapper {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
     }
 }

@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { PrimaryButton } from '@/components/common/button/primary';
 import { SectionLayout } from '@/components/layout/section/section-layout';
 import { useModal } from '@/context/modal/Modal.context';
+import { AdmissionForm } from '@/forms/admission';
 import { ReservationForm } from '@/forms/college-tour';
 
 import styles from './styles.module.css';
@@ -12,11 +13,11 @@ export function HeroSection() {
   const t = useTranslations('home');
   const { provideModalSettings } = useModal();
 
-  const collegeTourButtonClick = () =>
+  const onClickAction = (actionName: 'reservation' | 'admission') => () =>
     provideModalSettings({
       isShowing: true,
       variant: 'drawer',
-      content: <ReservationForm />,
+      content: actionName === 'reservation' ? <ReservationForm /> : <AdmissionForm />,
       delay: 0,
     });
 
@@ -24,13 +25,15 @@ export function HeroSection() {
     <div className={styles.wrapper}>
       <SectionLayout>
         <h1 className={styles.heroHeader}>{t('header-title')}</h1>
+        <span className={styles.founders}>{t('header-founders-name')}</span>
         <p className={styles.heroDescription}>{t('header-description')}</p>
 
         <div className={styles.buttonsWrapper}>
-          <PrimaryButton>{t('apply-button-text')}</PrimaryButton>
-          <PrimaryButton onClick={collegeTourButtonClick}>{t('college-tour-button-text')}</PrimaryButton>
+          <PrimaryButton onClick={onClickAction('admission')}>{t('apply-button-text')}</PrimaryButton>
+          <PrimaryButton onClick={onClickAction('reservation')}>{t('college-tour-button-text')}</PrimaryButton>
         </div>
       </SectionLayout>
+
       <div className={styles.gradientEffect} />
     </div>
   );

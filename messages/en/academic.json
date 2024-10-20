@@ -1,6 +1,41 @@
 {
   "academic": {
     "faculties-header": "Faculties",
-    "board-header": "Meet Our Academic Board"
+    "board-header": "Meet Our Academic Board",
+    "board-member-0": {
+      "name": "Nairi Baghdasaryan",
+      "position": "Senior Front-end Developer",
+      "description": "Lorem ipsum dolor sit amet consectetur. Magna morbi magna rhoncus lorem. Ut adipiscing diam arcu lectus euismod scelerisque elementum amet sed."
+    },
+    "board-member-1": {
+      "name": "Aram Papoyan",
+      "position": "Director At Institute For Physical",
+      "description": "Lorem ipsum dolor sit amet consectetur. Magna morbi magna rhoncus lorem. Ut adipiscing diam arcu lectus euismod scelerisque elementum amet sed."
+    },
+    "board-member-2": {
+      "name": "Shant Karapetyan",
+      "position": "Founder & CEO At BLINK.AI",
+      "description": "Lorem ipsum dolor sit amet consectetur. Magna morbi magna rhoncus lorem. Ut adipiscing diam arcu lectus euismod scelerisque elementum amet sed."
+    },
+    "board-member-3": {
+      "name": "Armen Marjinyan",
+      "position": "Artist",
+      "description": "Lorem ipsum dolor sit amet consectetur. Magna morbi magna rhoncus lorem. Ut adipiscing diam arcu lectus euismod scelerisque elementum amet sed."
+    },
+    "board-member-4": {
+      "name": "Armine Haroyan",
+      "position": "Executive Director At AEF",
+      "description": "Lorem ipsum dolor sit amet consectetur. Magna morbi magna rhoncus lorem. Ut adipiscing diam arcu lectus euismod scelerisque elementum amet sed."
+    },
+    "board-member-5": {
+      "name": "Name Surname",
+      "position": "Senior Front-end Developer",
+      "description": "Lorem ipsum dolor sit amet consectetur. Magna morbi magna rhoncus lorem. Ut adipiscing diam arcu lectus euismod scelerisque elementum amet sed."
+    },
+    "board-member-6": {
+      "name": "Name Surname",
+      "position": "Author Of JavaScript Book",
+      "description": "Lorem ipsum dolor sit amet consectetur. Magna morbi magna rhoncus lorem. Ut adipiscing diam arcu lectus euismod scelerisque elementum amet sed."
+    }
   }
 }

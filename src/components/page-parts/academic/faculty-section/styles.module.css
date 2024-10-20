@@ -8,9 +8,18 @@
     gap: 16px;
 }
 
+.header {
+    margin-bottom: 42px;
+}
+
 
 @media screen and (max-width: 920px) {
     .facultiesWrapper {
         gap: 8px;
+    }
+
+    .header {
+        font-size: 36px;
+        margin-bottom: 24px;
     }
 }

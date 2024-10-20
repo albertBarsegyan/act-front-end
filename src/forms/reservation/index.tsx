@@ -22,8 +22,8 @@ import styles from './styles.module.css';
 const formDefaultValues = {
   first_name: '',
   last_name: '',
-  phone_number: '',
-  reservation_date: '',
+  // phone_number: '',
+  // reservation_date: '',
 };
 
 export function ReservationForm() {

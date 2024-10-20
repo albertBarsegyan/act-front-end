@@ -61,7 +61,6 @@
     border-bottom: 0.5px solid white;
 }
 
-
 @media screen and  (max-width: 920px) {
     .formHeader {
         font-size: 1.5rem;

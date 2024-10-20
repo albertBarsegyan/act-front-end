@@ -3,5 +3,5 @@ export interface Member {
   position: string;
   img: string;
   description: string;
-  id: number;
+  id: string;
 }

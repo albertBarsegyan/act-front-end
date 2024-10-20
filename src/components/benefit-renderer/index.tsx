@@ -16,7 +16,7 @@ export function BenefitRenderer({ data }: Readonly<BenefitRendererProps>) {
         <ImageLoader src={data.img} alt={data.title} />
       </div>
       <div>
-        <span className={styles.title}>{data.title}</span>
+        <p className={styles.title}>{data.title}</p>
       </div>
     </div>
   );

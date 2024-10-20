@@ -15,7 +15,6 @@ import { Input, InputFieldVariant } from '@/components/common/Input';
 import { CloseIcon } from '@/components/icons/close-icon';
 import { useModal } from '@/context/modal/Modal.context';
 import { CollegeTourFormValues, collegeTourSchema } from '@/forms/college-tour/schema';
-import { useOutsideClick } from '@/hooks/use-outside-click';
 import { admissionsService } from '@/services/form-submissions';
 
 import styles from './styles.module.css';
@@ -62,14 +61,11 @@ export function ReservationForm() {
 
   const closeModal = () => provideModalSettings({ isShowing: false });
 
-  const ref = useOutsideClick(closeModal);
-
   return (
-    <div ref={ref}>
+    <div>
       <PrimaryButton onClick={closeModal} className={styles.closeButton} variant={ButtonVariant.TextPrimary}>
         <CloseIcon />
       </PrimaryButton>
-
       <form className={styles.formWrapper} onSubmit={handleSubmit(onSubmit)}>
         <div>
           <p className={styles.formHeader}>{t('reservation-form-header')}</p>

@@ -30,7 +30,7 @@ export function FacultySection() {
   return (
     <div className={styles.facultySectionWrapper}>
       <SectionLayout>
-        <HeaderText>{t('faculties-header')}</HeaderText>
+        <HeaderText className={styles.header}>{t('faculties-header')}</HeaderText>
 
         <div className={styles.facultiesWrapper}>
           {faculties.map(({ id, ...data }) => (

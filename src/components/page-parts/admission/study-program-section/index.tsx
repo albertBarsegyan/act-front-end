@@ -2,38 +2,26 @@ import { useTranslations } from 'next-intl';
 
 import { HeaderText } from '@/components/header-text';
 import { SectionLayout } from '@/components/layout/section/section-layout';
-import { StudyOptionRenderer } from '@/components/study-option-renderer';
+import { ProgramOptionRenderer } from '@/components/study-option-renderer';
 
 import styles from './styles.module.css';
 
 const studyPrograms = [
   {
-    id: 1,
-    header: 'College',
+    id: 'mandatory-education',
     img: '/static/img/admission/study-program.jpeg',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Semper aliquam ut eu elit tellus. Tristique interdum amet sit neque ut gravida auctor.',
   },
   {
-    id: 2,
-    header: 'Certification Courses',
+    id: 'certification-courses',
     img: '/static/img/admission/study-program.jpeg',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Semper aliquam ut eu elit tellus. Tristique interdum amet sit neque ut gravida auctor.',
   },
   {
-    id: 3,
-    header: 'Summer School',
+    id: 'summer-school',
     img: '/static/img/admission/study-program.jpeg',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Semper aliquam ut eu elit tellus. Tristique interdum amet sit neque ut gravida auctor.',
   },
   {
-    id: 4,
-    header: 'Courses',
+    id: 'courses',
     img: '/static/img/admission/study-program.jpeg',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Semper aliquam ut eu elit tellus. Tristique interdum amet sit neque ut gravida auctor.',
   },
 ];
 
@@ -46,8 +34,11 @@ export function StudyProgramSection() {
         <HeaderText>{t('study-program-header')}</HeaderText>
 
         <div className={styles.contentWrapper}>
-          {studyPrograms.map(({ id, ...data }) => (
-            <StudyOptionRenderer key={id} data={data} />
+          {studyPrograms.map(({ id, img }) => (
+            <ProgramOptionRenderer
+              key={id}
+              data={{ img, header: t(`${id}.header`), description: t(`${id}.description`) }}
+            />
           ))}
         </div>
       </SectionLayout>
