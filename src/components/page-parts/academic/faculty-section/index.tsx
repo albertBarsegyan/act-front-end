@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 
 import { FacultyRenderer } from '@/components/faculty-renderer';
@@ -8,19 +10,16 @@ import styles from './styles.module.css';
 
 const faculties = [
   {
-    id: 0,
+    id: 'digital-art',
     img: '/static/img/academic/digital-art.jpg',
-    header: 'Digital Art',
   },
   {
-    id: 1,
+    id: 'computer-science',
     img: '/static/img/academic/computer-science.jpeg',
-    header: 'Computer Science',
   },
   {
-    id: 2,
+    id: 'engineering-manufactoring',
     img: '/static/img/academic/engineering.jpeg',
-    header: 'Engineering',
   },
 ];
 
@@ -33,8 +32,11 @@ export function FacultySection() {
         <HeaderText className={styles.header}>{t('faculties-header')}</HeaderText>
 
         <div className={styles.facultiesWrapper}>
-          {faculties.map(({ id, ...data }) => (
-            <FacultyRenderer key={id} data={data} />
+          {faculties.map(({ id, img }) => (
+            <FacultyRenderer
+              key={id}
+              data={{ img, header: t(`${id}.title`), extraDescription: t(`${id}.read-more`) }}
+            />
           ))}
         </div>
       </SectionLayout>

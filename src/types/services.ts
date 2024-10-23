@@ -6,8 +6,8 @@ export interface CollegeTourRequest {
 }
 
 export interface ConsultationApplication {
-  first_name: string;
-  last_name: string;
+  name: string;
+  email: string;
   phone_number: string;
   message: string;
 }

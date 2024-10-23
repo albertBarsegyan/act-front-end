@@ -2,6 +2,18 @@
   "academic": {
     "faculties-header": "Faculties",
     "board-header": "Meet Our Academic Board",
+    "digital-art": {
+      "title": "Digital Art",
+      "read-more": "The Digital Art faculty at ACT College is dedicated to cultivating creativity and technical proficiency in students pursuing careers in the digital arts. Our comprehensive curriculum encompasses traditional art, VR/AR technologies, graphic design and game development, providing hands-on training with industry-standard software and tools.\n Students engage in real-world projects that allow them to develop robust portfolios showcasing their skills and creativity. Guided by experienced instructors in a collaborative environment, the faculty prepares students to excel as professional artists and designers in the dynamic digital landscape."
+    },
+    "computer-science": {
+      "title": "Computer Science",
+      "read-more": "The Computer Science faculty at ACT College is dedicated to equipping students with the foundational knowledge and practical skills necessary for success in the ever-evolving field of technology. Our curriculum covers a wide range of topics, including programming languages, software development, data structures, algorithms, and cybersecurity. \n Students receive hands-on training with modern programming tools and technologies, engaging in real-world projects that enhance their problem-solving abilities and critical thinking skills. With guidance from experienced instructors, students are prepared to tackle complex challenges and innovate in various areas of the tech industry, ensuring they are well-equipped for a successful career in computer science."
+    },
+    "engineering-manufactoring": {
+      "title": "Engineering & Manufacturing",
+      "read-more": "The Engineering & Manufacturing faculty at ACT College is focused on providing students with a comprehensive education that combines theoretical knowledge with practical application. Our curriculum includes essential topics such as mechanical engineering, electrical engineering, materials science, and manufacturing processes. \n Students benefit from hands-on experience in state-of-the-art labs and workshops, where they can work on real-world projects that develop their engineering design skills and technical expertise. Guided by industry-experienced instructors, students learn to innovate and solve complex engineering challenges, preparing them for successful careers in various sectors, including manufacturing, automation, and product development."
+    },
     "board-member-0": {
       "name": "Nairi Baghdasaryan",
       "position": "Senior Front-end Developer",

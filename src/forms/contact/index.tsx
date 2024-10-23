@@ -18,8 +18,8 @@ import { ConsultationApplication } from '@/types/services';
 import styles from './styles.module.css';
 
 const formDefaultValues: ConsultationApplication = {
-  first_name: '',
-  last_name: '',
+  name: '',
+  email: '',
   phone_number: '',
   message: '',
 };
@@ -44,7 +44,7 @@ export function ContactForm() {
   });
 
   const onSubmit = async (data: ConsultationApplication) => {
-    const res = await admissionsService.consultation(data);
+    const res = await admissionsService.contact(data);
 
     const isSuccess = !res?.error;
 
@@ -67,7 +67,7 @@ export function ContactForm() {
       <p className={styles.formTitle}>{t('contact-form-title')}</p>
 
       <Controller
-        name="first_name"
+        name="name"
         control={control}
         render={({ field }) => (
           <Input
@@ -75,22 +75,22 @@ export function ContactForm() {
             wrapperClassName={styles.inputWrapper}
             placeholder={String(t('contact-form-fields.name-placeholder'))}
             label={String(t('contact-form-fields.name-label'))}
-            errorMessage={errors.first_name?.message}
+            errorMessage={errors.name?.message}
             type="text"
           />
         )}
       />
 
       <Controller
-        name="last_name"
+        name="email"
         control={control}
         render={({ field }) => (
           <Input
             {...field}
             wrapperClassName={styles.inputWrapper}
-            placeholder={String(t('contact-form-fields.last-name-placeholder'))}
-            label={String(t('contact-form-fields.last-name-label'))}
-            errorMessage={errors.last_name?.message}
+            placeholder={String(t('contact-form-fields.email-placeholder'))}
+            label={String(t('contact-form-fields.email-label'))}
+            errorMessage={errors.email?.message}
             type="text"
           />
         )}

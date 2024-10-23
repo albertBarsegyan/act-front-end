@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 
 import { BenefitRenderer } from '@/components/benefit-renderer';
@@ -31,7 +33,7 @@ export function BenefitsSection() {
 
         <div className={styles.benefitContent}>
           {benefits.map(({ id, img }) => (
-            <BenefitRenderer key={id} data={{ img, title: t(`${id}.title`) }} />
+            <BenefitRenderer key={id} data={{ img, title: t(`${id}.title`), extraDescription: t(`${id}.read-more`) }} />
           ))}
         </div>
       </SectionLayout>

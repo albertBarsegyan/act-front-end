@@ -2,6 +2,8 @@ import { useTranslations } from 'next-intl';
 
 import { ButtonVariant, PrimaryButton } from '@/components/common/button/primary';
 import { ImageLoader } from '@/components/image-loader';
+import { ReadMoreContent } from '@/components/read-more-content';
+import { useModal } from '@/context/modal/Modal.context';
 
 import styles from './styles.module.css';
 
@@ -10,12 +12,21 @@ interface StudyOptionRendererProps {
     header: string;
     description: string;
     img: string;
+    extraDescription: string;
   };
 }
 
 export function ProgramOptionRenderer({ data }: Readonly<StudyOptionRendererProps>) {
-  const { header, description, img } = data;
+  const { header, description, img, extraDescription } = data;
   const t = useTranslations('common');
+  const { provideModalSettings } = useModal();
+
+  const onReadMoreClick = () =>
+    provideModalSettings({
+      content: <ReadMoreContent data={{ image: img, header, description: extraDescription }} />,
+      isShowing: true,
+      delay: 0,
+    });
 
   return (
     <div className={styles.wrapperWithImage}>
@@ -27,7 +38,8 @@ export function ProgramOptionRenderer({ data }: Readonly<StudyOptionRendererProp
           <span className={styles.studyOptionHeader}>{header}</span>
           <p className={styles.studyOptionDescription}>{description}</p>
         </div>
-        <PrimaryButton style={{ width: '130px' }} variant={ButtonVariant.RegularOutline}>
+
+        <PrimaryButton style={{ width: '130px' }} onClick={onReadMoreClick} variant={ButtonVariant.RegularOutline}>
           {t('read-more-button-title')}
         </PrimaryButton>
       </div>

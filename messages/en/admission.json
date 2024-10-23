@@ -13,28 +13,35 @@
     "contact-email": "info@gitc.am",
     "mandatory-education": {
       "header": "Mandatory Education",
-      "description": "ACT College, mandatory education is a 3-year program available for students who have completed the 9th grade, providing a strong foundation in their chosen fields to prepare them for future academic or career success."
+      "description": "ACT College, mandatory education is a 3-year program available for students who have completed the 9th grade, providing a strong foundation in their chosen fields to prepare them for future academic or career success.",
+      "read-more": "The mandatory program at ACT College is designed for students who have completed the 9th grade and are seeking comprehensive education in one of the college’s three departments: Digital Art, Engineering and Manufacturing, or Computer Science. The program spans three years, during which students receive in-depth education, equipping them with both theoretical knowledge and practical skills to prepare them for careers in technology and creative industries. Upon completing the three-year program, students will graduate with a state-licensed certificate, enabling them to either enter the workforce with valuable skills or continue their education at a university."
     },
     "certification-courses": {
       "header": "Certification Courses",
-      "description": "ACT College offers a range of after-class certification courses.These courses provide an excellent opportunity for individuals to gain specialized skills and knowledge in a flexible and efficient format."
+      "description": "ACT College offers a range of after-class certification courses.These courses provide an excellent opportunity for individuals to gain specialized skills and knowledge in a flexible and efficient format.",
+      "read-more": "Certification courses at ACT College are comprehensive bootcamp-style programs designed to provide in-depth, intensive training in specialized fields. These bootcamps offer a more immersive learning experience, allowing students to acquire advanced skills over a condensed period. These programs are ideal for individuals who want to rapidly upskill, switch careers, or gain certification in a specific area of interest."
     },
     "summer-school": {
       "header": "Summer School",
-      "description": "ACT College offers summer school program designed for youth. These program allows students to develop new skills, deepen their knowledge, and explore their interests in a focused environment during the summer months."
+      "description": "ACT College offers summer school program designed for youth. These program allows students to develop new skills, deepen their knowledge, and explore their interests in a focused environment during the summer months.",
+      "read-more": "Summer School at ACT College is specially designed for youth under 18, providing a unique opportunity for young learners from both Armenia and around the world to explore new subjects, develop practical skills, and engage in creative projects during the summer months. This program is perfect for young minds eager to dive into hands-on learning and innovation in a supportive and stimulating environment."
     },
     "courses": {
       "header": "Courses",
-      "description": "ACT College offers a range of courses in software development, data science and other sectors of interest in technology. These courses provide hands-on, practical learning experiences designed to equip students with the skills needed for success in today’s tech-driven job market."
+      "description": "ACT College offers a range of courses in software development, data science and other sectors of interest in technology. These courses provide hands-on, practical learning experiences designed to equip students with the skills needed for success in today’s tech-driven job market.",
+      "read-more": "ACT College offers a variety of short-term certification courses designed for individuals looking to gain specialized skills quickly and effectively. These courses are ideal for students, professionals, or anyone seeking to enhance their knowledge in high-demand fields without committing to a long-term program. Upon completion, participants receive certificates that are recognized both nationally and internationally, helping them boost their career prospects."
     },
     "free-transportation": {
-      "title": "Free Transportation"
+      "title": "Free Transportation",
+      "read-more": "ACT College recognizes the importance of a smooth and stress-free commute for students and their families. By offering this free transportation service, the college ensures that all students, regardless of where they live, can easily and safely access their education without the worry of arranging their own transportation. Whether students are traveling from nearby villages or urban areas, they can rely on this service to bring them to the college and back home efficiently.\n This initiative not only supports students' academic success by removing transportation barriers, but it also fosters independence in young learners. Parents can rest assured that their children are in good hands, with experienced drivers and reliable transportation systems that prioritize safety and punctuality.\n In addition to providing comfort and convenience, this service allows families to avoid the costs and logistics of daily commutes, making education more accessible and inclusive for all students."
     },
     "manufacturing-area": {
-      "title": "Manufacturing Area"
+      "title": "Manufacturing Area",
+      "read-more": "The Manufacturing Area at ACT College is equipped with the best machinery and tools available, ensuring students have access to the latest and most advanced technologies in the industry. From high-precision 3D printers and state-of-the-art CNC machines to laser cutters and robotics equipment, our facility provides everything students need to bring their ideas to life with professional-grade quality."
     },
     "extracurricular-learning": {
-      "title": "Extracurricular Learning"
+      "title": "Extracurricular Learning",
+      "read-more": "At ACT College, students have the opportunity to benefit from extra-curricular learning sessions after their mandatory classes, which are provided free of charge. This initiative is designed to help students complete their homework, deepen their understanding of course materials, and prepare effectively for university entrance exams. These sessions ensure that students are fully supported in their academic journey, offering additional guidance and resources beyond the classroom."
     },
     "admission-member-0": {
       "name": "Edgar Chilingaryan",
