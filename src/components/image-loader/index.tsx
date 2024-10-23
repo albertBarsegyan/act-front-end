@@ -7,12 +7,6 @@ import { useIntersection } from '@/hooks/intersection-observer';
 
 import styles from './ImageLoader.module.css';
 
-export const enum ImgLoadState {
-  Idle = 'Idle',
-  Loading = 'Loading',
-  Success = 'Success',
-}
-
 interface ImageLoaderProps {
   width?: number;
   height?: number;
