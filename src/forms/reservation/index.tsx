@@ -1,4 +1,3 @@
-// src/forms/reservation/index.tsx
 'use client';
 import 'react-datetime-picker/dist/DateTimePicker.css';
 import 'react-calendar/dist/Calendar.css';

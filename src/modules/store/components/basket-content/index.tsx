@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ButtonVariant, PrimaryButton } from '@/components/common/button/primary';
+import { ImageLoader } from '@/components/image-loader';
 import { useOutsideClick } from '@/hooks/use-outside-click';
 import { useStore } from '@/modules/store/context/basket';
 
@@ -25,7 +26,13 @@ export function BasketContent({ onClose }: Readonly<{ onClose: () => void }>) {
     <div className={styles.contentWrapper} ref={ref}>
       {basket?.map(({ product, count }) => (
         <div key={product.id} className={styles.basketItem}>
-          <img width={300} height={300} src={product.image} alt={product.name} className={styles.productImage} />
+          <ImageLoader
+            width={300}
+            height={300}
+            src={product.image}
+            alt={product.name}
+            className={styles.productImage}
+          />
           <div className={styles.productDetails}>
             <h3>{product.name}</h3>
             <p>{product.description}</p>

@@ -14,20 +14,6 @@ export const enum LoaderVariant {
   FullScreen = 'FullScreen',
 }
 
-export const LoaderIcon = () => {
-  return (
-    <div className={styles.ldsRingSmallWrapper}>
-      <div className={styles.ldsRingSmall}>
-        <div></div>
-        <div></div>
-
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-  );
-};
-
 export function Loader({ children, isLoading, variant = LoaderVariant.Regular }: Readonly<LoaderProps>) {
   const wrapperStyles = classNames({
     [styles.wrapper]: variant === LoaderVariant.Regular,
