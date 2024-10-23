@@ -17,9 +17,9 @@ export const admissionsService = {
     }
   },
 
-  consultation: async (data: ConsultationApplication) => {
+  contact: async (data: ConsultationApplication) => {
     try {
-      const response = await axiosInstance.post('/admissions/consultation/', data);
+      const response = await axiosInstance.post('/admissions/contact/', data);
       return response.data;
     } catch (error) {
       return { error: getErrorMessage(error) };

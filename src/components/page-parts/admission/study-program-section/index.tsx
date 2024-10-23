@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 
 import { HeaderText } from '@/components/header-text';
@@ -37,7 +39,12 @@ export function StudyProgramSection() {
           {studyPrograms.map(({ id, img }) => (
             <ProgramOptionRenderer
               key={id}
-              data={{ img, header: t(`${id}.header`), description: t(`${id}.description`) }}
+              data={{
+                img,
+                header: t(`${id}.header`),
+                description: t(`${id}.description`),
+                extraDescription: t(`${id}.read-more`),
+              }}
             />
           ))}
         </div>

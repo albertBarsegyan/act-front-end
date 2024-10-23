@@ -9,6 +9,8 @@
       "name-label": "First Name *",
       "last-name-label": "Last Name *",
       "phone-label": "Phone number *",
+      "email-placeholder": "Email",
+      "email-label": "Email *",
       "date-label": "Consultation Date *",
       "message-label": "Message *",
       "submit-button-text": "Send Message",
