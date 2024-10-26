@@ -61,6 +61,10 @@
     border-bottom: 0.5px solid white;
 }
 
+.dateTimePicker :global(.react-datetime-picker__button__icon) {
+    stroke: white;
+}
+
 @media screen and  (max-width: 920px) {
     .formHeader {
         font-size: 1.5rem;

@@ -23,7 +23,7 @@
 
 .linksWrapper {
     display: grid;
-    grid-template-columns: repeat(7, minmax(120px, 1fr));
+    grid-template-columns: repeat(7, minmax(130px, 1fr));
     align-items: center;
     justify-items: center;
 }
@@ -38,7 +38,6 @@
 }
 
 .buttonsWrapper {
-    margin-left: 40px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -89,5 +88,6 @@
         justify-content: flex-start;
         align-items: flex-start;
         gap: 36px 0;
+        margin-left: 40px;
     }
 }

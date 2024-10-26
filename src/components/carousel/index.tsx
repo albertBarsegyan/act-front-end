@@ -1,6 +1,8 @@
 import classNames from 'classnames';
 import React, { PropsWithChildren, useEffect, useState } from 'react';
 
+import { LeftIcon, RightIcon } from '@/components/icons/direction-icons';
+
 import styles from './styles.module.css';
 
 const Carousel = ({ children }: Readonly<PropsWithChildren>) => {
@@ -34,8 +36,12 @@ const Carousel = ({ children }: Readonly<PropsWithChildren>) => {
         })}
       </div>
       <div className={styles.controls}>
-        <button onClick={goToPrev}>&lt;</button>
-        <button onClick={goToNext}>&gt;</button>
+        <button onClick={goToPrev}>
+          <LeftIcon />
+        </button>
+        <button onClick={goToNext}>
+          <RightIcon />
+        </button>
       </div>
       <div className={styles.dots}>
         {Array.from({ length: totalItems }).map((_, index) => (
