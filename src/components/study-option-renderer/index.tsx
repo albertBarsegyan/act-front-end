@@ -25,6 +25,7 @@ export function ProgramOptionRenderer({ data }: Readonly<StudyOptionRendererProp
     provideModalSettings({
       content: <ReadMoreContent data={{ image: img, header, description: extraDescription }} />,
       isShowing: true,
+      variant: 'modal',
       delay: 0,
     });
 
@@ -39,7 +40,11 @@ export function ProgramOptionRenderer({ data }: Readonly<StudyOptionRendererProp
           <p className={styles.studyOptionDescription}>{description}</p>
         </div>
 
-        <PrimaryButton style={{ width: '130px' }} onClick={onReadMoreClick} variant={ButtonVariant.RegularOutline}>
+        <PrimaryButton
+          style={{ width: 'fit-content', background: 'black', color: 'white' }}
+          onClick={onReadMoreClick}
+          variant={ButtonVariant.Regular}
+        >
           {t('read-more-button-title')}
         </PrimaryButton>
       </div>

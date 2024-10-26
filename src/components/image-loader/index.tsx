@@ -5,7 +5,7 @@ import { CSSProperties } from 'react';
 
 import { useIntersection } from '@/hooks/intersection-observer';
 
-import styles from './ImageLoader.module.css';
+import styles from './styles.module.css';
 
 interface ImageLoaderProps {
   width?: number;

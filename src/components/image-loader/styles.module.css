@@ -1,0 +1,13 @@
+.imageLoading {
+    filter: blur(10px);
+    opacity: 0;
+    transition: 0.3s linear;
+    object-fit: cover;
+
+}
+
+.imageSuccess {
+    transition: 0.3s linear;
+    object-fit: cover;
+    opacity: 1;
+}

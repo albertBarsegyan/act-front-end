@@ -1,4 +1,4 @@
-import { BasketIcon } from '@/components/icons/store/basket';
+import { PlusIcon } from '@/components/header-text/plus-icon';
 import { ImageLoader } from '@/components/image-loader';
 import { ProductType } from '@/modules/store/types';
 
@@ -13,12 +13,15 @@ export function Product({ data, onClick }: Readonly<ProductProps>) {
   return (
     <div className={styles.productContainer}>
       <ImageLoader src={data.image} alt={data.name} className={styles.productImage} />
-      <h2 className={styles.productName}>{data.name}</h2>
-      <p className={styles.productPrice}>${data.price.toFixed(2)}</p>
-      <p className={styles.productDescription}>{data.description}</p>
+      <div className={styles.productTextContent}>
+        <h2 className={styles.productName}>{data.name}</h2>
+        <div className={styles.line}></div>
+        <p className={styles.productPrice}>${data.price.toFixed(2)}</p>
+      </div>
+
       <button className={styles.buyButton} onClick={() => onClick(data)}>
         <div className={styles.align}>
-          To basket <BasketIcon />
+          <PlusIcon />
         </div>
       </button>
     </div>

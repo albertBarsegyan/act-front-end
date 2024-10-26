@@ -8,6 +8,7 @@
     background: rgba(0, 0, 0, 0.7);
     z-index: 99999;
     backdrop-filter: blur(5px);
+    overflow-y: auto;
 }
 
 
@@ -33,6 +34,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 80px;
 }
 
 .modalEnterActive {
@@ -46,6 +48,7 @@
 @media screen and (max-width: 920px) {
     .contentWrapper {
         top: 120px;
+        padding-bottom: 40px;
     }
 
     .drawerModal {

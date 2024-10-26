@@ -36,9 +36,9 @@ export function BenefitRenderer({ data }: Readonly<BenefitRendererProps>) {
         <p className={styles.title}>{title}</p>
       </div>
       <PrimaryButton
-        style={{ width: '130px', margin: '0 auto' }}
+        style={{ width: 'fit-content', margin: '0 auto', background: 'black', color: 'white' }}
         onClick={onReadMoreClick}
-        variant={ButtonVariant.RegularOutline}
+        variant={ButtonVariant.Regular}
       >
         {t('read-more-button-title')}
       </PrimaryButton>
