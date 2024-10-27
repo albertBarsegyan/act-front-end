@@ -1,0 +1,29 @@
+.introSectionWrapper {
+    margin-top: 30px;
+    margin-bottom: 86px;
+}
+
+.description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: 8px;
+    margin-bottom: 24px;
+    max-width: 100%;
+}
+
+.descriptionFull {
+    composes: description;
+    max-width: 100%;
+    margin-top: 32px;
+}
+
+.imageWrapper {
+    height: 526px;
+    position: relative;
+}
+
+.imageWrapper > img {
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}

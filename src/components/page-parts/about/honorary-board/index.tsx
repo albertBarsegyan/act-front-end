@@ -1,0 +1,44 @@
+import { useTranslations } from 'next-intl';
+
+import { HeaderText } from '@/components/header-text';
+import { PersonInfo } from '@/components/page-parts/about/person-info';
+
+import styles from './styles.module.css';
+
+const honoraryBoardMembers = [
+  {
+    id: 'honorary-member-1',
+    image: '/static/img/about-us/members/board-member.jpeg',
+  },
+  {
+    id: 'honorary-member-2',
+    image: '/static/img/about-us/members/board-member.jpeg',
+  },
+];
+
+export function HonoraryBoard() {
+  const translation = useTranslations('about');
+
+  const members = honoraryBoardMembers.map(({ id, image }) => {
+    return {
+      id,
+      image,
+      name: translation(`${id}.name`),
+      position: translation(`${id}.position`),
+      description: translation(`${id}.description`),
+    };
+  });
+
+  return (
+    <div>
+      <HeaderText className={styles.honoraryHeader} color="black">
+        {translation('honorary-header')}
+      </HeaderText>
+      <div className={styles.membersWrapper}>
+        {members.map((member) => {
+          return <PersonInfo data={member} key={member.id} />;
+        })}
+      </div>
+    </div>
+  );
+}
