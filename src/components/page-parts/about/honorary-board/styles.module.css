@@ -1,0 +1,16 @@
+.membersWrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+}
+
+.honoraryHeader {
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+    .membersWrapper {
+        flex-direction: column;
+    }
+}

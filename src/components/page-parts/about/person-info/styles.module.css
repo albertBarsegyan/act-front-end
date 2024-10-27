@@ -1,0 +1,64 @@
+.wrapper {
+    padding: 8px;
+    background: white;
+    gap: 28px;
+    display: flex;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+    width: 100%;
+}
+
+.imageWrapper {
+    width: 100%;
+    max-width: 300px;
+    flex-shrink: 0;
+}
+
+.image {
+    width: 100%;
+    max-width: inherit;
+}
+
+.header {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 8px;
+}
+
+.position {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 8px
+}
+
+.description {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.96px;
+    max-width: 500px;
+}
+
+@media screen and (max-width: 600px) {
+    .imageWrapper {
+        max-width: 100%;
+    }
+
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .imageWrapper,
+    .textContent {
+        width: 100%
+    }
+
+    .image {
+        object-position: top;
+    }
+
+    .description {
+        max-width: 400px;
+    }
+}
