@@ -5,6 +5,7 @@ import { useParams, usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
 import { LinkButton } from '@/components/common/button/link';
+import { LanguageSelector } from '@/components/footer/language-selector';
 import { ActLogo } from '@/components/icons/act-logo';
 import { TargetIcon } from '@/components/icons/contact-icon';
 import { MailIcon } from '@/components/icons/mail-icon';
@@ -62,6 +63,10 @@ export function Footer() {
             <Link href={routePath.getHome()}>
               <ActLogo />
             </Link>
+
+            <div style={{ marginTop: '16px' }}>
+              <LanguageSelector />
+            </div>
 
             <SocialMedia />
 

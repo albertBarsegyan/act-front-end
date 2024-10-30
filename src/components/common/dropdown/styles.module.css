@@ -1,0 +1,27 @@
+.dropdownWrapper {
+    position: relative;
+}
+
+.buttonWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    color: white;
+}
+
+.dropdownListWrapper {
+    top: calc(100% + 16px);
+    width: fit-content;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px 0;
+    z-index: 99;
+    background: white;
+    padding: 8px;
+    border-radius: 4px;
+}
