@@ -4,7 +4,6 @@
     width: 100%;
     box-sizing: border-box;
     border-radius: var(--border-radius);
-    max-width: 320px;
 }
 
 .memberWrapper img {
@@ -41,23 +40,32 @@
 
 .memberImage {
     width: 100%;
-    height: 100%;
+    height: 390px;
     object-fit: cover;
     margin-bottom: 8px;
+    object-position: top;
 }
 
 .memberListWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
 }
 
-
 @media screen and (max-width: 920px) {
+    .gridContainer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .memberListWrapper {
         display: flex;
         flex-direction: row;
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .gridContainer {
+        grid-template-columns: 1fr;
     }
 }

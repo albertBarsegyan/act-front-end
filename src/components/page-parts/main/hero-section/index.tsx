@@ -23,7 +23,8 @@ export function HeroSection() {
 
   return (
     <div className={styles.wrapper}>
-      <SectionLayout>
+      <div className={styles.gradientEffect} />
+      <SectionLayout className={styles.sectionLayout}>
         <h1 className={styles.heroHeader}>{t('header-title')}</h1>
         <span className={styles.founders}>{t('header-founders-name')}</span>
         <p className={styles.heroDescription}>{t('header-description')}</p>
@@ -33,8 +34,6 @@ export function HeroSection() {
           <PrimaryButton onClick={onClickAction('tour')}>{t('college-tour-button-text')}</PrimaryButton>
         </div>
       </SectionLayout>
-
-      <div className={styles.gradientEffect} />
     </div>
   );
 }
