@@ -157,7 +157,7 @@ export function StoreContent() {
   const handleClick = (product: ProductType) => addToBasket(product);
 
   return (
-    <SectionLayout>
+    <SectionLayout className={styles.contentWrapper}>
       <div className={styles.layout}>
         {products.map((product) => (
           <Product key={product.id} onClick={handleClick} data={product} />
