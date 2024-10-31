@@ -14,17 +14,24 @@ export function StoreHeader() {
   const [isBasketOpen, setIsBasketOpen] = useState(false);
   const { basketItemsCount } = useStore();
 
+  const onIconClick = () => {
+    console.log('click');
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   const onBasketClick = () => setIsBasketOpen((prev) => !prev);
 
   return (
-    <SectionLayout>
-      <div className={styles.storeLogoWrapper}>
-        <PrimaryButton variant={ButtonVariant.TextPrimary}>
+    <SectionLayout className={styles.sectionWrapper}>
+      <div className={styles.basketWrapper}>
+        <PrimaryButton type="button" variant={ButtonVariant.TextPrimary} onClick={onIconClick}>
           <StoreLogo />
         </PrimaryButton>
-      </div>
-      <div className={styles.basketWrapper}>
-        <PrimaryButton onClick={onBasketClick} variant={ButtonVariant.TextPrimary}>
+
+        <PrimaryButton onClick={onBasketClick} className={styles.storeLogoWrapper} variant={ButtonVariant.TextPrimary}>
           <BasketBlock itemsCount={basketItemsCount} />
         </PrimaryButton>
 
