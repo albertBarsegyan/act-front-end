@@ -58,6 +58,19 @@
     margin-bottom: 15px;
 }
 
+.workingHours {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.workingHoursDark {
+    composes: workingHours;
+    color: #1C222A;
+}
+
 .contactInfoItemDark {
     composes: contactInfoItem;
     color: #1C222A;

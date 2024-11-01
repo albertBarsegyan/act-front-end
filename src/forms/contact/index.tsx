@@ -44,9 +44,9 @@ export function ContactForm() {
   });
 
   const onSubmit = async (data: ConsultationApplication) => {
-    const res = await admissionsService.contact(data);
+    const { error } = await admissionsService.contact(data);
 
-    const isSuccess = !res?.error;
+    const isSuccess = !error;
 
     const description = commonTranslation(
       isSuccess ? 'contact-form-success-description' : 'contact-form-error-description'

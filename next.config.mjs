@@ -9,6 +9,9 @@ const nextConfig = {
       {
         hostname: 'via.placeholder.com',
       },
+      {
+        hostname: 'act-portal-media.s3.amazonaws.com',
+      },
     ],
   },
 };

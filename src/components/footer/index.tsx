@@ -17,14 +17,29 @@ import { getIsActive, routePath } from '@/utils/route';
 
 import styles from './styles.module.css';
 
-export function ContactDetails({ isDark = false }: Readonly<{ isDark?: boolean }>) {
+export function ContactDetails({
+  isDark = false,
+  showWorkingHours = false,
+  className,
+}: Readonly<{
+  className?: string;
+  isDark?: boolean;
+  showWorkingHours?: boolean;
+}>) {
   const contactInfoItemStyle = classNames({
     [styles.contactInfoItem]: !isDark,
     [styles.contactInfoItemDark]: isDark,
   });
 
+  const workingHoursStyle = classNames({
+    [styles.workingHours]: !isDark,
+    [styles.workingHoursDark]: isDark,
+  });
+
   return (
-    <div>
+    <div className={className}>
+      {showWorkingHours && <div className={workingHoursStyle}>{ContactInformation.workingHours}</div>}
+
       <div className={contactInfoItemStyle}>
         <div className={styles.iconShape}>
           <PhoneIcon />

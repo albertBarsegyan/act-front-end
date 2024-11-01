@@ -1,0 +1,113 @@
+.checkoutContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.cartSection, .summarySection, .pickupSection, .shippingSection {
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    background-color: #C8C9CB;
+    border: none;
+}
+
+.cartSection h2, .pickupSection h3, .shippingSection h3 {
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+.cartItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.productImage {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+}
+
+.productDetails {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quantityControl button {
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
+}
+
+.subtotal {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.summaryDetails {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.checkoutButton {
+    width: 100%;
+    padding: 12px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.paymentMethods {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.pickupSection .inputGroup, .shippingSection .inputGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.inputField, .notesField {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+.notesField {
+    grid-column: 1 / -1;
+    resize: vertical;
+    height: 80px;
+}
+
+.contactInfo p, .summarySection p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.applyButton {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
