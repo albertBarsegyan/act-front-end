@@ -19,13 +19,11 @@ export function DirectorSection() {
     name: translation(`${id}.name`),
     position: translation(`${id}.position`),
     description: translation(`${id}.description`),
+    role: translation('director-header'),
   };
 
   return (
     <div className={styles.directorSectionWrapper}>
-      <HeaderText className={styles.sectionHeader} color="black">
-        {translation('director-header')}
-      </HeaderText>
 
       <PersonInfo className={styles.collegeDirector} data={directorInfo} />
     </div>

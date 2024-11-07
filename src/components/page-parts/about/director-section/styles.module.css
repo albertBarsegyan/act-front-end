@@ -1,14 +1,14 @@
 .directorSectionWrapper {
-    margin-top: 60px;
-    width: 50%;
+  margin-top: 60px;
+  width: calc(50% - 20px);
 }
 
 .sectionHeader {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 1200px) {
-    .directorSectionWrapper {
-        width: 100%;
-    }
+  .directorSectionWrapper {
+    width: 100%;
+  }
 }
