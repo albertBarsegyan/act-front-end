@@ -1,68 +1,89 @@
 .wrapper {
-    padding: 8px;
-    background: white;
-    gap: 28px;
-    display: flex;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    align-items: flex-start;
-    width: 100%;
-    height: 222px;
+  padding: 8px;
+  background: white;
+  gap: 28px;
+  display: flex;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  width: 100%;
+  height: 222px;
+  transition: box-shadow 0.3s;
+}
+.wrapper:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.wrapper:hover .image {
+  transform: scale(1.3);
 }
 
 .imageWrapper {
-    flex-shrink: 0;
+  flex-shrink: 0;
+  object-position: top center;
+  overflow: hidden;
 }
 
 .image {
-    width: 100%;
-    max-width: 164px;
-    height: 207px;
+  width: 100%;
+  max-width: 164px;
+  height: 207px;
 }
 
 .header {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 32px;
-    margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  margin-bottom: 8px;
+  color: #1c222a;
 }
 
 .position {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-    margin-bottom: 8px
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 8px;
+  color: #797979;
 }
 
 .description {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 18.96px;
-    max-width: 500px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18.96px;
+  max-width: 500px;
+  color: #1c222a;
+}
+
+.role {
+  font-size: 11px;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 19px;
+  background-color: black;
+  display: inline-block;
+  margin-bottom: 8px;
 }
 
 @media screen and (max-width: 600px) {
-    .imageWrapper {
-        max-width: 100%;
-    }
+  .imageWrapper {
+    max-width: 100%;
+  }
 
-    .wrapper {
-        flex-direction: column;
-        height: auto;
+  .wrapper {
+    flex-direction: column;
+    height: auto;
+  }
 
-    }
+  .imageWrapper,
+  .textContent {
+    width: 100%;
+  }
 
-    .imageWrapper,
-    .textContent {
-        width: 100%
-    }
+  .image {
+    object-position: top;
+    max-width: 100%;
+    height: 400px;
+  }
 
-    .image {
-        object-position: top;
-        max-width: 100%;
-        height: 400px;
-    }
-
-    .description {
-        max-width: 400px;
-    }
+  .description {
+    max-width: 400px;
+  }
 }
