@@ -29,7 +29,6 @@
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-
 }
 
 .cartItem {
@@ -51,7 +50,6 @@
     display: flex;
     justify-content: flex-end;
     min-width: 80px;
-
 }
 
 .productImage {

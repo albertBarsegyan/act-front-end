@@ -11,7 +11,7 @@ import styles from './styles.module.css';
 
 export const Checkout = () => {
   const { basket } = useStore();
-  console.log('basket', basket);
+
   return (
     <SectionLayout className={styles.sectionStyles}>
       <div className={styles.checkoutContainer}>
