@@ -1,14 +1,17 @@
 import { ImageLoader } from '@/components/image-loader';
-import styles from '@/modules/store/components/checkout/styles.module.css';
 import { ProductType } from '@/modules/store/types';
 import { calculateTotalItemPrice } from '@/utils/price';
+
+import styles from './styles.module.css';
 
 interface ProductItemProps {
   product: ProductType;
   count: number;
+  addToBasket: (product: ProductType) => void;
+  removeFromBasket: (product: ProductType) => void;
 }
 
-export function ProductItem({ product, count }: Readonly<ProductItemProps>) {
+export function CheckoutProduct({ product, count, addToBasket, removeFromBasket }: Readonly<ProductItemProps>) {
   return (
     <div className={styles.cartItem}>
       <ImageLoader src={product.image as string} alt={product.name} className={styles.productImage} />
@@ -19,9 +22,9 @@ export function ProductItem({ product, count }: Readonly<ProductItemProps>) {
 
         <div className={styles.rightSide}>
           <div className={styles.quantityControl}>
-            <button>-</button>
+            <button onClick={() => removeFromBasket(product)}>-</button>
             <span>{count}</span>
-            <button>+</button>
+            <button onClick={() => addToBasket(product)}>+</button>
 
             <p>${product.price}</p>
           </div>
