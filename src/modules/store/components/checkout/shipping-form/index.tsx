@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 
 import { ButtonVariant, PrimaryButton } from '@/components/common/button/primary';
 import { ErrorText } from '@/components/common/error-text/error-text';
-import { ShippingFormData, shippingSchema } from '@/modules/store/components/checkout-shipping-form/schema';
+import { ShippingFormData, shippingSchema } from '@/modules/store/components/checkout/shipping-form/schema';
 
 import styles from './styles.module.css';
 

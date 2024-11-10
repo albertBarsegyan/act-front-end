@@ -7,7 +7,7 @@ import z from 'zod';
 import { ButtonVariant, PrimaryButton } from '@/components/common/button/primary';
 import { ErrorText } from '@/components/common/error-text/error-text';
 import { ContactDetails } from '@/components/footer';
-import { CheckoutPickupFormFields } from '@/modules/store/components/checkout-pickup-form/type';
+import { CheckoutPickupFormFields } from '@/modules/store/components/checkout/pickup-form/type';
 
 import styles from './styles.module.css';
 
