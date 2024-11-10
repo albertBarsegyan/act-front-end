@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import { ButtonVariant, PrimaryButton } from '@/components/common/button/primary';
 import { StoreLogo } from '@/components/icons/store/logo';
@@ -11,10 +12,12 @@ import { routePath } from '@/utils/route';
 import styles from './styles.module.css';
 
 export function StoreHeader() {
+  const router = useRouter();
   const { basketItemsCount } = useStore();
 
   const onIconClick = () => {
-    console.log('click');
+    router.push(routePath.getStore());
+
     window.scrollTo({
       top: 0,
       behavior: 'smooth',

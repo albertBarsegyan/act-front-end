@@ -1,7 +1,6 @@
 import { WentWrongContent } from '@/components/went-wrong-content';
 import { StoreHeader } from '@/modules/store/components/header';
 import { StoreContent } from '@/modules/store/components/store-content';
-import { StoreProvider } from '@/modules/store/context/basket';
 import { storeService } from '@/modules/store/services';
 
 export async function MainLayout() {
@@ -12,9 +11,9 @@ export async function MainLayout() {
   }
 
   return (
-    <StoreProvider>
+    <>
       <StoreHeader />
       <StoreContent products={data} />
-    </StoreProvider>
+    </>
   );
 }

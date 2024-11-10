@@ -9,7 +9,11 @@ import { ShippingFormData, shippingSchema } from '@/modules/store/components/che
 
 import styles from './styles.module.css';
 
-export const CheckoutShippingForm = () => {
+interface CheckoutShippingFormProps {
+  isDisabled: boolean;
+}
+
+export const CheckoutShippingForm = ({ isDisabled }: CheckoutShippingFormProps) => {
   const {
     register,
     formState: { errors },
@@ -30,7 +34,13 @@ export const CheckoutShippingForm = () => {
           <label htmlFor="firstName" className={styles.inputLabel}>
             First Name *
           </label>
-          <input type="text" placeholder="First Name" className={styles.inputField} {...register('firstName')} />
+          <input
+            type="text"
+            disabled={isDisabled}
+            placeholder="First Name"
+            className={styles.inputField}
+            {...register('firstName')}
+          />
           {errors.firstName && <ErrorText variant="text" errorMessage={errors.firstName.message} />}
         </div>
 
@@ -38,7 +48,13 @@ export const CheckoutShippingForm = () => {
           <label htmlFor="lastName" className={styles.inputLabel}>
             Last Name *
           </label>
-          <input type="text" placeholder="Last Name" className={styles.inputField} {...register('lastName')} />
+          <input
+            type="text"
+            placeholder="Last Name"
+            disabled={isDisabled}
+            className={styles.inputField}
+            {...register('lastName')}
+          />
           {errors.lastName && <ErrorText variant="text" errorMessage={errors.lastName.message} />}
         </div>
       </div>
@@ -47,7 +63,13 @@ export const CheckoutShippingForm = () => {
         <label htmlFor="Address" className={styles.inputLabel}>
           Address
         </label>
-        <input type="text" placeholder="Address" className={styles.inputField} {...register('address')} />
+        <input
+          type="text"
+          disabled={isDisabled}
+          placeholder="Address"
+          className={styles.inputField}
+          {...register('address')}
+        />
         {errors.address && <ErrorText variant="text" errorMessage={errors.address.message} />}
       </div>
 
@@ -55,7 +77,13 @@ export const CheckoutShippingForm = () => {
         <label htmlFor="City" className={styles.inputLabel}>
           Town / City *
         </label>
-        <input type="text" placeholder="Town / City" className={styles.inputField} {...register('city')} />
+        <input
+          type="text"
+          placeholder="Town / City"
+          disabled={isDisabled}
+          className={styles.inputField}
+          {...register('city')}
+        />
         {errors.city && <ErrorText variant="text" errorMessage={errors.city.message} />}
       </div>
 
@@ -64,14 +92,26 @@ export const CheckoutShippingForm = () => {
           <label htmlFor="Phone" className={styles.inputLabel}>
             Phone
           </label>
-          <input type="text" placeholder="Phone (Optional)" className={styles.inputField} {...register('phone')} />
+          <input
+            type="text"
+            disabled={isDisabled}
+            placeholder="Phone (Optional)"
+            className={styles.inputField}
+            {...register('phone')}
+          />
           {errors.phone && <ErrorText variant="text" errorMessage={errors.phone.message} />}
         </div>
         <div className={styles.inputWrapper}>
           <label htmlFor="email" className={styles.inputLabel}>
             Email Address *
           </label>
-          <input type="email" placeholder="Email Address" className={styles.inputField} {...register('email')} />
+          <input
+            type="email"
+            disabled={isDisabled}
+            placeholder="Email Address"
+            className={styles.inputField}
+            {...register('email')}
+          />
           {errors.email && <ErrorText variant="text" errorMessage={errors.email.message} />}
         </div>
       </div>
@@ -80,14 +120,15 @@ export const CheckoutShippingForm = () => {
         <label htmlFor="notes" className={styles.inputLabel}>
           Order Notes
         </label>
-        <textarea placeholder="Order notes (Optional)" className={styles.inputField} {...register('notes')}></textarea>
+        <textarea
+          disabled={isDisabled}
+          placeholder="Order notes (Optional)"
+          className={styles.inputField}
+          {...register('notes')}
+        ></textarea>
       </div>
 
-      <PrimaryButton
-        style={{ width: 'fit-content', margin: '0 auto', background: 'black', color: 'white', marginTop: '16px' }}
-        variant={ButtonVariant.Regular}
-        type="submit"
-      >
+      <PrimaryButton className={styles.submitButton} variant={ButtonVariant.Regular} active={!isDisabled} type="submit">
         Submit
       </PrimaryButton>
     </form>
