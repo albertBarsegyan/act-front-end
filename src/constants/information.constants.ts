@@ -3,4 +3,5 @@ export const ContactInformation = {
   email: 'info@gitc.am',
   place1: '',
   place2: 'Isahak Gasparyan Street 2',
+  workingHours: 'Monday - Saturday 9AM - 6PM',
 };

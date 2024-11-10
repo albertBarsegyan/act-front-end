@@ -6,6 +6,7 @@ export const routePath = {
   getAboutUs: () => '/about',
   getContactUs: () => '/contact',
   getStore: () => '/store',
+  getCheckout: () => '/store/checkout',
 };
 
 export const getIsActive = ({ pathname, path, locale }: { pathname: string; path: string; locale: string }) => {

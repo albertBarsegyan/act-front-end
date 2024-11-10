@@ -1,17 +1,16 @@
 'use client';
-import { useState } from 'react';
+import Link from 'next/link';
 
 import { ButtonVariant, PrimaryButton } from '@/components/common/button/primary';
 import { StoreLogo } from '@/components/icons/store/logo';
 import { SectionLayout } from '@/components/layout/section/section-layout';
 import { BasketBlock } from '@/modules/store/components/basket-block';
-import { BasketContent } from '@/modules/store/components/basket-content';
 import { useStore } from '@/modules/store/context/basket';
+import { routePath } from '@/utils/route';
 
 import styles from './styles.module.css';
 
 export function StoreHeader() {
-  const [isBasketOpen, setIsBasketOpen] = useState(false);
   const { basketItemsCount } = useStore();
 
   const onIconClick = () => {
@@ -22,8 +21,6 @@ export function StoreHeader() {
     });
   };
 
-  const onBasketClick = () => setIsBasketOpen((prev) => !prev);
-
   return (
     <SectionLayout className={styles.sectionWrapper}>
       <div className={styles.basketWrapper}>
@@ -31,11 +28,9 @@ export function StoreHeader() {
           <StoreLogo />
         </PrimaryButton>
 
-        <PrimaryButton onClick={onBasketClick} className={styles.storeLogoWrapper} variant={ButtonVariant.TextPrimary}>
+        <Link href={routePath.getCheckout()} className={styles.storeLogoWrapper}>
           <BasketBlock itemsCount={basketItemsCount} />
-        </PrimaryButton>
-
-        {isBasketOpen && <BasketContent onClose={onBasketClick} />}
+        </Link>
       </div>
     </SectionLayout>
   );

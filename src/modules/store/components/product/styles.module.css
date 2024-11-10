@@ -12,8 +12,17 @@
 .productTextContent {
     display: flex;
     align-items: center;
-    margin: 16px 8px 34px;
+    margin: 16px 8px 16px;
 }
+
+.quantityWrapper {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin: 0 8px 16px;
+    align-items: center;
+}
+
 
 .productName {
     font-size: 1rem;
@@ -43,9 +52,21 @@
     border: none;
     cursor: pointer;
     margin-bottom: 16px;
+    color: black;
+    transition: color 0.1s;
+}
+
+.buyButton:active {
+    color: #d88f3f;
+}
+
+.buyButton:disabled {
+    cursor: not-allowed;
+    color: #888;
 }
 
 .align {
+    color: inherit;
     display: flex;
     justify-content: center;
     align-items: center;

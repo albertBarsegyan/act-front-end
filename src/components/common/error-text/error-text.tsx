@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { FieldError } from 'react-hook-form';
 
 import styles from './styles.module.css';
 
@@ -6,7 +7,7 @@ export function ErrorText({
   errorMessage,
   variant = 'fill',
 }: Readonly<{
-  errorMessage?: string;
+  errorMessage?: FieldError | string;
   variant?: 'text' | 'fill';
 }>) {
   if (!errorMessage) {
@@ -20,7 +21,7 @@ export function ErrorText({
         [styles.error]: variant === 'fill',
       })}
     >
-      {errorMessage}
+      {String(errorMessage)}
     </p>
   );
 }

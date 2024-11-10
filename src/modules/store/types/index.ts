@@ -1,9 +1,9 @@
 export interface ProductType {
-  id: string;
+  readonly id: number;
   name: string;
-  price: number;
-  image: string;
-  description: string;
+  readonly image?: string;
+  price: string;
+  quantity?: number;
 }
 
 export interface Order {
