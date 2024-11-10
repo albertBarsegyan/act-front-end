@@ -17,7 +17,11 @@ const checkoutPickupSchema = z.object({
   phone: z.string().optional(),
 });
 
-export const CheckoutPickupForm = () => {
+interface CheckoutPickupFormProps {
+  isDisabled: boolean;
+}
+
+export const CheckoutPickupForm = ({ isDisabled }: CheckoutPickupFormProps) => {
   const {
     register,
     formState: { errors },
@@ -35,28 +39,42 @@ export const CheckoutPickupForm = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.inputGroup}>
         <div className={styles.inputWrapper}>
-          <input type="text" placeholder="First Name" className={styles.inputField} {...register('firstName')} />
+          <input
+            type="text"
+            placeholder="First Name"
+            disabled={isDisabled}
+            className={styles.inputField}
+            {...register('firstName')}
+          />
           {errors.firstName && <ErrorText variant="text" errorMessage={errors.firstName.message} />}
         </div>
 
         <div className={styles.inputWrapper}>
-          <input type="text" placeholder="Last Name" className={styles.inputField} {...register('lastName')} />
+          <input
+            type="text"
+            disabled={isDisabled}
+            placeholder="Last Name"
+            className={styles.inputField}
+            {...register('lastName')}
+          />
           {errors.lastName && <ErrorText variant="text" errorMessage={errors.lastName.message} />}
         </div>
 
         <div className={styles.inputWrapper}>
-          <input type="text" placeholder="Phone (Optional)" className={styles.inputField} {...register('phone')} />
+          <input
+            type="text"
+            disabled={isDisabled}
+            placeholder="Phone (Optional)"
+            className={styles.inputField}
+            {...register('phone')}
+          />
           {errors.phone && <ErrorText variant="text" errorMessage={errors.phone.message} />}
         </div>
       </div>
 
       <ContactDetails className={styles.contactDetails} showWorkingHours isDark />
 
-      <PrimaryButton
-        style={{ width: 'fit-content', margin: '0 auto', background: 'black', color: 'white' }}
-        variant={ButtonVariant.Regular}
-        type="submit"
-      >
+      <PrimaryButton className={styles.submitButton} variant={ButtonVariant.Regular} active={!isDisabled} type="submit">
         Submit
       </PrimaryButton>
     </form>

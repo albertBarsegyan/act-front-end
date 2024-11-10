@@ -1,9 +1,10 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import React, { createContext, ReactNode, useContext, useMemo, useReducer } from 'react';
 
 import { localStorageConstants } from '@/modules/store/constants/local-storage';
 import { BasketItem, StoreAction, StoreState } from '@/modules/store/context/basket/type';
-import { addProductToBasketUtil, removeProductFromBasketUtil } from '@/modules/store/context/basket/util';
+import { addProductToBasketUtil, removeProductToBasketUtil } from '@/modules/store/context/basket/util';
 import { ProductType } from '@/modules/store/types';
 import { localStorageUtils } from '@/utils/local-storage';
 
@@ -37,7 +38,7 @@ const storeReducer = (state: StoreState, action: StoreAction): StoreState => {
       return updatedBasketData;
     }
     case 'REMOVE_FROM_BASKET': {
-      const updatedBasket = removeProductFromBasketUtil(state.basket, action.payload);
+      const updatedBasket = removeProductToBasketUtil(state.basket, action.payload);
 
       const updatedBasketData = { basket: updatedBasket };
 
@@ -50,9 +51,9 @@ const storeReducer = (state: StoreState, action: StoreAction): StoreState => {
   }
 };
 
-const localStorageBasket = localStorageUtils.getItem<BasketItem[]>(localStorageConstants.BASKET) ?? initialState;
-
 export const StoreProvider = ({ children }: { children: ReactNode }) => {
+  const router = useRouter();
+  const localStorageBasket = localStorageUtils.getItem<BasketItem[]>(localStorageConstants.BASKET) ?? initialState;
   const [{ basket }, dispatch] = useReducer(storeReducer, { basket: localStorageBasket });
 
   const basketItemsCount = useMemo(() => basket.reduce((acc, item) => acc + item.count, 0), [basket]);
@@ -68,7 +69,7 @@ export const StoreProvider = ({ children }: { children: ReactNode }) => {
       removeFromBasket,
       basketItemsCount,
     }),
-    [basket, addToBasket, removeFromBasket]
+    [basket, addToBasket, removeFromBasket, router, basketItemsCount]
   );
 
   return <StoreContext.Provider value={contextDataMemo}>{children}</StoreContext.Provider>;

@@ -43,6 +43,7 @@
 
 .checkoutButton:disabled {
     background-color: #ccc;
+    cursor: not-allowed;
 }
 
 .securePayments > span {
