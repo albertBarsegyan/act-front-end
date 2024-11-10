@@ -3,6 +3,7 @@
     --primary-color-hover: #d88f3f;
     --primary-color: black;
     --text-color-light: white;
+    --text-color-light-opacity: rgba(255, 255, 255, 0.597);
     --text-color-dark: black;
     --light-bg-color: #F0EEEE;
     --text-color-lighter: #1C222A;

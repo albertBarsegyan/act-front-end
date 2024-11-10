@@ -1,29 +1,48 @@
 .introSectionWrapper {
-    margin-top: 30px;
-    margin-bottom: 86px;
+  margin-top: 30px;
+  margin-bottom: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
 }
 
 .description {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 26px;
-    margin-top: 8px;
-    margin-bottom: 24px;
-    max-width: 100%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  margin-top: 8px;
+  margin-bottom: 24px;
+  max-width: 100%;
+  padding: 8px;
 }
 
 .descriptionFull {
-    composes: description;
-    max-width: 100%;
-    margin-top: 32px;
+  composes: description;
+  max-width: 100%;
+  margin-top: 32px;
 }
 
 .imageWrapper {
-    height: 526px;
-    position: relative;
+  position: relative;
+  overflow: hidden;
+  margin-right: 20px;
+  min-width: 50%;
+  aspect-ratio: 25/20;
 }
 
 .imageWrapper > img {
-    object-fit: cover;
-    border-radius: var(--border-radius);
+  object-fit: cover;
+  object-position: bottom center;
+  border-radius: var(--border-radius);
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+.introSectionWrapper:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.introSectionWrapper:hover .imageWrapper > img {
+  transform: scale(1.2);
 }

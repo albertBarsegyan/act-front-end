@@ -26,14 +26,12 @@ export function HonoraryBoard() {
       name: translation(`${id}.name`),
       position: translation(`${id}.position`),
       description: translation(`${id}.description`),
+      role: translation('honorary-header'),
     };
   });
 
   return (
     <div>
-      <HeaderText className={styles.honoraryHeader} color="black">
-        {translation('honorary-header')}
-      </HeaderText>
       <div className={styles.membersWrapper}>
         {members.map((member) => {
           return <PersonInfo data={member} key={member.id} />;
