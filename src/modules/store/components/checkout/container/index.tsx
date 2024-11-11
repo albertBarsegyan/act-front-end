@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 
+import Checkbox from '@/components/common/checkbox';
 import { SectionLayout } from '@/components/layout/section/section-layout';
 import { CardSummary } from '@/modules/store/components/checkout/card';
 import { useStore } from '@/modules/store/context/basket';
@@ -20,7 +21,7 @@ const paymentMethodVariants = {
 };
 
 export const CheckoutContainer = () => {
-  const [paymentMethod, setPaymentMethod] = useState<string | null>(paymentMethodVariants.NOT_SELECTED);
+  const [paymentMethod] = useState<string | null>(paymentMethodVariants.NOT_SELECTED);
   const { basket, addToBasket, removeFromBasket } = useStore();
 
   const productTotalPrice = calculateBasketTotalPrice(basket);
@@ -69,13 +70,20 @@ export const CheckoutContainer = () => {
         </div>
 
         <section className={styles.pickupSection}>
-          <h3>Pick Up</h3>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <h3>Pick Up</h3>
+            <Checkbox checked={paymentMethod === paymentMethodVariants.SHIPPING} onChange={() => {}} />
+          </div>
           <hr className={styles.line} />
           <CheckoutPickupForm isDisabled={paymentMethod !== paymentMethodVariants.PICKUP} />
         </section>
 
         <section className={styles.shippingSection}>
-          <h3>Shipping</h3>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <h3>Shipping</h3>
+            <Checkbox checked={paymentMethod === paymentMethodVariants.SHIPPING} onChange={() => {}} />
+          </div>
+
           <hr className={styles.line} />
           <CheckoutShippingForm isDisabled={paymentMethod !== paymentMethodVariants.SHIPPING} />
         </section>

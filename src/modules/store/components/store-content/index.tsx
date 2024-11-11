@@ -12,7 +12,7 @@ export function StoreContent({ products = [] }: Readonly<{ products: ProductType
   const handleClick = (product: ProductType) => addToBasket(product);
 
   const getProductQuantityInBasket = (id: number) => {
-    const { count = 0 } = basket.find(({ product }) => product.id === id) ?? {};
+    const { count = 0 } = basket.find(({ product = {} }) => product?.id === id) ?? {};
     return count;
   };
 

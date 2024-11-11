@@ -25,25 +25,35 @@ export const addProductToBasketUtil = (basket: BasketItem[], product: ProductTyp
   return updatedBasket;
 };
 
-export const removeProductToBasketUtil = (basket: BasketItem[], product: ProductType) => {
+export const removeProductToBasketUtil = (basket: BasketItem[], product: ProductType): BasketItem[] => {
   let productFound = false;
 
-  const updatedBasket = basket.map((basketItem) => {
+  let updatedBasket = [...basket];
+
+  for (let index = 0; index < basket.length; index++) {
+    const basketItem = basket[index];
+
     if (basketItem.product.id === product.id) {
       productFound = true;
-      return {
-        ...basketItem,
-        count: basketItem.count - 1,
-      };
-    }
-    return basketItem;
-  });
 
-  if (!productFound) {
-    updatedBasket.push({
-      product,
-      count: 1,
-    });
+      const isLastItem = basketItem.count === 1;
+
+      if (isLastItem) {
+        updatedBasket = updatedBasket.filter((item) => item.product.id !== product.id);
+      } else {
+        updatedBasket[index] = {
+          ...basketItem,
+          count: basketItem.count - 1,
+        };
+      }
+
+      if (!productFound) {
+        updatedBasket.push({
+          product,
+          count: 1,
+        });
+      }
+    }
   }
 
   return updatedBasket;
