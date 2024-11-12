@@ -1,87 +1,82 @@
 .wrapper {
-    background: url("/static/img/background/hero-bg.jpg") center center no-repeat;
-    background-size: cover;
-    padding-bottom: 12.5rem;
-    position: relative;
+  background: url('/static/img/background/hero-bg.jpg') center center no-repeat;
+  background-size: cover;
+  padding-bottom: 12.5rem;
+  position: relative;
 }
 
 .sectionLayout {
-    position: relative;
+  position: relative;
 }
 
 .gradientEffect {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-    right: 0;
-    background: linear-gradient(90deg, #000000 21.5%, rgba(0, 0, 0, 0) 100%),
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+  background: linear-gradient(90deg, #000000 21.5%, rgba(0, 0, 0, 0) 100%),
     linear-gradient(360deg, #000000 1.76%, rgba(0, 0, 0, 0) 11.76%);
 }
 
 .heroHeader {
-    font-size: 3.75rem;
-    line-height: 150%;
-    font-weight: 700;
-    color: var(--text-color-light);
-    padding-top: 84px;
+  font-size: 3.75rem;
+  line-height: 150%;
+  font-weight: 700;
+  color: var(--text-color-light);
+  padding-top: 84px;
 }
 
 .founders {
-    display: block;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 32px;
-    text-align: left;
-    color: #FFFFFF;
-    margin-bottom: 10px;
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  text-align: left;
+  color: #ffffff;
+  margin-bottom: 10px;
 }
 
 .heroDescription {
-    font-size: 24px;
-    line-height: 150%;
-    font-weight: 400;
-    color: var(--text-color-light);
-    margin-bottom: 34px;
-    max-width: 720px;
-    width: 100%;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 400;
+  color: var(--text-color-light);
+  margin-bottom: 34px;
+  max-width: 720px;
+  width: 100%;
 }
 
 .buttonsWrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 24px;
-    padding-bottom: 230px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 230px;
 }
 
 .header {
-    padding-bottom: 24px;
+  padding-bottom: 24px;
 }
 
 @media screen and (max-width: 920px) {
-    .wrapper {
-        padding-bottom: 6.25rem;
-    }
+  .wrapper {
+    padding-bottom: 6.25rem;
+  }
 
-    .heroHeader {
-        font-size: 2.5rem;
-        padding-top: 4rem;
-    }
+  .heroHeader {
+    font-size: 2.5rem;
+    padding-top: 4rem;
+  }
 
-    .heroDescription {
-        font-size: 20px;
-        margin-bottom: 24px;
-    }
+  .heroDescription {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
 
-    .buttonsWrapper {
-        padding-bottom: 120px;
-    }
-
-    .gradientEffect {
-        height: 12.5rem;
-    }
-
+  .buttonsWrapper {
+    padding-bottom: 120px;
+  }
 }

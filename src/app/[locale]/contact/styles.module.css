@@ -1,58 +1,59 @@
 .sectionLayout {
-    background-color: var(--light-bg-color);
+  background-color: var(--light-bg-color);
 }
 
 .wrapper {
-    padding: 40px 0 120px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+  padding: 40px 0 120px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .contactInfoWrapper {
-    padding: 1.5rem;
-    position: absolute;
-    bottom: 1.5rem;
-    left: 1.5rem;
-    background: rgba(255, 255, 255, 0.86);
-    width: 20.8125rem;
-    max-width: 100%;
-    box-shadow: 0 100px 80px rgba(212, 212, 212, 0.07),
+  padding: 1.5rem;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background: rgba(255, 255, 255, 0.86);
+  width: 20.8125rem;
+  max-width: 100%;
+  box-shadow:
+    0 100px 80px rgba(212, 212, 212, 0.07),
     0 22.3363px 17.869px rgba(212, 212, 212, 0.0417275),
     0 6.6501px 5.32008px rgba(212, 212, 212, 0.0282725);
-    border-radius: var(--border-radius);
+  border-radius: var(--border-radius);
 }
 
 .formWrapper {
-    width: 100%;
-    max-width: 23.875rem;
+  width: 100%;
+  max-width: 23.875rem;
 }
 
 .image {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 @media screen and (max-width: 920px) {
-    .wrapper {
-        flex-direction: column;
-        padding-left: 0;
-        padding-right: 0;
-    }
+  .wrapper {
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+  }
 
-    .mapWrapper {
-        margin-right: 0;
-        margin-bottom: 2.5rem;
-        border-radius: 0;
-    }
+  .mapWrapper {
+    margin-right: 0;
+    margin-bottom: 2.5rem;
+    border-radius: 0;
+  }
 
-    .contactInfoWrapper {
-        width: 351px;
-        left: 12px;
-    }
+  .contactInfoWrapper {
+    width: calc(100vw - 160px);
+    left: 12px;
+  }
 
-    .formWrapper {
-        max-width: 100%;
-        padding: 0 24px;
-        height: auto;
-    }
+  .formWrapper {
+    max-width: 100%;
+    padding: 0 24px;
+    height: auto;
+  }
 }
