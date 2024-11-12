@@ -1,6 +1,7 @@
 .introSectionWrapper {
   margin-top: 30px;
   margin-bottom: 86px;
+  padding: 32px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -45,4 +46,15 @@
 
 .introSectionWrapper:hover .imageWrapper > img {
   transform: scale(1.2);
+}
+
+@media screen and (max-width: 1200px) {
+  .introSectionWrapper {
+    flex-direction: column-reverse;
+  }
+  .imageWrapper {
+    aspect-ratio: 16/9;
+    margin: 0;
+    width: 100%;
+  }
 }
