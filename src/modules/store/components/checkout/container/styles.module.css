@@ -1,206 +1,215 @@
 .sectionStyles {
-    background-color: #FFFFFF;
+  background-color: #ffffff;
+  margin-top: 70px;
 }
 
 .checkoutContainer {
-    margin-top: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 122px;
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 122px;
 }
 
 .cardAndPaymentWrapper {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .cartSection {
-    min-width: 580px;
+  min-width: 580px;
 }
 
-.cartSection, .summarySection, .pickupSection, .shippingSection {
-    border-radius: 8px;
+.cartSection,
+.summarySection,
+.pickupSection,
+.shippingSection {
+  border-radius: 8px;
 }
 
 .line {
-    height: 1px;
-    width: 100%;
-    background: #F4F4F4;
-    border: none;
+  height: 1px;
+  width: 100%;
+  background: #f4f4f4;
+  border: none;
 }
 
-.cartSection h2, .pickupSection h3, .shippingSection h3 {
-    margin-bottom: 14px;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 30px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
+.cartSection h2,
+.pickupSection h3,
+.shippingSection h3 {
+  margin-bottom: 14px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
 .cartItem {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .rightSide {
-    flex-shrink: 0;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
+  flex-shrink: 0;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
 }
 
 .priceWrapper {
-    display: flex;
-    justify-content: flex-end;
-    min-width: 80px;
+  display: flex;
+  justify-content: flex-end;
+  min-width: 80px;
 }
 
 .productImage {
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
 }
 
 .productDetails {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #F4F4F4;
-    padding-bottom: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f4f4f4;
+  padding-bottom: 10px;
 }
 
 .quantityControl {
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .quantityControl p {
-    margin-left: 12px;
-    min-width: 80px;
-    text-align: right;
+  margin-left: 12px;
+  min-width: 80px;
+  text-align: right;
 }
 
 .quantityControl button {
-    width: 36px;
-    height: 36px;
-    font-size: 18px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    box-sizing: border-box;
-    padding: 0 0 5px;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 0 0 5px;
 }
 
 .quantityControl span {
-    background: #F4F4F4;
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: #f4f4f4;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .subtotal {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 .subtotal p:first-of-type {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 21px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-    color: #9D9EA2;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #9d9ea2;
 }
 
 .subtotal p:nth-of-type(2) {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 21px;
-    text-align: right;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-    color: #060709;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: right;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #060709;
 }
 
 .summaryDetails {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .checkoutButton {
-    width: 100%;
-    padding: 12px;
-    background-color: #ccc;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+  width: 100%;
+  padding: 12px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .paymentMethods {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-.pickupSection .inputGroup, .shippingSection .inputGroup {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+.pickupSection .inputGroup,
+.shippingSection .inputGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
-.inputField, .notesField {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
+.inputField,
+.notesField {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
 }
 
 .notesField {
-    grid-column: 1 / -1;
-    resize: vertical;
-    height: 80px;
+  grid-column: 1 / -1;
+  resize: vertical;
+  height: 80px;
 }
 
-.contactInfo p, .summarySection p {
-    margin: 0;
-    font-size: 14px;
+.contactInfo p,
+.summarySection p {
+  margin: 0;
+  font-size: 14px;
 }
 
 .applyButton {
-    padding: 10px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 @media screen and (max-width: 768px) {
-    .cardAndPaymentWrapper {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 64px;
-    }
+  .cardAndPaymentWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 64px;
+  }
 }
