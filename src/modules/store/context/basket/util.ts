@@ -25,7 +25,7 @@ export const addProductToBasketUtil = (basket: BasketItem[], product: ProductTyp
   return updatedBasket;
 };
 
-export const removeProductToBasketUtil = (basket: BasketItem[], product: ProductType): BasketItem[] => {
+export const removeProductFromBasketUtil = (basket: BasketItem[], product: ProductType): BasketItem[] => {
   let productFound = false;
 
   let updatedBasket = [...basket];

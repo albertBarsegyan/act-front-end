@@ -72,3 +72,17 @@
     align-items: center;
     justify-content: center;
 }
+
+@media screen and (max-width: 768px) {
+    .productDetails {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .cartItem {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+}

@@ -6,7 +6,6 @@ import { useForm } from 'react-hook-form';
 import PhoneInput from 'react-phone-number-input/input';
 import z from 'zod';
 
-import { ButtonVariant, PrimaryButton } from '@/components/common/button/primary';
 import { ErrorText } from '@/components/common/error-text/error-text';
 import { ContactDetails } from '@/components/footer';
 import { CheckoutPickupFormData } from '@/modules/store/components/checkout/pickup-form/type';
@@ -19,8 +18,14 @@ import { localStorageUtils } from '@/utils/local-storage';
 import styles from './styles.module.css';
 
 const checkoutPickupSchema = z.object({
-  firstName: z.string().min(1, 'First Name is required'),
-  lastName: z.string().min(1, 'Last Name is required'),
+  firstName: z
+    .string()
+    .min(1, 'First Name is required')
+    .regex(/^[A-Za-z]+$/, 'First Name must contain only letters'),
+  lastName: z
+    .string()
+    .min(1, 'Last Name is required')
+    .regex(/^[A-Za-z]+$/, 'Last Name must contain only letters'),
   phone: z.string().min(1, 'Phone number is required').refine(isValidPhoneNumber, {
     message: 'Phone number must be valid.',
   }),
@@ -28,6 +33,7 @@ const checkoutPickupSchema = z.object({
 
 interface CheckoutPickupFormProps {
   isDisabled: boolean;
+  productPrice: number;
 }
 
 const formDefaultValues = {
@@ -36,13 +42,12 @@ const formDefaultValues = {
   phone: '',
 };
 
-export const CheckoutPickupForm = ({ isDisabled }: CheckoutPickupFormProps) => {
+export const CheckoutPickupForm = ({ isDisabled, productPrice }: CheckoutPickupFormProps) => {
   const {
     register,
     formState: { errors },
     getValues,
     setValue,
-    reset,
     handleSubmit,
   } = useForm<CheckoutPickupFormData>({
     mode: 'onChange',
@@ -56,9 +61,9 @@ export const CheckoutPickupForm = ({ isDisabled }: CheckoutPickupFormProps) => {
 
     const res = await storeService.orderProducts(normalisedData);
 
-    const isSuccess = !res?.error;
+    const isSuccess = res?.data;
 
-    if (isSuccess) reset(formDefaultValues);
+    if (isSuccess) window.location.href = res?.data?.payment_url;
   };
 
   return (
@@ -105,9 +110,9 @@ export const CheckoutPickupForm = ({ isDisabled }: CheckoutPickupFormProps) => {
 
       <ContactDetails className={styles.contactDetails} showWorkingHours isDark />
 
-      <PrimaryButton className={styles.submitButton} variant={ButtonVariant.Regular} active={!isDisabled} type="submit">
-        Submit
-      </PrimaryButton>
+      <button disabled={isDisabled} type="submit" className={styles.checkoutButton}>
+        Checkout | ${productPrice}
+      </button>
     </form>
   );
 };

@@ -4,7 +4,7 @@ import React, { createContext, ReactNode, useContext, useMemo, useReducer } from
 
 import { localStorageConstants } from '@/modules/store/constants/local-storage';
 import { BasketItem, StoreAction, StoreState } from '@/modules/store/context/basket/type';
-import { addProductToBasketUtil, removeProductToBasketUtil } from '@/modules/store/context/basket/util';
+import { addProductToBasketUtil, removeProductFromBasketUtil } from '@/modules/store/context/basket/util';
 import { ProductType } from '@/modules/store/types';
 import { localStorageUtils } from '@/utils/local-storage';
 
@@ -38,7 +38,7 @@ const storeReducer = (state: StoreState, action: StoreAction): StoreState => {
       return updatedBasketData;
     }
     case 'REMOVE_FROM_BASKET': {
-      const updatedBasket = removeProductToBasketUtil(state.basket, action.payload);
+      const updatedBasket = removeProductFromBasketUtil(state.basket, action.payload);
 
       const updatedBasketData = { basket: updatedBasket };
 
