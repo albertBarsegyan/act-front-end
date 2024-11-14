@@ -1,4 +1,4 @@
-export interface CheckoutPickupFormFields {
+export interface CheckoutPickupFormData {
   firstName: string;
   lastName: string;
   phone?: string;

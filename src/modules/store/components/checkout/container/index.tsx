@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Checkbox } from '@/components/common/checkbox';
 import { SectionLayout } from '@/components/layout/section/section-layout';
 import { CardSummary } from '@/modules/store/components/checkout/card';
+import { paymentMethodVariants } from '@/modules/store/constants/payment';
 import { useStore } from '@/modules/store/context/basket';
 import { ProductType } from '@/modules/store/types';
 import { calculateBasketTotalPrice } from '@/utils/price';
@@ -13,12 +14,6 @@ import { CheckoutPickupForm } from '../pickup-form';
 import { CheckoutProduct } from '../product';
 import { CheckoutShippingForm } from '../shipping-form';
 import styles from './styles.module.css';
-
-const paymentMethodVariants = {
-  NOT_SELECTED: null,
-  SHIPPING: 'shipping',
-  PICKUP: 'pickup',
-};
 
 export const CheckoutContainer = () => {
   const [paymentMethod, setPaymentMethod] = useState<string | null>(paymentMethodVariants.NOT_SELECTED);
