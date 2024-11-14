@@ -9,12 +9,10 @@ export const normalisePickupFormData = (orderData: CheckoutPickupFormData, produ
     quantity: count,
   }));
 
-  const phoneData = orderData.phone ? { phone_number: orderData.phone } : {};
-
   return {
     order_type: paymentMethodVariants.PICKUP as OrderType,
     return_url: window.location.href,
     order_items: productsNormalised,
-    ...phoneData,
+    phone_number: orderData.phone,
   };
 };
