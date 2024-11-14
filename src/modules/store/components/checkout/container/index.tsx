@@ -2,9 +2,10 @@
 
 import { useState } from 'react';
 
-import Checkbox from '@/components/common/checkbox';
+import { Checkbox } from '@/components/common/checkbox';
 import { SectionLayout } from '@/components/layout/section/section-layout';
 import { CardSummary } from '@/modules/store/components/checkout/card';
+import { paymentMethodVariants } from '@/modules/store/constants/payment';
 import { useStore } from '@/modules/store/context/basket';
 import { ProductType } from '@/modules/store/types';
 import { calculateBasketTotalPrice } from '@/utils/price';
@@ -14,23 +15,21 @@ import { CheckoutProduct } from '../product';
 import { CheckoutShippingForm } from '../shipping-form';
 import styles from './styles.module.css';
 
-const paymentMethodVariants = {
-  NOT_SELECTED: null,
-  SHIPPING: 'shipping',
-  PICKUP: 'pickup',
-};
-
 export const CheckoutContainer = () => {
-  const [paymentMethod] = useState<string | null>(paymentMethodVariants.NOT_SELECTED);
+  const [paymentMethod, setPaymentMethod] = useState<string | null>(paymentMethodVariants.NOT_SELECTED);
   const { basket, addToBasket, removeFromBasket } = useStore();
 
   const productTotalPrice = calculateBasketTotalPrice(basket);
 
-  const onCheckoutClick = () => {};
-
   const onAddProduct = (product: ProductType) => addToBasket(product);
 
   const onRemoveProduct = (product: ProductType) => removeFromBasket(product);
+
+  const onPickupCheck = (checked: boolean) =>
+    setPaymentMethod(checked ? paymentMethodVariants.PICKUP : paymentMethodVariants.NOT_SELECTED);
+
+  const onShippingCheck = (checked: boolean) =>
+    setPaymentMethod(checked ? paymentMethodVariants.SHIPPING : paymentMethodVariants.NOT_SELECTED);
 
   return (
     <SectionLayout className={styles.sectionStyles}>
@@ -64,7 +63,7 @@ export const CheckoutContainer = () => {
 
           <CardSummary
             productPrice={productTotalPrice}
-            onCheckout={onCheckoutClick}
+            onCheckout={() => {}}
             isCheckoutDisabled={paymentMethod === paymentMethodVariants.NOT_SELECTED}
           />
         </div>
@@ -72,7 +71,7 @@ export const CheckoutContainer = () => {
         <section className={styles.pickupSection}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <h3>Pick Up</h3>
-            <Checkbox checked={paymentMethod === paymentMethodVariants.SHIPPING} onChange={() => {}} />
+            <Checkbox checked={paymentMethod === paymentMethodVariants.PICKUP} onChange={onPickupCheck} />
           </div>
           <hr className={styles.line} />
           <CheckoutPickupForm isDisabled={paymentMethod !== paymentMethodVariants.PICKUP} />
@@ -81,7 +80,7 @@ export const CheckoutContainer = () => {
         <section className={styles.shippingSection}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <h3>Shipping</h3>
-            <Checkbox checked={paymentMethod === paymentMethodVariants.SHIPPING} onChange={() => {}} />
+            <Checkbox checked={paymentMethod === paymentMethodVariants.SHIPPING} onChange={onShippingCheck} />
           </div>
 
           <hr className={styles.line} />
