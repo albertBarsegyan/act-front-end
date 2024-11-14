@@ -61,11 +61,7 @@ export const CheckoutContainer = () => {
             </div>
           </div>
 
-          <CardSummary
-            productPrice={productTotalPrice}
-            onCheckout={() => {}}
-            isCheckoutDisabled={paymentMethod === paymentMethodVariants.NOT_SELECTED}
-          />
+          <CardSummary productPrice={productTotalPrice} />
         </div>
 
         <section className={styles.pickupSection}>
@@ -74,7 +70,10 @@ export const CheckoutContainer = () => {
             <Checkbox checked={paymentMethod === paymentMethodVariants.PICKUP} onChange={onPickupCheck} />
           </div>
           <hr className={styles.line} />
-          <CheckoutPickupForm isDisabled={paymentMethod !== paymentMethodVariants.PICKUP} />
+          <CheckoutPickupForm
+            productPrice={productTotalPrice}
+            isDisabled={paymentMethod !== paymentMethodVariants.PICKUP}
+          />
         </section>
 
         <section className={styles.shippingSection}>
@@ -84,7 +83,10 @@ export const CheckoutContainer = () => {
           </div>
 
           <hr className={styles.line} />
-          <CheckoutShippingForm isDisabled={paymentMethod !== paymentMethodVariants.SHIPPING} />
+          <CheckoutShippingForm
+            productPrice={productTotalPrice}
+            isDisabled={paymentMethod !== paymentMethodVariants.SHIPPING}
+          />
         </section>
       </section>
     </SectionLayout>

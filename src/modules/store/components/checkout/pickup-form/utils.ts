@@ -11,7 +11,7 @@ export const normalisePickupFormData = (orderData: CheckoutPickupFormData, produ
 
   return {
     order_type: paymentMethodVariants.PICKUP as OrderType,
-    return_url: window.location.href,
+    return_url: window.location.origin,
     order_items: productsNormalised,
     phone_number: orderData.phone,
   };

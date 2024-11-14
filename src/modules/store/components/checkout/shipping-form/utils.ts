@@ -11,7 +11,7 @@ export const normaliseOrderData = (orderData: ShippingFormData, products: Basket
 
   return {
     order_type: paymentMethodVariants.SHIPPING as OrderType,
-    return_url: window.location.href,
+    return_url: window.location.origin,
     city: orderData.city,
     address: orderData.address,
     order_notes: orderData.notes,

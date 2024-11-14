@@ -4,7 +4,6 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import PhoneInput from 'react-phone-number-input/input';
 
-import { ButtonVariant, PrimaryButton } from '@/components/common/button/primary';
 import { ErrorText } from '@/components/common/error-text/error-text';
 import { ShippingFormData, shippingSchema } from '@/modules/store/components/checkout/shipping-form/schema';
 import { normaliseOrderData } from '@/modules/store/components/checkout/shipping-form/utils';
@@ -17,24 +16,14 @@ import styles from './styles.module.css';
 
 interface CheckoutShippingFormProps {
   isDisabled: boolean;
+  productPrice: number;
 }
 
-const formDefaultValues = {
-  firstName: '',
-  lastName: '',
-  address: '',
-  city: '',
-  phone: '',
-  email: '',
-  notes: '',
-};
-
-export const CheckoutShippingForm = ({ isDisabled }: CheckoutShippingFormProps) => {
+export const CheckoutShippingForm = ({ isDisabled, productPrice }: CheckoutShippingFormProps) => {
   const {
     register,
     formState: { errors },
     getValues,
-    reset,
     setValue,
     handleSubmit,
   } = useForm<ShippingFormData>({
@@ -49,11 +38,11 @@ export const CheckoutShippingForm = ({ isDisabled }: CheckoutShippingFormProps) 
 
     const res = await storeService.orderProducts(normalisedData);
 
-    const isSuccess = !res?.error;
+    const isSuccess = res?.data;
 
-    console.log('res', res);
-
-    if (isSuccess) reset(formDefaultValues);
+    if (isSuccess) {
+      window.location.href = res?.data?.payment_url;
+    }
   };
 
   return (
@@ -162,9 +151,9 @@ export const CheckoutShippingForm = ({ isDisabled }: CheckoutShippingFormProps) 
         ></textarea>
       </div>
 
-      <PrimaryButton className={styles.submitButton} variant={ButtonVariant.Regular} active={!isDisabled} type="submit">
-        Submit
-      </PrimaryButton>
+      <button disabled={isDisabled} type="submit" className={styles.checkoutButton}>
+        Checkout | ${productPrice}
+      </button>
     </form>
   );
 };
