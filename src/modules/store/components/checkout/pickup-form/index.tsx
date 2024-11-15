@@ -36,12 +36,6 @@ interface CheckoutPickupFormProps {
   productPrice: number;
 }
 
-const formDefaultValues = {
-  firstName: '',
-  lastName: '',
-  phone: '',
-};
-
 export const CheckoutPickupForm = ({ isDisabled, productPrice }: CheckoutPickupFormProps) => {
   const {
     register,
@@ -61,9 +55,9 @@ export const CheckoutPickupForm = ({ isDisabled, productPrice }: CheckoutPickupF
 
     const res = await storeService.orderProducts(normalisedData);
 
-    const isSuccess = res?.data;
+    const paymentUrl = res?.data?.payment_url;
 
-    if (isSuccess) window.location.href = res?.data?.payment_url;
+    if (paymentUrl) window.location.href = paymentUrl;
   };
 
   return (

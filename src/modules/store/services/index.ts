@@ -24,7 +24,7 @@ export const storeService = {
     try {
       const response = await mainApiInstance.post('payments/process-payment/', { json: data });
 
-      return { data: await response.json(), error: null };
+      return { data: (await response.json()) as { response_code: string }, error: null };
     } catch (error) {
       return { data: null, error: getErrorMessage(error) };
     }
