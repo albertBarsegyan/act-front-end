@@ -1,9 +1,16 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
+import { FormResponseContent } from '@/components/common/form-response-content';
+import { useModal } from '@/context/modal/Modal.context';
+import { localStorageConstants } from '@/modules/store/constants/local-storage';
 import { storeService } from '@/modules/store/services';
+import { localStorageUtils } from '@/utils/local-storage';
 import { queryParamsToObject } from '@/utils/query-params';
+import { routePath } from '@/utils/route';
 
 export function usePayment() {
+  const { provideModalSettings } = useModal();
+
   useEffect(() => {
     const queryData = queryParamsToObject(window.location.search);
 
@@ -15,7 +22,23 @@ export function usePayment() {
           response_code: queryData.resposneCode,
         })
         .then((response) => {
-          console.log('response', response);
+          const isSuccessful = response?.data?.response_code === '00';
+
+          if (isSuccessful) localStorageUtils.removeItem(localStorageConstants.BASKET);
+
+          const description = isSuccessful ? 'Your payment was successful!' : 'Your payment was unsuccessful!';
+
+          provideModalSettings({
+            content: (
+              <FormResponseContent
+                onTryAgain={() => (window.location.href = routePath.getCheckout())}
+                isSuccess={isSuccessful}
+                description={description}
+              />
+            ),
+            isShowing: true,
+            delay: 0,
+          });
         });
     }
   }, []);

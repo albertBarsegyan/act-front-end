@@ -38,11 +38,9 @@ export const CheckoutShippingForm = ({ isDisabled, productPrice }: CheckoutShipp
 
     const res = await storeService.orderProducts(normalisedData);
 
-    const isSuccess = res?.data;
+    const paymentUrl = res?.data?.payment_url;
 
-    if (isSuccess) {
-      window.location.href = res?.data?.payment_url;
-    }
+    if (paymentUrl) window.location.href = paymentUrl;
   };
 
   return (
