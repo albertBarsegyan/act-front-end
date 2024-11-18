@@ -22,7 +22,7 @@ export function usePayment() {
           response_code: queryData.resposneCode,
         })
         .then((response) => {
-          const isSuccessful = response?.data?.response_code === '00';
+          const isSuccessful = response?.data?.response_code === 'OK';
 
           if (isSuccessful) localStorageUtils.removeItem(localStorageConstants.BASKET);
 
