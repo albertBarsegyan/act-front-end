@@ -3,7 +3,7 @@ export interface ProductType {
   name: string;
   readonly image?: string;
   price: string;
-  quantity?: number;
+  quantity: number;
 }
 
 export interface Order {

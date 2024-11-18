@@ -37,6 +37,23 @@
 }
 
 
+.checkoutButton {
+    width: 50%;
+    padding: 15px 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #ACFA00;
+}
+
+.checkoutButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
 @media screen and (max-width: 768px) {
     .inputGroup {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -46,5 +63,9 @@
 @media screen and (max-width: 480px) {
     .inputGroup {
         grid-template-columns: 1fr;
+    }
+
+    .checkoutButton {
+        width: 100%;
     }
 }

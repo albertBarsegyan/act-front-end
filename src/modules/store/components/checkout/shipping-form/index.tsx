@@ -2,29 +2,45 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import PhoneInput from 'react-phone-number-input/input';
 
-import { ButtonVariant, PrimaryButton } from '@/components/common/button/primary';
 import { ErrorText } from '@/components/common/error-text/error-text';
 import { ShippingFormData, shippingSchema } from '@/modules/store/components/checkout/shipping-form/schema';
+import { normaliseOrderData } from '@/modules/store/components/checkout/shipping-form/utils';
+import { localStorageConstants } from '@/modules/store/constants/local-storage';
+import { BasketItem } from '@/modules/store/context/basket/type';
+import { storeService } from '@/modules/store/services';
+import { localStorageUtils } from '@/utils/local-storage';
 
 import styles from './styles.module.css';
 
 interface CheckoutShippingFormProps {
   isDisabled: boolean;
+  productPrice: number;
 }
 
-export const CheckoutShippingForm = ({ isDisabled }: CheckoutShippingFormProps) => {
+export const CheckoutShippingForm = ({ isDisabled, productPrice }: CheckoutShippingFormProps) => {
   const {
     register,
     formState: { errors },
+    getValues,
+    setValue,
     handleSubmit,
   } = useForm<ShippingFormData>({
     mode: 'onChange',
     resolver: zodResolver(shippingSchema),
   });
 
-  const onSubmit = (data: ShippingFormData) => {
-    console.log(data);
+  const onSubmit = async (data: ShippingFormData) => {
+    const products: BasketItem[] = localStorageUtils.getItem(localStorageConstants.BASKET) ?? [];
+
+    const normalisedData = normaliseOrderData(data, products);
+
+    const res = await storeService.orderProducts(normalisedData);
+
+    const paymentUrl = res?.data?.payment_url;
+
+    if (paymentUrl) window.location.href = paymentUrl;
   };
 
   return (
@@ -92,12 +108,17 @@ export const CheckoutShippingForm = ({ isDisabled }: CheckoutShippingFormProps) 
           <label htmlFor="Phone" className={styles.inputLabel}>
             Phone
           </label>
-          <input
-            type="text"
-            disabled={isDisabled}
-            placeholder="Phone (Optional)"
+          <PhoneInput
             className={styles.inputField}
-            {...register('phone')}
+            value={getValues('phone')}
+            disabled={isDisabled}
+            onChange={(value) =>
+              setValue('phone', value ?? '', {
+                shouldDirty: true,
+                shouldValidate: true,
+              })
+            }
+            placeholder={'Phone number'}
           />
           {errors.phone && <ErrorText variant="text" errorMessage={errors.phone.message} />}
         </div>
@@ -128,9 +149,9 @@ export const CheckoutShippingForm = ({ isDisabled }: CheckoutShippingFormProps) 
         ></textarea>
       </div>
 
-      <PrimaryButton className={styles.submitButton} variant={ButtonVariant.Regular} active={!isDisabled} type="submit">
-        Submit
-      </PrimaryButton>
+      <button disabled={isDisabled} type="submit" className={styles.checkoutButton}>
+        Checkout | ${productPrice}
+      </button>
     </form>
   );
 };

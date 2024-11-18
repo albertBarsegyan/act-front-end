@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useId } from 'react';
 
 import styles from './styles.module.css';
 
 interface CheckboxProps {
   checked: boolean;
-  onChange: () => void;
+  onChange: (checked: boolean) => void;
 }
 
-const Checkbox = ({ checked, onChange }: CheckboxProps) => {
+export const Checkbox = ({ checked, onChange }: CheckboxProps) => {
+  const id = useId();
+
   return (
     <div>
-      <input className={styles.styledCheckbox} id="styled-checkbox-1" type="checkbox" value="value1" />
-      <label htmlFor="styled-checkbox-1" />
+      <input
+        checked={checked}
+        className={styles.styledCheckbox}
+        onChange={(e) => onChange(e.target.checked)}
+        id={id}
+        type="checkbox"
+        value="value1"
+      />
+      <label htmlFor={id} />
     </div>
   );
 };
-
-export default Checkbox;

@@ -8,11 +8,9 @@ import styles from './styles.module.css';
 
 interface CardSummaryProps {
   productPrice: number;
-  isCheckoutDisabled?: boolean;
-  onCheckout?: () => void;
 }
 
-export const CardSummary = ({ productPrice, isCheckoutDisabled, onCheckout }: CardSummaryProps) => {
+export const CardSummary = ({ productPrice }: CardSummaryProps) => {
   return (
     <div className={styles.paymentSummary}>
       <div className={styles.row}>
@@ -27,9 +25,7 @@ export const CardSummary = ({ productPrice, isCheckoutDisabled, onCheckout }: Ca
         <span className={styles.priceHeader}>Shipping Costs</span>
         <span>$0.00</span>
       </div>
-      <button disabled={isCheckoutDisabled} onClick={onCheckout} className={styles.checkoutButton}>
-        Checkout | ${productPrice}
-      </button>
+
       <div className={styles.securePayments}>
         <span>SECURE PAYMENTS PROVIDED BY</span>
         <div className={styles.paymentIcons}>
