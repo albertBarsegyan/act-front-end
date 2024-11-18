@@ -1,4 +1,5 @@
 'use client';
+import { useRouter } from 'next/router';
 import React, { ReactNode } from 'react';
 
 import { Dropdown, DropdownType } from '@/components/common/dropdown';
@@ -32,5 +33,14 @@ export const LocaleDropdownList: DropdownType[] = [
 ];
 
 export function LanguageSelector() {
-  return <Dropdown defaultNameId={'en'} items={LocaleDropdownList} handleChange={() => {}} />;
+  const router = useRouter();
+
+  const handleChange = (selectedLocale: string) => {
+    const { pathname, asPath, query } = router;
+    router.push({ pathname, query }, asPath, { locale: selectedLocale });
+  };
+
+  return (
+    <Dropdown defaultNameId={'en'} items={LocaleDropdownList} handleChange={(item) => handleChange(item.nameId)} />
+  );
 }
