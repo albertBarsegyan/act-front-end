@@ -37,7 +37,7 @@ export function LanguageSelector() {
 
   // const handleChange = () => {
   // const { pathname, asPath, query } = router;
-  // router.push({ pathname, query }, asPath, { locale: 'en' });
+  // router.push({ pathname, query }, asPath, { locale: 'en'});
   // };
 
   return <Dropdown defaultNameId={'en'} items={LocaleDropdownList} handleChange={() => { }} />;
