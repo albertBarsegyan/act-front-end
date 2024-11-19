@@ -154,6 +154,9 @@ a {
     box-sizing: border-box;
 }
 
+body {
+    overflow-x: hidden;
+}
 
 .overflow-hidden {
     overflow: hidden;

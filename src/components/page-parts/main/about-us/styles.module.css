@@ -1,32 +1,54 @@
 .wrapper {
-    padding-top: 100px;
-    background-color: var(--primary-color);
+  padding-top: 100px;
+  background-color: var(--primary-color);
 }
 
 .header {
-    font-size: 52px;
-    font-weight: 700;
-    line-height: 62px;
-    text-align: left;
-    color: white;
-    margin-bottom: 24px;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 62px;
+  text-align: left;
+  color: white;
+  margin-bottom: 24px;
 }
 
 .description {
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 32px;
-    text-align: left;
-    color: white;
-    width: 100%;
-    margin-bottom: 40px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: left;
+  color: white;
+  width: 100%;
+  margin-bottom: 40px;
 }
 
 .imageWrapper {
-    height: 526px;
-    position: relative;
+  height: 526px;
+  position: relative;
 }
 
 .imageWrapper > img {
-    object-fit: cover;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 920px) {
+  .description {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .imageWrapper {
+    width: 100%;
+    aspect-ratio: 16/9;
+    height: auto;
+  }
+  .imageWrapper > img {
+    aspect-ratio: 16/9;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .description {
+    font-size: 16px;
+    line-height: 20px;
+  }
 }

@@ -76,7 +76,7 @@ export function AdmissionHeroSection() {
           <p className={styles.description}>{t('scholarship-description')}</p>
 
           <p className={styles.description}>
-            {t('scholarship-sub-description')}
+            {t('scholarship-sub-description')}{' '}
             <a href={`mailto:${email}`} style={{ textDecoration: 'underline' }}>
               {t('contact-email')}
             </a>

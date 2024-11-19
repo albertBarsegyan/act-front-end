@@ -1,79 +1,103 @@
 .admissionHeroWrapper {
-    padding-top: 48px;
-    padding-bottom: 48px;
-    background: var(--light-bg-color);
+  padding-top: 48px;
+  padding-bottom: 48px;
+  background: var(--light-bg-color);
 }
 
 .admissionHeroContentWrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 0 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0 5rem;
 }
 
 .header {
-    font-size: 52px;
-    font-weight: 700;
-    line-height: 61.62px;
-    text-align: left;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 61.62px;
+  text-align: left;
 }
 
 .description {
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 32px;
-    margin-top: 20px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  margin-top: 20px;
 }
 
 .subHeader {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 32px;
-    display: block;
-    margin-top: 24px;
-    margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .subDescription {
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 32px;
-    margin-top: 8px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  margin-top: 8px;
 }
 
 .listWrapper > li {
-    margin-bottom: 20px;
-    font-size: 24px;
-    line-height: 32px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  line-height: 32px;
 }
 
 .listWrapper strong {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .scholarship {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 32px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
 }
 
 .linkButton {
-    background: transparent;
-    border: none;
-    text-decoration: underline;
-    cursor: pointer;
-    font-size: 24px;
-    line-height: 32px;
+  background: transparent;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 32px;
 }
 
-
 @media screen and (max-width: 920px) {
-    .admissionHeroContentWrapper {
-        flex-direction: column;
-        gap: 2.5rem 0;
-    }
+  .admissionHeroContentWrapper {
+    flex-direction: column;
+    gap: 2.5rem 0;
+  }
 
-    .admissionHeroContentWrapper img {
-        width: 100%;
-    }
+  .admissionHeroContentWrapper img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    font-size: 45px;
+    line-height: 52px;
+  }
+  .description,
+  .subDescription {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .admissionHeroContentWrapper {
+    align-items: stretch;
+  }
+  .subHeader {
+    font-size: 26px;
+  }
+  .listWrapper li  {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .scholarship {
+    font-size: 26px;
+  }
 }
