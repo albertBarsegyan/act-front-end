@@ -7,7 +7,7 @@ import styles from './styles.module.css';
 
 const { id, image } = {
   id: 'college-director',
-  image: '/static/img/about-us/members/board-member.jpeg',
+  image: '/static/img/about-us/members/director.jpg',
 };
 
 export function DirectorSection() {

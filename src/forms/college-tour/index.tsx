@@ -3,11 +3,13 @@ import 'react-datetime-picker/dist/DateTimePicker.css';
 import 'react-calendar/dist/Calendar.css';
 import 'react-clock/dist/Clock.css';
 
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 import React from 'react';
 import DateTimePicker from 'react-datetime-picker';
 import { Controller, useForm } from 'react-hook-form';
+import TimePicker from "react-time-picker";
 
 import { ButtonVariant, PrimaryButton } from '@/components/common/button/primary';
 import { FormResponseContent } from '@/components/common/form-response-content';
@@ -24,6 +26,7 @@ const formDefaultValues = {
   last_name: '',
   phone_number: '',
   tour_date: '',
+  tour_time: '',
 };
 
 export function CollegeTourForm() {
@@ -43,7 +46,18 @@ export function CollegeTourForm() {
   });
 
   const onSubmit = async (data: CollegeTourFormValues) => {
-    const res = await admissionsService.collegeTour(data);
+    let date = data.tour_date + "T"
+    if (data.tour_time) {
+      date += data.tour_time.toString().split('T')[1];
+    }
+
+
+    const res = await admissionsService.collegeTour({
+      first_name: data.first_name,
+      last_name: data.last_name,
+      phone_number: data.phone_number,
+      tour_date: date,
+    });
 
     const isSuccess = !res?.error;
 
@@ -102,19 +116,39 @@ export function CollegeTourForm() {
                 <DateTimePicker
                   className={styles.dateTimePicker}
                   disableClock
+                  format="y-MM-dd"
                   {...field}
-                  onChange={(date) => field.onChange(date ? date.toISOString() : '')}
+                  onChange={(date) => field.onChange(date ? date.toISOString().split('T')[0] : '')}
                 />
               )}
             />
             {errors.tour_date && <p className={styles.error}>{errors.tour_date.message}</p>}
           </div>
-        </div>
+          <div className={styles.inputWrapper}>
 
-        <div className={styles.submitWrapper}>
-          <PrimaryButton className={styles.submitButton} variant={ButtonVariant.Regular} type="submit">
-            {isLoading ? 'Loading' : t('apply-button-text')}
-          </PrimaryButton>
+            <Controller
+              name="tour_time"
+              control={control}
+              render={({ field }) => (
+                <DateTimePicker
+                  className={styles.dateTimePicker}
+                  disableClock
+                  calendarIcon={false}
+                  format="HH:mm"
+                  {...field}
+                  onChange={(date) => field.onChange(date ? date.toISOString() : '')}
+                />
+              )}
+            />
+            {errors.tour_time && <p className={styles.error}>{errors.tour_time.message}</p>}
+
+          </div>
+
+          <div className={styles.submitWrapper}>
+            <PrimaryButton className={styles.submitButton} variant={ButtonVariant.Regular} type="submit">
+              {isLoading ? 'Loading' : t('apply-button-text')}
+            </PrimaryButton>
+          </div>
         </div>
       </form>
     </div>

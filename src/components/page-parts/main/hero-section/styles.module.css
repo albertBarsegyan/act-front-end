@@ -1,7 +1,9 @@
 .wrapper {
   background: url('/static/img/background/hero-bg.jpg') center center no-repeat;
   background-size: cover;
-  padding-bottom: 12.5rem;
+  background-position: right center;
+  padding-bottom: 20px;
+  min-height: calc(100vh - 70px);
   position: relative;
 }
 
@@ -54,7 +56,6 @@
   justify-content: flex-start;
   align-items: center;
   gap: 24px;
-  padding-bottom: 230px;
 }
 
 .header {

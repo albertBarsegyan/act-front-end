@@ -108,7 +108,7 @@ export function ReservationForm() {
         </div>
       </div>
 
-      <PrimaryButton variant={ButtonVariant.Regular} type="submit">
+      <PrimaryButton variant={ButtonVariant.Regular} type="submit" active={false}>
         {isLoading ? 'Loading' : t('apply-button-text')}
       </PrimaryButton>
     </form>

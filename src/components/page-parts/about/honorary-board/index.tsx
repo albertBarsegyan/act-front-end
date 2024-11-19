@@ -8,11 +8,11 @@ import styles from './styles.module.css';
 const honoraryBoardMembers = [
   {
     id: 'honorary-member-1',
-    image: '/static/img/about-us/members/board-member.jpeg',
+    image: '/static/img/about-us/members/honoraryboard2.jpg',
   },
   {
     id: 'honorary-member-2',
-    image: '/static/img/about-us/members/board-member.jpeg',
+    image: '/static/img/about-us/members/honoraryboard1.jpg',
   },
 ];
 
