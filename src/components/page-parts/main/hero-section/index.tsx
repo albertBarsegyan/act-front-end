@@ -25,13 +25,16 @@ export function HeroSection() {
     <div className={styles.wrapper}>
       <div className={styles.gradientEffect} />
       <SectionLayout className={styles.sectionLayout}>
-        <h1 className={styles.heroHeader}>{t('header-title')}</h1>
-        <span className={styles.founders}>{t('header-founders-name')}</span>
-        <p className={styles.heroDescription}>{t('header-description')}</p>
+        <div className={styles.flex}>
+          <h1 className={styles.heroHeader}>{t('header-title')}</h1>
+          <span className={styles.founders}>{t('header-founders-name')}</span>
+          <div className={styles.line}></div>
+          <p className={styles.heroDescription}>{t('header-description')}</p>
 
-        <div className={styles.buttonsWrapper}>
-          <PrimaryButton onClick={onClickAction('admission')}>{t('apply-button-text')}</PrimaryButton>
-          <PrimaryButton onClick={onClickAction('tour')}>{t('college-tour-button-text')}</PrimaryButton>
+          <div className={styles.buttonsWrapper}>
+            <PrimaryButton onClick={onClickAction('admission')}>{t('apply-button-text')}</PrimaryButton>
+            <PrimaryButton onClick={onClickAction('tour')}>{t('college-tour-button-text')}</PrimaryButton>
+          </div>
         </div>
       </SectionLayout>
     </div>
