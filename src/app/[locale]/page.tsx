@@ -16,7 +16,7 @@ export default function HomePage() {
       <GraduationSection />
       <ReservationSection />
       <AboutUsSection />
-      <Partners />
+      {/* <Partners /> */}
     </PageLoader>
   );
 }

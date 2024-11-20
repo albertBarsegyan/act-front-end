@@ -2,7 +2,7 @@
   background: url('/static/img/background/5.png') no-repeat;
   background-size: cover;
   background-position: right center;
-  padding-bottom: 20px;
+  padding-bottom: 70px;
   min-height: calc(100vh - 70px);
   position: relative;
 }
@@ -86,7 +86,7 @@
 
   .heroHeader {
     font-size: 2.5rem;
-    padding-top: 4rem;
+    padding-top: 5rem;
   }
 
   .heroDescription {
@@ -112,7 +112,7 @@
   }
   .wrapper {
     background-position: center;
-    padding-bottom: 4rem;
+    padding-bottom: 5rem;
     min-height: auto;
   }
 }

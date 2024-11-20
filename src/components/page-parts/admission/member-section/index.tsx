@@ -12,7 +12,7 @@ const admissionMembers = [
   },
   {
     id: 'admission-member-1',
-    img: '/static/img/admission/profile.jpeg',
+    img: '/static/img/admission/staff/margarita.jpg',
   },
   {
     id: 'admission-member-2',

@@ -17,7 +17,6 @@ export function DirectorSection() {
     id,
     image,
     name: translation(`${id}.name`),
-    position: translation(`${id}.position`),
     description: translation(`${id}.description`),
     role: translation('director-header'),
   };
