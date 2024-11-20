@@ -3,10 +3,8 @@
   background: white;
   gap: 28px;
   display: flex;
+
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  align-items: center;
-  width: 100%;
-  height: 222px;
   transition: box-shadow 0.3s;
 }
 .wrapper:hover {
@@ -23,25 +21,16 @@
 }
 
 .image {
-  width: 100%;
-  max-width: 164px;
-  height: 207px;
+  height: 100%;
+  max-width: 180px;
 }
 
 .header {
   font-size: 24px;
   font-weight: 700;
   line-height: 32px;
-  margin-bottom: 8px;
+  margin: 8px 0;
   color: #1c222a;
-}
-
-.position {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  margin-bottom: 8px;
-  color: #797979;
 }
 
 .description {
@@ -52,6 +41,13 @@
   color: #1c222a;
 }
 
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 30px;
+}
+
 .role {
   font-size: 11px;
   color: white;
@@ -59,7 +55,6 @@
   border-radius: 19px;
   background-color: black;
   display: inline-block;
-  margin-bottom: 8px;
 }
 
 @media screen and (max-width: 600px) {
@@ -85,5 +80,8 @@
 
   .description {
     max-width: 400px;
+  }
+  .textWrapper {
+    padding-top: 0px;
   }
 }

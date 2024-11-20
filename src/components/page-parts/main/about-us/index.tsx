@@ -15,7 +15,8 @@ export function AboutUsSection() {
         <HeaderText color="white">{t('about-us-header')}</HeaderText>
         <p className={styles.description}>{t('about-us-description')}</p>
         <div className={styles.imageWrapper}>
-          <Image fill src={'/static/img/about-us/about-us.jpeg'} alt={'about us'} />
+          <img src="/static/img/about-us/before.png" alt="" />
+          <img src="/static/img/about-us/after.png" alt="" />
         </div>
       </SectionLayout>
     </div>

@@ -9,7 +9,7 @@ interface PersonInfoProps {
     id: string;
     name: string;
     description: string;
-    position: string;
+    position?: string;
     image: string;
     role?: string;
   };
@@ -25,7 +25,6 @@ export function PersonInfo({ className, data: { name, description, position, ima
       <div className={styles.textWrapper}>
         <span className={styles.role}>{role}</span>
         <h3 className={styles.header}>{name}</h3>
-        <p className={styles.position}>{position}</p>
         <p className={styles.description}>{description}</p>
       </div>
     </div>

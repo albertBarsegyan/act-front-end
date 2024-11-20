@@ -45,17 +45,17 @@
     },
     "admission-member-0": {
       "name": "Edgar Chilingaryan",
-      "position": "Senior Front-end Developer",
+      "position": "Head of Admission",
       "description": "Responsible for evaluating applications, conducting interviews, and making decisions on student admissions to ensure a diverse and qualified student body."
     },
     "admission-member-1": {
       "name": "Margarita Krtikashyan",
-      "position": "Senior Front-end Developer",
+      "position": "Admission Specialist",
       "description": "Responsible for handling calls, sending invitations, coordinating meetings, and guiding campus tours for prospective students."
     },
     "admission-member-2": {
       "name": "Levon Hayrapetyan",
-      "position": "Senior Front-end Developer",
+      "position": "Scholarship Expert",
       "description": "Responsible for managing scholarship applications and ensuring that eligible students receive financial support as per ACT Scholarship Policy and procedures."
     }
   }

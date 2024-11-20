@@ -25,10 +25,14 @@
 .imageWrapper {
   height: 526px;
   position: relative;
+  display: flex;
+
 }
 
 .imageWrapper > img {
   object-fit: cover;
+  width: 50%;
+  aspect-ratio: 1/1;
 }
 
 @media screen and (max-width: 920px) {

@@ -3,22 +3,19 @@
     "about-us-header": "About Us",
     "about-us-description-1": "Armenia represents not just its 3 million residents but the dreams of almost 10 million Armenians worldwide. When one can be The Change, Nshan Karayan, a devoted Armenian from Polis in his 80s, decided to donate all his wealth to create One Roof for Armenian talents to Think, Learn, and Create together. The Armenian Creative Technologies College will be left to Armenia on the condition that it will always serve as a symbol of unity for all Armenian youth from every region. It will be used for one purpose and one purpose only: creating equal opportunities for high-level education for the Armenian generations, regardless of any condition.",
     "about-us-description-2": "The Armenian Creative Technologies College, located in Parakar, is dedicated to fostering innovation, creativity, and collaboration among students, offering programs in technology and the arts. It provides a platform for aspiring talents to develop their skills and thrive in an ever-evolving landscape. GITC implements and operates the college, ensuring it meets the highest educational standards and addresses the needs of the community. Together, we are committed to empowering the next generation of Armenian leaders and visionaries.",
-    "honorary-header": "Honorary Board",
+    "honorary-header": "Honorary Board Member",
     "director-header": "ACT College Director",
     "honorary-member-1": {
-      "name": "Nshan",
-      "position": "Founder & Ceo At BLINK.AI",
-      "description": "ACT College, mandatory education is a 3-year program available for students who have completed the 9th grade, providing a strong foundation in their chosen fields to prepare them for future academic or career success."
+      "name": "Nshan Karayan",
+      "description": "Education is the cornerstone of our nation’s future. Every resource, every effort, and every investment must be dedicated to empowering our youth through knowledge. No matter where an Armenian may live, it is our shared duty to reconnect with our motherland and contribute to the empowerment of future generations."
     },
     "honorary-member-2": {
-      "name": "Narek",
-      "position": "Founder & Ceo At BLINK.AI",
-      "description": "ACT College, mandatory education is a 3-year program available for students who have completed the 9th grade, providing a strong foundation in their chosen fields to prepare them for future academic or career success."
+      "name": "Narek Mkrtchyan",
+      "description": "Transforming the historic building in Parakar into a thriving educational institution has been a deeply meaningful journey. As someone who has been directly involved in this initiative, I am proud to see ACT College become a hub of opportunity, inclusivity, and innovation. This college embodies our commitment to providing world-class education while honoring our heritage and investing in the future of our youth."
     },
     "college-director": {
       "name": "Amalya Yeghoyan",
-      "position": "Founder & Ceo At BLINK.AI",
-      "description": "ACT College, mandatory education is a 3-year program available for students who have completed the 9th grade, providing a strong foundation in their chosen fields to prepare them for future academic or career success."
+      "description": "ACT College is the heart of education where inclusivity drives innovation. We are dedicated to creating an environment where every talented student has the opportunity to thrive. Our inclusive approach ensures diverse voices come together to shape the future of technology, art, and engineering. At ACT College, everyone belongs."
     }
   }
 }

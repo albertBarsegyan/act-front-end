@@ -11,7 +11,8 @@ export function IntroSection() {
   return (
     <div className={styles.introSectionWrapper}>
       <div className={styles.imageWrapper}>
-        <Image fill src={'/static/img/about-us/about-us.jpeg'} alt={'about us'} />
+        <img src="/static/img/about-us/before.png" alt="" />
+        <img src="/static/img/about-us/after.png" alt="" />
       </div>
       <div className={styles.info}>
         <HeaderText color="black">{translation('about-us-header')}</HeaderText>
